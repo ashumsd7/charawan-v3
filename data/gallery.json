@@ -1,0 +1,68 @@
+{
+  "heading": "गैलरी",
+  "items": [
+    {
+      "title": "चरावां गांव ",
+      "subTitle": "2013  से अब तक ",
+      "link": "",
+      "info": "",
+      "numberOfPhotos": "7500+ फोटो",
+      "type": "photo",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2210/2210000.png"
+    },
+    {
+      "title": "श्री रामचरित मानस पाठ  ",
+      "subTitle": "( विजय मिश्रा & पार्टी)   ",
+      "link": "https://www.youtube.com/channel/UCKGWoWw1mXPcpiR0yz5vO3g/videos",
+      "info": "फिल्मों के गानों के तर्ज़ों पर रामायण पाठ की संगीतमय प्रस्तुति ",
+      "numberOfPhotos": "25+ वीडियो",
+      "type": "video",
+      "icon": "https://images-eu.ssl-images-amazon.com/images/I/51l-0n5kdsL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
+    },
+    {
+      "title": "चरावां Vlogs",
+      "subTitle": "वीडियो लॉग्स देखें  ",
+      "link": "https://www.youtube.com/watch?v=3ysh5vssdeg&list=PL4ehj0-yhmAJAo8YqqJeHPbWqIFtN2ExL",
+      "info": "",
+      "numberOfPhotos": "2 वीडियो",
+      "type": "video",
+      "icon": "https://cdn-icons-png.flaticon.com/512/1518/1518977.png"
+    },
+    {
+      "title": "टूर्नामेंट तैयारी  2021",
+      "subTitle": "टूर्नामेंट तैयारी 2021",
+      "link": "https://photos.app.goo.gl/FNDNuQZ66qVkZtKR6",
+      "info": "",
+      "numberOfPhotos": "130+ फोटो",
+      "type": "photo",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2405/2405308.png"
+    },
+    {
+      "title": "चरावां क्रिकेट क्लब 2021",
+      "subTitle": "दिन 1",
+      "link": "https://photos.app.goo.gl/u2CLyH1VJ6tctRaz7",
+      "info": "",
+      "numberOfPhotos": "20+ फोटो",
+      "type": "photo",
+      "icon": "https://cdn-icons-png.flaticon.com/512/1454/1454436.png"
+    },
+    {
+      "title": "चरावां क्रिकेट क्लब 2021",
+      "subTitle": "फाइनल दिन ",
+      "link": "https://photos.app.goo.gl/QJ44jiWAb6Qwvti3A",
+      "info": "",
+      "numberOfPhotos": "440+ फोटो",
+      "type": "photo",
+      "icon": "https://cdn-icons-png.flaticon.com/512/864/864763.png"
+    },
+    {
+      "title": "होली 2021",
+      "subTitle": "चरावां चौराहा होली",
+      "link": "https://photos.app.goo.gl/eiiL5MQ2oCZReenH9",
+      "info": "",
+      "numberOfPhotos": "280+ फोटो",
+      "type": "photo",
+      "icon": "https://cdn-icons-png.flaticon.com/512/3755/3755104.png"
+    }
+  ]
+}

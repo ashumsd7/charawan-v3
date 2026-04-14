@@ -1,0 +1,12 @@
+{
+  "title": "सम्पर्क करें",
+  "intro": "प्रश्न, सुझाव या सामग्री भेजने के लिए नीचे दिए गए विकल्पों से जुड़ें।",
+  "channels": [
+    {
+      "label": "व्हाट्सप्प समूह",
+      "href": "https://chat.whatsapp.com/LgCz9l1tWQKKJe6OQ5n8Zt"
+    },
+    { "label": "ईमेल", "href": "mailto:hello@charawan.netlify.app" },
+    { "label": "फेसबुक", "href": "https://www.facebook.com/" }
+  ]
+}

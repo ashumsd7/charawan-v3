@@ -1,0 +1,23 @@
+{
+  "village": {
+    "nameHi": "चरावां",
+    "nameEn": "Charawan",
+    "taglineHi": "अयोध्या जिला, बीकापुर तहसील",
+    "taglineEn": "Ayodhya district, Bikapur tehsil, Uttar Pradesh"
+  },
+  "domain": "charawan.netlify.app",
+  "map": {
+    "embedUrl": "https://www.google.com/maps?q=Charawan+Uttar+Pradesh&output=embed",
+    "link": "https://www.google.com/maps?q=Charawan+Uttar+Pradesh"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/",
+    "twitter": "https://twitter.com/",
+    "whatsappGroup": "https://chat.whatsapp.com/LgCz9l1tWQKKJe6OQ5n8Zt",
+    "email": "mailto:hello@charawan.netlify.app"
+  },
+  "seo": {
+    "defaultTitle": "चरावां | Charawan — गाँव की आधिकारिक जानकारी",
+    "defaultDescription": "चरावां (Charawan) गाँव की समाचार, दुकानें, गैलरी, क्रिकेट, चुनाव परिणाम और सम्पर्क — अयोध्या, उत्तर प्रदेश।"
+  }
+}

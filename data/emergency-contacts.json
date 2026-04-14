@@ -1,0 +1,111 @@
+{
+  "sectionId": "emergency-contacts",
+  "heading": "आपातकालीन व त्वरित सम्पर्क",
+  "subheading": "महत्वपूर्ण सेवाओं के नंबर एक ही स्थान पर — कॉल करें या नंबर कॉपी करें।",
+  "helplinesHeading": "कुछ हेल्पलाइन",
+  "helplines": [
+    {
+      "id": "h112",
+      "label": "पुलिस / सामान्य आपातकाल (भारत)",
+      "number": "112",
+      "tel": "tel:112"
+    },
+    {
+      "id": "h1962",
+      "label": "पशु आपात सहायता हेल्पलाइन",
+      "number": "1962",
+      "tel": "tel:1962"
+    },
+    {
+      "id": "h101",
+      "label": "अग्निशमन दल (फायर ब्रिगेड)",
+      "number": "101",
+      "tel": "tel:101"
+    }
+  ],
+  "cards": [
+    {
+      "id": "c1",
+      "categoryHi": "पशु चिकित्सक",
+      "name": "डॉ. उदाहरण शर्मा",
+      "designation": "पशु चिकित्सालय — चरावां क्षेत्र",
+      "phoneDisplay": "+91 98765 43210",
+      "tel": "tel:+919876543210",
+      "copyDigits": "919876543210"
+    },
+    {
+      "id": "c2",
+      "categoryHi": "पशु चिकित्सक",
+      "name": "डॉ. नमूना (अस्थायी नाम)",
+      "designation": "पशु उपचार सेवा",
+      "phoneDisplay": "+91 98765 00000",
+      "tel": "tel:+919876500000",
+      "copyDigits": "919876500000"
+    },
+    {
+      "id": "c3",
+      "categoryHi": "मेडिकल स्टोर",
+      "name": "मेडिकल स्टोर 1",
+      "designation": "दवाइयाँ व सामान्य औषधि",
+      "phoneDisplay": "+91 91234 50001",
+      "tel": "tel:+919123450001",
+      "copyDigits": "919123450001"
+    },
+    {
+      "id": "c4",
+      "categoryHi": "मेडिकल स्टोर",
+      "name": "मेडिकल स्टोर 2",
+      "designation": "दवाइयाँ व होमियोपैथिक",
+      "phoneDisplay": "+91 91234 50002",
+      "tel": "tel:+919123450002",
+      "copyDigits": "919123450002"
+    },
+    {
+      "id": "c5",
+      "categoryHi": "सम्पर्क",
+      "name": "संदीप तिवारी जी",
+      "designation": "सहायता समन्वय (नमूना)",
+      "phoneDisplay": "+91 90000 11111",
+      "tel": "tel:+919000011111",
+      "copyDigits": "919000011111"
+    },
+    {
+      "id": "c6",
+      "categoryHi": "चिकित्सक",
+      "name": "डॉक्टर 1",
+      "designation": "सामान्य चिकित्सक",
+      "phoneDisplay": "+91 90000 22222",
+      "tel": "tel:+919000022222",
+      "copyDigits": "919000022222"
+    },
+    {
+      "id": "c7",
+      "categoryHi": "चिकित्सक",
+      "name": "डॉक्टर 2",
+      "designation": "सामान्य चिकित्सक",
+      "phoneDisplay": "+91 90000 33333",
+      "tel": "tel:+919000033333",
+      "copyDigits": "919000033333"
+    },
+    {
+      "id": "c8",
+      "categoryHi": "वेबसाइट सहायता",
+      "name": "Website Help Desk",
+      "designation": "सुझाव, त्रुटि व सामग्री अपडेट",
+      "phoneDisplay": "hello@charawan.netlify.app",
+      "tel": "mailto:hello@charawan.netlify.app",
+      "copyDigits": "hello@charawan.netlify.app"
+    },
+    {
+      "id": "c9",
+      "categoryHi": "नया नंबर",
+      "name": "नंबर जोड़ें / सूचना दें",
+      "designation": "अपना विवरण भेजने हेतु",
+      "phoneDisplay": "—",
+      "tel": "",
+      "copyDigits": "",
+      "ctaHref": "/contacts",
+      "ctaLabel": "सम्पर्क फ़ॉर्म खोलें"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "banner": {
+    "title": "Election",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRldW7veazJYtaphJxxzZ7RZlJzXF8MvVwf2w&s",
+    "mobileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRldW7veazJYtaphJxxzZ7RZlJzXF8MvVwf2w&s"
+  },
+  "heading": "चुनाव चरावां में",
+  "years": ["2021", "2015", "2010"],
+  "electionData": [
+    {
+      "year": "2021",
+      "data": [
+        {
+          "type": "ग्राम पंचायत प्रधान ",
+          "winnerImg": "https://i.ibb.co/Vw20jjS/anil005018092021.jpg",
+          "img": "",
+          "downloadLink": null,
+          "winner": "अनिल कुमार ",
+          "opponent": "",
+          "about": "2021 के ग्राम पंचायत चुनाव में चरावां के प्रधान के रूप में अनिल कुमार जी चुने गए।"
+        },
+        {
+          "type": "बी डी सी",
+          "winnerImg": "https://i.ibb.co/JQNw2XM/anil003918092021.jpg",
+          "img": "",
+          "downloadLink": null,
+          "winner": "अनीस तिवारी ",
+          "opponent": "",
+          "about": "बीडीसी प्रतिनिधित्व — अनीस तिवारी जी।"
+        }
+      ]
+    },
+    {
+      "year": "2015",
+      "data": [
+        {
+          "type": "ग्राम पंचायत प्रधान  ",
+          "img": "https://i.ibb.co/0qLLPsD/ele2015.jpg",
+          "winnerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ZPryW2FN8JQZ1y8I0BaGzVJTi6evpNrkdZ17uaWiOjIsBLYnuUHv2KIt0eBeqgzHICQ&usqp=CAU",
+          "downloadLink": "http://sec.up.nic.in/ElecLive/ResultSearchOnVacancy.aspx?VacancyId=CN9xsQK+u2E=&PostId=v/iigWwtI48=&DistId=I3JyRKadE8w=",
+          "winner": "रोशनलाल (436)",
+          "opponent": "vs संदीप तिवारी (303)",
+          "about": "2015 के चुनाव परिणाम — आधिकारिक लिंक से विवरण देखें।"
+        },
+        {
+          "type": "बी डी सी",
+          "winnerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ZPryW2FN8JQZ1y8I0BaGzVJTi6evpNrkdZ17uaWiOjIsBLYnuUHv2KIt0eBeqgzHICQ&usqp=CAU",
+          "img": "",
+          "downloadLink": null,
+          "winner": "",
+          "opponent": "",
+          "about": "2015 बीडीसी — विवरण जल्द।"
+        }
+      ]
+    },
+    {
+      "year": "2010",
+      "data": [
+        {
+          "type": "ग्राम पंचायत प्रधान ",
+          "winnerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ZPryW2FN8JQZ1y8I0BaGzVJTi6evpNrkdZ17uaWiOjIsBLYnuUHv2KIt0eBeqgzHICQ&usqp=CAU",
+          "img": "https://i.ibb.co/ZmRW3RZ/2010-pradhan.jpg",
+          "downloadLink": "http://sec.up.nic.in/site/fonts/gpp_1404.pdf",
+          "winner": "ऋषिकेश जायसवाल  ",
+          "opponent": "",
+          "about": "2010 प्रधान चुनाव — आधिकारिक PDF।"
+        },
+        {
+          "type": "बी डी सी",
+          "winnerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ZPryW2FN8JQZ1y8I0BaGzVJTi6evpNrkdZ17uaWiOjIsBLYnuUHv2KIt0eBeqgzHICQ&usqp=CAU",
+          "img": "https://i.ibb.co/cgMZ6fL/BDC-2010.jpg",
+          "downloadLink": "http://sec.up.nic.in/site/fonts/kpm_1404.pdf",
+          "winner": "किरन",
+          "opponent": "",
+          "about": "2010 बीडीसी — आधिकारिक PDF।"
+        }
+      ]
+    }
+  ]
+}
