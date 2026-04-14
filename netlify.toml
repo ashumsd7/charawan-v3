@@ -1,0 +1,10 @@
+# Next.js on Netlify (OpenNext): publish must be `.next`, not `out` or `dist`.
+# Wrong publish dir → every route shows Netlify’s “Page not found”.
+# https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
