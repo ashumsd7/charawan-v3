@@ -36,16 +36,7 @@
       "unread": false,
       "thumbnail": "/og-image-placeholder.svg"
     },
-    {
-      "id": "n3",
-      "headline": "छात्रवृत्ति — तिथि विस्तार",
-      "message": "छात्रवृत्ति आवेदन की अंतिम तिथि 30 नवंबर तक बढ़ाई गई।",
-      "author": "प्रशासन",
-      "timeLabel": "58 दिन पहले",
-      "likes": 15,
-      "unread": false,
-      "thumbnail": "/og-image-placeholder.svg"
-    },
+    
     {
       "id": "n4",
       "headline": "माता जी विसर्जन",
@@ -68,17 +59,14 @@
     }
   ],
   "importantLinks": [
-    {
-      "label": "कोरोना की वैक्सीन 💉 के लिए रजिस्ट्रेशन करें",
-      "href": "https://www.cowin.gov.in/"
-    },
+   
     {
       "label": "वेबसाइट सम्बन्धित जानकारी और फीडबैक के लिए वेबसाइट हेल्प डेस्क से जुड़ें",
-      "href": "#"
+      "href": "https://chat.whatsapp.com/DGW9FlVoEeF7YVPxtptsUi?mode=gi_t"
     },
     {
       "label": "चरावां के ओफिसिअल व्हाट्सप्प ग्रुप से जुड़ें",
-      "href": "https://chat.whatsapp.com/LgCz9l1tWQKKJe6OQ5n8Zt"
+      "href": "https://chat.whatsapp.com/DGW9FlVoEeF7YVPxtptsUi?mode=gi_t"
     },
     {
       "label": "सरकारी नौकरी की जानकारी के लिए वेबसाइट देखें",

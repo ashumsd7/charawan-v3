@@ -17,6 +17,7 @@ import { NotificationsSection } from "@/components/notifications-section";
 import { VillageSupportSection } from "@/components/village-support-section";
 import { EmergencyContactsSection } from "@/components/emergency-contacts-section";
 import { homeCarouselPhotos } from "@/data/home-carousel-photos";
+import { WHATSAPP_CONTACT_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "मुख्य पेज",
@@ -73,7 +74,7 @@ export default async function HomePage() {
               src: p.src,
               alt: `चरावां — गैलरी ${idx + 1}`,
             }))}
-            whatsappHref={site.social.whatsappGroup}
+            whatsappHref={WHATSAPP_CONTACT_HREF || site.social.whatsappGroup}
             whatsappLabel={home.hero.joinWhatsappCta}
           />
         </section>
@@ -82,8 +83,8 @@ export default async function HomePage() {
 
         <NotificationsSection
           panel={notifications.panel}
-          items={notifications.items.slice(0, 5)}
-          previewCount={5}
+          items={notifications.items.slice(0, 4)}
+          previewCount={4}
         />
 
         <EmergencyContactsSection

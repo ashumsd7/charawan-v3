@@ -27,65 +27,38 @@
     {
       "id": "c1",
       "categoryHi": "पशु चिकित्सक",
-      "name": "डॉ. उदाहरण शर्मा",
-      "designation": "पशु चिकित्सालय — चरावां क्षेत्र",
-      "phoneDisplay": "+91 98765 43210",
-      "tel": "tel:+919876543210",
-      "copyDigits": "919876543210"
+      "name": "पशु डॉक्टर",
+      "designation": "पृथ्वीराज वर्मा",
+      "phoneDisplay": "9565476111",
+      "tel": "tel:9565476111",
+      "copyDigits": "9565476111"
     },
     {
       "id": "c2",
-      "categoryHi": "पशु चिकित्सक",
-      "name": "डॉ. नमूना (अस्थायी नाम)",
-      "designation": "पशु उपचार सेवा",
-      "phoneDisplay": "+91 98765 00000",
-      "tel": "tel:+919876500000",
-      "copyDigits": "919876500000"
+      "categoryHi": "डॉक्टर",
+      "name": "Doc Bablu Prajapati",
+      "designation": "बबलू प्रजापति",
+      "phoneDisplay": "8004897846",
+      "tel": "tel:8004897846",
+      "copyDigits": "8004897846"
     },
     {
       "id": "c3",
-      "categoryHi": "मेडिकल स्टोर",
-      "name": "मेडिकल स्टोर 1",
-      "designation": "दवाइयाँ व सामान्य औषधि",
-      "phoneDisplay": "+91 91234 50001",
-      "tel": "tel:+919123450001",
-      "copyDigits": "919123450001"
+      "categoryHi": "दुकान",
+      "name": "Sonu Kirana Store",
+      "designation": "सोनू किराना स्टोर",
+      "phoneDisplay": "6386172574",
+      "tel": "tel:6386172574",
+      "copyDigits": "6386172574"
     },
     {
       "id": "c4",
-      "categoryHi": "मेडिकल स्टोर",
-      "name": "मेडिकल स्टोर 2",
-      "designation": "दवाइयाँ व होमियोपैथिक",
-      "phoneDisplay": "+91 91234 50002",
-      "tel": "tel:+919123450002",
-      "copyDigits": "919123450002"
-    },
-    {
-      "id": "c5",
       "categoryHi": "सम्पर्क",
-      "name": "संदीप तिवारी जी",
-      "designation": "सहायता समन्वय (नमूना)",
-      "phoneDisplay": "+91 90000 11111",
-      "tel": "tel:+919000011111",
-      "copyDigits": "919000011111"
-    },
-    {
-      "id": "c6",
-      "categoryHi": "चिकित्सक",
-      "name": "डॉक्टर 1",
-      "designation": "सामान्य चिकित्सक",
-      "phoneDisplay": "+91 90000 22222",
-      "tel": "tel:+919000022222",
-      "copyDigits": "919000022222"
-    },
-    {
-      "id": "c7",
-      "categoryHi": "चिकित्सक",
-      "name": "डॉक्टर 2",
-      "designation": "सामान्य चिकित्सक",
-      "phoneDisplay": "+91 90000 33333",
-      "tel": "tel:+919000033333",
-      "copyDigits": "919000033333"
+      "name": "Sandeep Tiwari",
+      "designation": "संदीप तिवारी",
+      "phoneDisplay": "9984915000",
+      "tel": "tel:9984915000",
+      "copyDigits": "9984915000"
     },
     {
       "id": "c8",

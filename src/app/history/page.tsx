@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { readJsonFile } from "@/lib/read-data";
 import { homeCarouselPhotos } from "@/data/home-carousel-photos";
+import { NEW_TAB_FALLBACK_HREF, WHATSAPP_CONTACT_HREF } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "इतिहास",
@@ -23,6 +24,7 @@ const HISTORY_BANNER_PHOTO = homeCarouselPhotos[0];
 export default async function HistoryPage() {
   const data = await readJsonFile<HistoryJson>("history.json");
   const embedSrc = data.youtubeEmbed.trim();
+  const whatsappHref = WHATSAPP_CONTACT_HREF || data.whatsapp || NEW_TAB_FALLBACK_HREF;
 
   return (
     <div className="village-page-bg">
@@ -50,7 +52,7 @@ export default async function HistoryPage() {
             {data.body}
           </p>
           <Link
-            href={data.whatsapp}
+            href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground shadow-sm transition hover:opacity-95"

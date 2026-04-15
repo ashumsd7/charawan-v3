@@ -1,5 +1,12 @@
 import Link from "next/link";
 import { readJsonFile } from "@/lib/read-data";
+import {
+  FACEBOOK_HREF,
+  INSTAGRAM_HREF,
+  TWITTER_HREF,
+  WHATSAPP_CONTACT_HREF,
+  YOUTUBE_HREF,
+} from "@/lib/constants";
 
 type Lang = "hi";
 type I18nRoot = Record<Lang, Record<string, string>>;
@@ -10,7 +17,6 @@ export async function SiteFooter() {
     readJsonFile<I18nRoot>("i18n.json"),
     readJsonFile<{
       domain: string;
-      social: Record<string, string>;
       map: { embedUrl: string; link: string };
     }>("site.json"),
     readJsonFile<{
@@ -69,16 +75,32 @@ export async function SiteFooter() {
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-semibold text-foreground">Social</span>
-          <a className="hover:text-accent" href={site.social.whatsappGroup}>
-            WhatsApp
-          </a>
-          <a className="hover:text-accent" href={site.social.facebook}>
-            Facebook
-          </a>
-          <a className="hover:text-accent" href={site.social.twitter}>
-            Twitter
-          </a>
-          <a className="hover:text-accent" href={site.social.email}>
+          {[
+            { label: "WhatsApp", href: WHATSAPP_CONTACT_HREF },
+            { label: "Facebook", href: FACEBOOK_HREF },
+            { label: "Instagram", href: INSTAGRAM_HREF },
+            { label: "YouTube", href: YOUTUBE_HREF },
+            { label: "Twitter", href: TWITTER_HREF },
+          ].map((s) => {
+            const href = (s.href ?? "").trim();
+            const disabled = !href;
+            return disabled ? (
+              <span key={s.label} className="cursor-not-allowed opacity-50">
+                {s.label}
+              </span>
+            ) : (
+              <a
+                key={s.label}
+                className="hover:text-accent"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {s.label}
+              </a>
+            );
+          })}
+          <a className="hover:text-accent" href={"mailto:hello@charawan.netlify.app"}>
             Email
           </a>
         </div>

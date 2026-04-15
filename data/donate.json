@@ -10,11 +10,7 @@
   "shipTo": {
     "name": "आशु तिवारी",
     "addressLines": [
-      "ग्राम: चरावां",
-      "पोस्ट: कोदैला",
-      "जिला: अयोध्या, उत्तर प्रदेश",
-      "पिन: 224203",
-      "सरकारी गोदाम के पास"
+      "ग्राम: चरावां पोस्ट: कोदैला जिला: अयोध्या, उत्तर प्रदेश पिन: 224203 सरकारी गोदाम के पास"
     ],
     "phone": "7800818001"
   },
@@ -35,14 +31,7 @@
       "paymentQrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
       "timesDonated": 1,
       "donors": [
-        {
-          "name": "आशु तिवारी",
-          "number": "",
-          "address": "",
-          "photo": "https://avatars.githubusercontent.com/u/40313523?v=4",
-          "description": "",
-          "thankYouNote": "बहुत बहुत धन्यवाद — आपके सहयोग से ज़रूरतमंदों तक मदद पहुँचेगी।"
-        }
+        
       ]
     },
     {
@@ -61,11 +50,18 @@
       "name": "एंटी-रेबीज वैक्सीन",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrWkxOJnxARve1yXMzUtXV5jAMSux1crwtmw&s",
       "description": "Street dogs के लिए rabies vaccine support (QR से योगदान)।",
-      "priceStarts": 0,
+      "priceStarts": 450,
       "buyLink": "",
       "paymentQrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
       "timesDonated": 0,
-      "donors": []
+      "donors": [{
+        "name": "आशु तिवारी",
+        "number": "",
+        "address": "",
+        "photo": "https://avatars.githubusercontent.com/u/40313523?v=4",
+        "description": "",
+        "thankYouNote": "बहुत बहुत धन्यवाद — आपके सहयोग से ज़रूरतमंदों तक मदद पहुँचेगी।"
+      }]
     },
     {
       "id": "anti-parvo-vaccine",
@@ -76,7 +72,14 @@
       "buyLink": "",
       "paymentQrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
       "timesDonated": 0,
-      "donors": []
+      "donors": [{
+        "name": "आशु तिवारी",
+        "number": "",
+        "address": "",
+        "photo": "https://avatars.githubusercontent.com/u/40313523?v=4",
+        "description": "",
+        "thankYouNote": "बहुत बहुत धन्यवाद — आपके सहयोग से ज़रूरतमंदों तक मदद पहुँचेगी।"
+      }]
     },
     {
       "id": "street-lights",
