@@ -57,7 +57,8 @@ export default function AdminPage() {
       {
         title: "Notifications",
         icon: <Bell className="h-5 w-5" aria-hidden />,
-        enabled: false,
+        href: "/manage-notifications",
+        enabled: true,
         bgClass: "bg-amber-500/10 text-amber-800 dark:text-amber-200",
         ringClass: "ring-amber-500/20",
       },
