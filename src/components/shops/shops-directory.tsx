@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import ShopCard from "@/components/shops/ShopCard";
 import type { ShopWithKey } from "@/lib/shops-firebase";
+import { SHOP_TYPE_FILTERS, canonicalShopTypeValue } from "@/lib/shop-type-filters";
 
 export function ShopsDirectory({
   shops,
@@ -17,11 +18,19 @@ export function ShopsDirectory({
 }) {
   const [draft, setDraft] = useState("");
   const [applied, setApplied] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("all");
 
   const filtered = useMemo(() => {
+    let list = shops;
+    if (categoryFilter !== "all") {
+      list = list.filter((s) => {
+        const types = (s.shopType ?? []).filter(Boolean).map(String).map(canonicalShopTypeValue);
+        return types.includes(categoryFilter);
+      });
+    }
     const needle = applied.trim().toLowerCase();
-    if (!needle) return shops;
-    return shops.filter((s) => {
+    if (!needle) return list;
+    return list.filter((s) => {
       const hay = [
         s.shopName,
         s.owenerName,
@@ -35,7 +44,7 @@ export function ShopsDirectory({
         .toLowerCase();
       return hay.includes(needle);
     });
-  }, [shops, applied]);
+  }, [shops, applied, categoryFilter]);
 
   const runSearch = () => {
     setApplied(draft.trim());
@@ -69,7 +78,28 @@ export function ShopsDirectory({
           </div>
 
           <div className="mt-8 rounded-2xl border border-slate-200/90 bg-white p-3 shadow-md ring-1 ring-slate-900/5 dark:border-slate-700 dark:bg-slate-900/80 dark:ring-white/10 sm:p-4">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:items-end">
+              <div className="min-w-0">
+                <label htmlFor="shops-category" className="mb-1.5 block text-xs font-extrabold text-slate-600 dark:text-slate-300">
+                  प्रकार चुनें
+                </label>
+                <select
+                  id="shops-category"
+                  value={categoryFilter}
+                  onChange={(e) => setCategoryFilter(e.target.value)}
+                  className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50/80 px-3 text-sm font-extrabold text-slate-900 outline-none transition focus:border-teal-500/60 focus:bg-white focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-950 dark:text-slate-100"
+                >
+                  <option value="all">सभी</option>
+                  {SHOP_TYPE_FILTERS.map((f) => (
+                    <option key={f.value} value={f.value}>
+                      {f.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="min-w-0">
+                <span className="mb-1.5 block text-xs font-extrabold text-slate-600 dark:text-slate-300">खोजें</span>
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-stretch">
               <label className="relative min-w-0 flex-1">
                 <span className="sr-only">संपर्क खोजें</span>
                 <Search
@@ -87,18 +117,20 @@ export function ShopsDirectory({
                     }
                   }}
                   placeholder="नाम, पता, गाँव, फोन…"
-                  className="h-12 w-full rounded-xl border border-slate-200 bg-slate-50/80 py-2 pl-11 pr-3 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-teal-500/60 focus:bg-white focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-950 dark:text-slate-100 dark:focus:border-teal-400/50 sm:h-11 sm:text-base"
+                  className="h-11 w-full rounded-xl border border-slate-200 bg-slate-50/80 py-2 pl-11 pr-3 text-sm font-medium text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-teal-500/60 focus:bg-white focus:ring-2 focus:ring-teal-500/20 dark:border-slate-600 dark:bg-slate-950 dark:text-slate-100 dark:focus:border-teal-400/50 sm:text-base"
                   autoComplete="off"
                 />
               </label>
               <button
                 type="button"
                 onClick={runSearch}
-                className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-slate-900 px-6 text-sm font-bold text-white shadow-sm transition hover:bg-slate-800 sm:h-11 sm:px-8 dark:bg-teal-700 dark:hover:bg-teal-600"
+                className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-slate-900 px-5 text-sm font-bold text-white shadow-sm transition hover:bg-slate-800 sm:px-6 dark:bg-teal-700 dark:hover:bg-teal-600"
               >
                 <Search className="h-4 w-4 shrink-0 opacity-90" aria-hidden />
                 खोजें
               </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -119,6 +151,9 @@ export function ShopsDirectory({
               <>
                 कुल <span className="font-bold text-teal-700 dark:text-teal-400">{filtered.length}</span>{" "}
                 प्रविष्टियाँ
+                {categoryFilter !== "all"
+                  ? ` · प्रकार: “${SHOP_TYPE_FILTERS.find((x) => x.value === categoryFilter)?.title ?? categoryFilter}”`
+                  : null}
                 {applied.trim() ? ` · खोज: “${applied.trim()}”` : null}
               </>
             )}

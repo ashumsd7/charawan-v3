@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import { Check, Clock, Copy, Flag, MapPin, PhoneCall, Share2, Store, Tag } from "lucide-react";
 import type { ShopWithKey } from "@/lib/shops-firebase";
 import { buildShopShareMessage } from "@/lib/shop-share-text";
+import { getShopTypeTitle } from "@/lib/shop-type-filters";
 import { WHATSAPP_CONTACT_HREF } from "@/lib/constants";
 
 function telDigits(tel?: string) {
@@ -227,7 +228,7 @@ export default function ShopCard({ data, siteOrigin }: { data: ShopWithKey; site
           {types.length ? (
             <p className="flex flex-wrap items-center gap-1 text-[10px] font-semibold text-teal-700 dark:text-teal-400">
               <Tag className="h-3 w-3 shrink-0" aria-hidden />
-              <span className="line-clamp-2">{types.join(" · ")}</span>
+              <span className="line-clamp-2">{types.map((t) => getShopTypeTitle(t)).join(" · ")}</span>
             </p>
           ) : null}
         </div>

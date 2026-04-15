@@ -21,29 +21,13 @@ import {
 import Link from "next/link";
 import axios from "axios";
 import { CHARAWAN_SHOPS_FIREBASE_URL } from "@/lib/shops-firebase";
+import { SHOP_TYPE_FILTERS, canonicalShopTypeValue, getShopTypeTitle } from "@/lib/shop-type-filters";
 
 const PASSCODE_FLAG_KEY = "charawan_passcode";
 
 type Toast = { id: string; type: "success" | "error" | "info"; title: string; body?: string };
 
 const DAYS = ["सोमवार", "मंगलवार", "बुधवार", "वृहस्पतिवार", "शुक्रवार", "शनिवार", "रविवार"] as const;
-
-const FILTERS: { value: string; title: string }[] = [
-  { value: "kirana", title: "किराना" },
-  { value: "medical", title: "मेडिकल" },
-  { value: "doctor", title: "डॉक्टर" },
-  { value: "hospital", title: "अस्पताल" },
-  { value: "pathology", title: "पैथोलॉजी" },
-  { value: "electrician", title: "इलेक्ट्रीशियन" },
-  { value: "plumber", title: "प्लंबर" },
-  { value: "mobile", title: "मोबाइल/रिचार्ज" },
-  { value: "hardware", title: "हार्डवेयर" },
-  { value: "tailor", title: "दर्जी" },
-  { value: "salon", title: "सैलून" },
-  { value: "restaurant", title: "रेस्टोरेंट" },
-  { value: "milk", title: "दूध/डेयरी" },
-  { value: "other", title: "अन्य" },
-];
 
 function onlyDigits(s: string) {
   return (s || "").replace(/\D/g, "");
@@ -362,7 +346,7 @@ export default function ManageContactsPage() {
   const visible = useMemo(() => {
     const q = query.trim().toLowerCase();
     return allShops.filter((s) => {
-      const st = normalizeShopType(s.shopType);
+      const st = canonicalShopTypeValue(normalizeShopType(s.shopType));
       if (filter !== "all" && st !== filter) return false;
       if (!q) return true;
       const hay = `${s.shopName ?? ""}\n${s.owenerName ?? ""}\n${s.shopAddress ?? ""}\n${s.shopInfo ?? ""}\n${s.villageName ?? ""}\n${s.mobileNumber ?? ""}\n${s.mobileNumber2 ?? ""}`.toLowerCase();
@@ -374,7 +358,7 @@ export default function ManageContactsPage() {
     const key = s.key ?? null;
     if (!key) return;
     setEditingKey(key);
-    setEditSelectedShopType(normalizeShopType(s.shopType));
+    setEditSelectedShopType(canonicalShopTypeValue(normalizeShopType(s.shopType)));
     setEditShopName(s.shopName ?? "");
     setEditOwenerName(s.owenerName ?? "");
     setEditMobileNumber(mobile10ForInput(s.mobileNumber ?? ""));
@@ -563,31 +547,22 @@ export default function ManageContactsPage() {
             <div className="max-h-[75vh] overflow-y-auto p-5">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="sm:col-span-2">
-                  <label className="block text-sm font-extrabold text-foreground">
+                  <label className="block text-sm font-extrabold text-foreground" htmlFor="edit-shop-type">
                     <span className="text-rose-600">*</span> दुकान / सर्विस का प्रकार
                   </label>
-                  <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-                    {FILTERS.map((f) => (
-                      <label
-                        key={f.value}
-                        className={`flex cursor-pointer items-center gap-2 rounded-2xl border px-3 py-2 text-sm font-semibold shadow-sm transition hover:bg-white dark:hover:bg-slate-900 ${
-                          editSelectedShopType === f.value
-                            ? "border-teal-500/60 bg-teal-50/70 text-teal-950 ring-2 ring-teal-500/20 dark:border-teal-500/40 dark:bg-teal-950/25 dark:text-teal-50"
-                            : "border-slate-200 bg-white/60 text-foreground dark:border-slate-700 dark:bg-slate-900/40"
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="editShopType"
-                          value={f.value}
-                          checked={editSelectedShopType === f.value}
-                          onChange={() => setEditSelectedShopType(f.value)}
-                          className="h-4 w-4 accent-teal-600"
-                        />
-                        <span className="truncate">{f.title}</span>
-                      </label>
+                  <select
+                    id="edit-shop-type"
+                    value={editSelectedShopType}
+                    onChange={(e) => setEditSelectedShopType(e.target.value)}
+                    className="mt-3 h-12 w-full max-w-full rounded-2xl border border-slate-200 bg-white/70 px-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
+                  >
+                    <option value="">प्रकार चुनें…</option>
+                    {SHOP_TYPE_FILTERS.map((f) => (
+                      <option key={f.value} value={f.value}>
+                        {f.title}
+                      </option>
                     ))}
-                  </div>
+                  </select>
                 </div>
 
                 <div>
@@ -908,13 +883,13 @@ export default function ManageContactsPage() {
                 />
               </div>
               <div className="flex flex-wrap gap-2">
-                <select
+                               <select
                   value={filter}
                   onChange={(e) => setFilter(e.target.value)}
-                  className="h-11 rounded-2xl border border-slate-200 bg-white/70 px-3 text-sm font-extrabold text-foreground shadow-sm outline-none transition hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900"
+                  className="h-11 min-w-0 max-w-full rounded-2xl border border-slate-200 bg-white/70 px-3 text-sm font-extrabold text-foreground shadow-sm outline-none transition hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900 sm:max-w-md"
                 >
-                  <option value="all">All प्रकार</option>
-                  {FILTERS.map((f) => (
+                  <option value="all">सभी</option>
+                  {SHOP_TYPE_FILTERS.map((f) => (
                     <option key={f.value} value={f.value}>
                       {f.title}
                     </option>
@@ -937,8 +912,8 @@ export default function ManageContactsPage() {
                   </thead>
                   <tbody className="divide-y divide-slate-200/70 dark:divide-slate-700/60">
                     {visible.map((s) => {
-                      const st = normalizeShopType(s.shopType);
-                      const stTitle = FILTERS.find((x) => x.value === st)?.title ?? (st || "—");
+                      const st = canonicalShopTypeValue(normalizeShopType(s.shopType));
+                      const stTitle = getShopTypeTitle(st);
                       return (
                         <tr key={s.key ?? `${s.shopName}-${Math.random()}`} className="hover:bg-slate-50/70 dark:hover:bg-slate-900/30">
                           <td className="px-4 py-3">
@@ -1014,35 +989,25 @@ export default function ManageContactsPage() {
           </div>
         ) : (
           <div className="rounded-3xl border border-slate-200 bg-card/90 p-6 shadow-sm backdrop-blur dark:border-slate-700 sm:p-8">
-            <label className="block text-sm font-extrabold text-foreground">
+            <label className="block text-sm font-extrabold text-foreground" htmlFor="add-shop-type">
               <span className="text-rose-600">*</span> #1. दुकान / सर्विस का प्रकार चुनिये
             </label>
             <p className="mt-1 text-xs text-muted">
               एक समय में <span className="font-bold text-foreground">एक ही</span> प्रकार चुनें।
             </p>
-
-            <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-              {FILTERS.map((f) => (
-                <label
-                  key={f.value}
-                  className={`flex cursor-pointer items-center gap-2 rounded-2xl border px-3 py-2 text-sm font-semibold shadow-sm transition hover:bg-white dark:hover:bg-slate-900 ${
-                    selectedShopType === f.value
-                      ? "border-teal-500/60 bg-teal-50/70 text-teal-950 ring-2 ring-teal-500/20 dark:border-teal-500/40 dark:bg-teal-950/25 dark:text-teal-50"
-                      : "border-slate-200 bg-white/60 text-foreground dark:border-slate-700 dark:bg-slate-900/40"
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="shopType"
-                    value={f.value}
-                    checked={selectedShopType === f.value}
-                    onChange={() => setSelectedShopType(f.value)}
-                    className="h-4 w-4 accent-teal-600"
-                  />
-                  <span className="truncate">{f.title}</span>
-                </label>
+            <select
+              id="add-shop-type"
+              value={selectedShopType}
+              onChange={(e) => setSelectedShopType(e.target.value)}
+              className="mt-3 h-12 w-full rounded-2xl border border-slate-200 bg-white/70 px-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
+            >
+              <option value="">प्रकार चुनें…</option>
+              {SHOP_TYPE_FILTERS.map((f) => (
+                <option key={f.value} value={f.value}>
+                  {f.title}
+                </option>
               ))}
-            </div>
+            </select>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div>
