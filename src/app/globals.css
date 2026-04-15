@@ -120,3 +120,18 @@ body {
       transparent 12px
     );
 }
+
+.hero-carousel-fade {
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 1) 58%,
+    rgba(0, 0, 0, 0.85) 72%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 1) 58%,
+    rgba(0, 0, 0, 0.85) 72%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}

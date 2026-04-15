@@ -74,6 +74,8 @@ export default async function HomePage() {
           />
         </section>
 
+        <VillageSupportSection data={home.villageDevelopment} />
+
         <NotificationsSection
           panel={home.notificationsPanel}
           items={home.notifications}
@@ -133,8 +135,6 @@ export default async function HomePage() {
           </div>
           <p className="mt-3 text-xs text-muted">{home.statsNote}</p>
         </section>
-
-        <VillageSupportSection data={home.villageDevelopment} />
 
         <SupportCricket
           clubTitle={home.cricketSection.title}

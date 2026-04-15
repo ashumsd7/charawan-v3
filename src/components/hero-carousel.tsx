@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ImageIcon, MessageCircle } from "lucide-react";
 
@@ -31,13 +30,11 @@ export function HeroCarousel({
               idx === i ? "opacity-100" : "pointer-events-none opacity-0"
             }`}
           >
-            <Image
-              src={s.src}
-              alt={s.alt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority={idx === 0}
+            <div
+              role="img"
+              aria-label={s.alt}
+              className="hero-carousel-fade absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url("${s.src}")` }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             <p className="absolute bottom-4 left-4 right-4 flex items-center gap-2 text-sm font-medium text-white drop-shadow">
