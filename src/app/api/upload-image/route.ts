@@ -3,8 +3,14 @@ import { NextResponse } from "next/server";
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
-  // const key = process.env.IMGBB_API_KEY;
-  const key = "45fdf5c62459de1d05f5467a287c5b44";
+  // Netlify provides env variables via process.env.<NAME> too,
+  // but for edge compatibility and to support Netlify's recommended pattern,
+  // allow fallback to process.env but first try Netlify's runtime env:
+  const key =
+    process.env.IMGBB_API_KEY ||
+    (typeof globalThis !== "undefined" && (globalThis as any).IMGBB_API_KEY) ||
+    undefined;
+ 
   if (!key) {
     return NextResponse.json(
       { ok: false, error: "IMGBB_API_KEY missing on server" },
