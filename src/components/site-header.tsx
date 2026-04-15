@@ -2,6 +2,7 @@ import Link from "next/link";
 import { readJsonFile } from "@/lib/read-data";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { GoogleTranslateWidget } from "@/components/google-translate";
+import { MobileNavMenu } from "@/components/mobile-nav";
 
 type Lang = "hi";
 type I18nRoot = Record<Lang, Record<string, string>>;
@@ -34,32 +35,40 @@ export async function SiteHeader() {
     "site.json",
   );
   const t = (k: string) => i18n[lang][k] ?? k;
+  const mobileItems = [...navLeft, ...navRight, ...extraNav].map((i) => ({
+    href: i.href,
+    label: t(i.key),
+  }));
 
   return (
     <header className="sticky top-0 z-30 border-b border-white/10 shadow-lg shadow-slate-900/20">
       <div className="bg-gradient-to-r from-slate-950 via-slate-900 to-teal-950">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href="/" className="flex flex-col leading-tight">
             <span className="text-lg font-bold tracking-tight text-white">
               {site.village.nameHi}
             </span>
-            <span className="text-xs font-medium text-teal-100/80">{site.village.nameEn}</span>
+            <span className="text-xs font-medium text-teal-100/80 sm:block">
+              {site.village.nameEn}
+            </span>
           </Link>
-          <div className="flex flex-wrap items-center gap-2 sm:justify-end">
-            <ThemeToggle
-              labelLight={t("theme.light")}
-              labelDark={t("theme.dark")}
-            />
-            <div className="flex max-h-9 items-center rounded-lg border border-white/10 bg-white/5 px-2 py-0.5 backdrop-blur">
+
+          <div className="flex items-center gap-2">
+            <ThemeToggle labelLight={t("theme.light")} labelDark={t("theme.dark")} />
+
+            <div className="hidden max-h-9 items-center rounded-lg border border-white/10 bg-white/5 px-2 py-0.5 backdrop-blur sm:flex">
               <GoogleTranslateWidget hint={t("translate.hint")} />
             </div>
+
+            <MobileNavMenu items={mobileItems} translateHint={t("translate.hint")} />
           </div>
         </div>
       </div>
-      <nav className="border-b border-slate-800/80 bg-slate-950/98 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-2 py-2.5 sm:px-4">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex flex-wrap gap-1 sm:gap-2">
+
+      <nav className="hidden border-b border-slate-800/80 bg-slate-950/98 backdrop-blur-md sm:block">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-2.5">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex flex-wrap gap-2">
               {navLeft.map((item) => (
                 <Link
                   key={item.href}
@@ -70,7 +79,7 @@ export async function SiteHeader() {
                 </Link>
               ))}
             </div>
-            <div className="flex flex-wrap items-center justify-start gap-1 sm:justify-end sm:gap-2">
+            <div className="flex flex-wrap items-center justify-end gap-2">
               {navRight.map((item) => (
                 <Link
                   key={item.href}
@@ -86,7 +95,7 @@ export async function SiteHeader() {
               ))}
             </div>
           </div>
-          <div className="flex flex-wrap gap-1 border-t border-white/10 pt-2 text-xs sm:text-sm">
+          <div className="flex flex-wrap gap-1 border-t border-white/10 pt-2 text-sm">
             {extraNav.map((item) => (
               <Link
                 key={item.href}
