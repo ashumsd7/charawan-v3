@@ -60,15 +60,7 @@
       "tel": "tel:9984915000",
       "copyDigits": "9984915000"
     },
-    {
-      "id": "c8",
-      "categoryHi": "वेबसाइट सहायता",
-      "name": "Website Help Desk",
-      "designation": "सुझाव, त्रुटि व सामग्री अपडेट",
-      "phoneDisplay": "hello@charawan.netlify.app",
-      "tel": "mailto:hello@charawan.netlify.app",
-      "copyDigits": "hello@charawan.netlify.app"
-    },
+   
     {
       "id": "c9",
       "categoryHi": "नया नंबर",

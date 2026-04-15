@@ -9,12 +9,13 @@ import {
   Bell,
   CheckCircle2,
   Clock,
-  Image as ImageIcon,
   Loader2,
   Plus,
   RefreshCw,
   Shield,
   ThumbsUp,
+  Trash2,
+  UploadCloud,
   X,
 } from "lucide-react";
 import { CHARAWAN_NOTIFICATIONS_FIREBASE_URL } from "@/lib/notifications-firebase";
@@ -98,6 +99,8 @@ export default function ManageNotificationsPage() {
   const [isAdmin, setIsAdmin] = useState(true);
   const [img1, setImg1] = useState("");
   const [img2, setImg2] = useState("");
+  const [uploading1, setUploading1] = useState(false);
+  const [uploading2, setUploading2] = useState(false);
   const [saving, setSaving] = useState(false);
 
   const cleanReporter = reporterName.trim() || "Admin";
@@ -105,8 +108,33 @@ export default function ManageNotificationsPage() {
   const cleanShort = shortInfo.trim();
 
   const canSubmit = useMemo(() => {
-    return Boolean(cleanTitle && cleanShort && !saving);
-  }, [cleanTitle, cleanShort, saving]);
+    return Boolean(cleanTitle && cleanShort && !saving && !uploading1 && !uploading2);
+  }, [cleanTitle, cleanShort, saving, uploading1, uploading2]);
+
+  const onPickImage = async (slot: 1 | 2, file?: File | null) => {
+    if (!file) return;
+    if (slot === 1) setUploading1(true);
+    else setUploading2(true);
+    try {
+      const fd = new FormData();
+      fd.append("image", file);
+      const { data } = await axios.post<{ ok: boolean; url?: string; error?: string }>(
+        "/api/upload-image",
+        fd,
+        { timeout: 60_000 },
+      );
+      if (!data.ok || !data.url) throw new Error(data.error || "Upload failed");
+      if (slot === 1) setImg1(data.url);
+      else setImg2(data.url);
+      pushToast({ type: "success", title: "फोटो अपलोड हो गई", body: "इमेज लिंक लग गया।" });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : "अपलोड नहीं हो सका";
+      pushToast({ type: "error", title: "अपलोड विफल", body: msg });
+    } finally {
+      if (slot === 1) setUploading1(false);
+      else setUploading2(false);
+    }
+  };
 
   const callApi = useCallback(async () => {
     setLoading(true);
@@ -398,27 +426,92 @@ export default function ManageNotificationsPage() {
                   className="mt-2 w-full rounded-2xl border border-slate-200 bg-white/70 p-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
                 />
               </div>
-              <div>
-                <label className="text-xs font-bold uppercase tracking-wider text-muted">Image 1 URL (optional)</label>
-                <div className="mt-2 flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-3 shadow-sm dark:border-slate-700 dark:bg-slate-900/40">
-                  <ImageIcon className="h-4 w-4 text-slate-400" aria-hidden />
+              <div className="rounded-3xl border border-slate-200 bg-white/60 p-5 dark:border-slate-700 dark:bg-slate-900/40">
+                <p className="text-xs font-bold uppercase tracking-wider text-muted">Image 1 (optional)</p>
+                <div className="mt-3 flex flex-col gap-3">
+                  <label className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-sm font-extrabold text-foreground shadow-sm transition hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900">
+                    <UploadCloud className="h-4 w-4 text-slate-500" aria-hidden />
+                    {uploading1 ? "अपलोड हो रहा है…" : "फोटो चुनें"}
+                    <input
+                      type="file"
+                      accept="image/png,image/jpeg"
+                      className="hidden"
+                      disabled={uploading1}
+                      onChange={(e) => {
+                        const f = e.target.files?.[0];
+                        e.target.value = "";
+                        void onPickImage(1, f);
+                      }}
+                    />
+                  </label>
+                  {img1 ? (
+                    <div className="flex items-start gap-3">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={img1} alt="img1" className="h-20 w-20 rounded-2xl object-cover ring-1 ring-slate-200 dark:ring-slate-700" />
+                      <div className="min-w-0 flex-1">
+                        <p className="break-all text-xs text-muted">{img1}</p>
+                        <button
+                          type="button"
+                          onClick={() => setImg1("")}
+                          className="mt-2 inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-foreground transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+                        >
+                          <Trash2 className="h-4 w-4" aria-hidden />
+                          हटाएँ
+                        </button>
+                      </div>
+                    </div>
+                  ) : null}
+                  <div className="text-xs text-muted">या लिंक पेस्ट करें:</div>
                   <input
                     value={img1}
                     onChange={(e) => setImg1(e.target.value)}
                     placeholder="https://..."
-                    className="h-11 w-full bg-transparent text-sm font-semibold text-foreground outline-none placeholder:text-slate-400"
+                    className="h-11 w-full rounded-2xl border border-slate-200 bg-white/70 px-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
                   />
                 </div>
               </div>
-              <div>
-                <label className="text-xs font-bold uppercase tracking-wider text-muted">Image 2 URL (optional)</label>
-                <div className="mt-2 flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-3 shadow-sm dark:border-slate-700 dark:bg-slate-900/40">
-                  <ImageIcon className="h-4 w-4 text-slate-400" aria-hidden />
+
+              <div className="rounded-3xl border border-slate-200 bg-white/60 p-5 dark:border-slate-700 dark:bg-slate-900/40">
+                <p className="text-xs font-bold uppercase tracking-wider text-muted">Image 2 (optional)</p>
+                <div className="mt-3 flex flex-col gap-3">
+                  <label className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-sm font-extrabold text-foreground shadow-sm transition hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900">
+                    <UploadCloud className="h-4 w-4 text-slate-500" aria-hidden />
+                    {uploading2 ? "अपलोड हो रहा है…" : "फोटो चुनें"}
+                    <input
+                      type="file"
+                      accept="image/png,image/jpeg"
+                      className="hidden"
+                      disabled={uploading2}
+                      onChange={(e) => {
+                        const f = e.target.files?.[0];
+                        e.target.value = "";
+                        void onPickImage(2, f);
+                      }}
+                    />
+                  </label>
+                  {img2 ? (
+                    <div className="flex items-start gap-3">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={img2} alt="img2" className="h-20 w-20 rounded-2xl object-cover ring-1 ring-slate-200 dark:ring-slate-700" />
+                      <div className="min-w-0 flex-1">
+                        <p className="break-all text-xs text-muted">{img2}</p>
+                        <button
+                          type="button"
+                          onClick={() => setImg2("")}
+                          className="mt-2 inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-foreground transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+                        >
+                          <Trash2 className="h-4 w-4" aria-hidden />
+                          हटाएँ
+                        </button>
+                      </div>
+                    </div>
+                  ) : null}
+                  <div className="text-xs text-muted">या लिंक पेस्ट करें:</div>
                   <input
                     value={img2}
                     onChange={(e) => setImg2(e.target.value)}
                     placeholder="https://..."
-                    className="h-11 w-full bg-transparent text-sm font-semibold text-foreground outline-none placeholder:text-slate-400"
+                    className="h-11 w-full rounded-2xl border border-slate-200 bg-white/70 px-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
                   />
                 </div>
               </div>

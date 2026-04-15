@@ -13,7 +13,7 @@ import type { Metadata } from "next";
 import { CharawanRepresentatives } from "@/components/charawan-representatives";
 import { SupportCricket } from "@/components/support-cricket";
 import { HeroCarousel } from "@/components/hero-carousel";
-import { NotificationsSection } from "@/components/notifications-section";
+import { HomeNotificationsFeed } from "@/components/home-notifications-feed";
 import { VillageSupportSection } from "@/components/village-support-section";
 import { EmergencyContactsSection } from "@/components/emergency-contacts-section";
 import { homeCarouselPhotos } from "@/data/home-carousel-photos";
@@ -27,15 +27,13 @@ type HomeJson = typeof import("../../data/home.json");
 type SiteJson = typeof import("../../data/site.json");
 type EmergencyJson = typeof import("../../data/emergency-contacts.json");
 type DonateJson = typeof import("../../data/donate.json");
-type NotificationsJson = typeof import("../../data/notifications.json");
 
 export default async function HomePage() {
-  const [home, site, emergency, donate, notifications] = await Promise.all([
+  const [home, site, emergency, donate] = await Promise.all([
     readJsonFile<HomeJson>("home.json"),
     readJsonFile<SiteJson>("site.json"),
     readJsonFile<EmergencyJson>("emergency-contacts.json"),
     readJsonFile<DonateJson>("donate.json"),
-    readJsonFile<NotificationsJson>("notifications.json"),
   ]);
 
   return (
@@ -81,11 +79,7 @@ export default async function HomePage() {
 
         <VillageSupportSection data={home.villageDevelopment} donate={donate} />
 
-        <NotificationsSection
-          panel={notifications.panel}
-          items={notifications.items.slice(0, 4)}
-          previewCount={4}
-        />
+        <HomeNotificationsFeed />
 
         <EmergencyContactsSection
           sectionId={emergency.sectionId}

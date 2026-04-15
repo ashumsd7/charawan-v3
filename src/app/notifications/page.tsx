@@ -1,41 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
-import { Bell, IndianRupee, Mic } from "lucide-react";
-import { readJsonFile } from "@/lib/read-data";
+import { IndianRupee, Mic } from "lucide-react";
 import { NEW_TAB_FALLBACK_HREF, WHATSAPP_CONTACT_HREF } from "@/lib/constants";
+import { NotificationsFeed } from "@/app/notifications/notifications-feed";
 
 export const metadata: Metadata = {
   title: "सभी सूचनाएँ",
   description: "चरावां ग्राम सूचनाएँ — पूर्ण सूची।",
 };
 
-type NotificationsJson = {
-  panel: {
-    heading: string;
-    subtitle: string;
-    addLabel: string;
-    addHref: string;
-  };
-  items: {
-    id: string;
-    headline: string;
-    message: string;
-    author: string;
-    timeLabel: string;
-    likes: number;
-    unread?: boolean;
-    thumbnail?: string;
-  }[];
-};
-
 export default async function NotificationsPage() {
-  const data = await readJsonFile<NotificationsJson>("notifications.json");
   const whatsappHref = WHATSAPP_CONTACT_HREF || NEW_TAB_FALLBACK_HREF;
 
   return (
     <div className="village-page-bg">
-      <div className="mx-auto max-w-3xl space-y-6 px-4 py-10">
+      <div className="mx-auto max-w-6xl space-y-6 px-4 py-10">
         <Link
           href="/charwan-jobs"
           className="group block overflow-hidden rounded-3xl border border-amber-200/70 bg-gradient-to-r from-amber-50 via-white to-emerald-50 p-5 shadow-sm transition hover:shadow-md dark:border-amber-800/40 dark:from-slate-900/60 dark:via-slate-900/30 dark:to-emerald-900/20"
@@ -67,8 +46,8 @@ export default async function NotificationsPage() {
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="text-3xl font-bold">{data.panel.heading}</h1>
-            <p className="mt-1 text-sm text-muted">{data.panel.subtitle}</p>
+            <h1 className="text-3xl font-bold">ग्राम सूचना केंद्र</h1>
+            <p className="mt-1 text-sm text-muted">गाँव की आधिकारिक व सामुदायिक अपडेट।</p>
           </div>
           <div className="flex flex-wrap gap-2">
             <Link
@@ -76,6 +55,12 @@ export default async function NotificationsPage() {
               className="rounded-xl border border-slate-300 px-4 py-2 text-sm font-semibold hover:bg-white/60 dark:border-slate-600"
             >
               ← मुख्य पृष्ठ
+            </Link>
+            <Link
+              href="/manage-notifications"
+              className="rounded-xl bg-slate-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
+            >
+              नोटिफिकेशन जोड़ें
             </Link>
             <a
               href={whatsappHref}
@@ -88,45 +73,7 @@ export default async function NotificationsPage() {
           </div>
         </div>
 
-        <ul className="space-y-3">
-          {data.items.map((n) => (
-            <li
-              key={n.id}
-              className={`flex gap-3 rounded-2xl border bg-card p-3 shadow-sm ${
-                n.unread
-                  ? "border-teal-300/80 ring-1 ring-teal-400/25 dark:border-teal-800"
-                  : "border-slate-200 dark:border-slate-700"
-              }`}
-            >
-              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800">
-                {n.thumbnail ? (
-                  <Image
-                    src={n.thumbnail}
-                    alt=""
-                    fill
-                    className="object-cover"
-                    sizes="48px"
-                  />
-                ) : (
-                  <div className="flex h-full w-full items-center justify-center text-slate-500 dark:text-slate-300">
-                    <Bell className="h-5 w-5" aria-hidden />
-                  </div>
-                )}
-              </div>
-              <div className="min-w-0">
-                <h2 className="text-sm font-semibold leading-snug text-foreground">
-                  {n.headline}
-                </h2>
-                <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted">
-                  {n.message}
-                </p>
-                <p className="mt-2 text-[11px] text-muted">
-                  {n.author} · {n.timeLabel} · 👍 {n.likes}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <NotificationsFeed columns={2} showHeader={false} showAddButton={false} variant="plain" />
       </div>
     </div>
   );
