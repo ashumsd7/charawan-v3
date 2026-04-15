@@ -22,8 +22,7 @@ import Link from "next/link";
 import axios from "axios";
 import { CHARAWAN_SHOPS_FIREBASE_URL } from "@/lib/shops-firebase";
 import { SHOP_TYPE_FILTERS, canonicalShopTypeValue, getShopTypeTitle } from "@/lib/shop-type-filters";
-
-const PASSCODE_FLAG_KEY = "charawan_passcode";
+import { isAdminAuthenticatedClient } from "@/lib/admin-auth";
 
 type Toast = { id: string; type: "success" | "error" | "info"; title: string; body?: string };
 
@@ -97,13 +96,7 @@ type FirebaseShopItem = {
 
 export default function ManageContactsPage() {
   const router = useRouter();
-  const [ok] = useState<boolean>(() => {
-    try {
-      return localStorage.getItem(PASSCODE_FLAG_KEY) === "true";
-    } catch {
-      return false;
-    }
-  });
+  const [ok] = useState<boolean>(() => isAdminAuthenticatedClient());
 
   useEffect(() => {
     if (!ok) router.replace("/login");

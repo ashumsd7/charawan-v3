@@ -482,7 +482,7 @@ export function NotificationsFeed({
                     <Heart className="h-4 w-4" aria-hidden />
                   </span>
                   {/* <span className="hidden sm:inline">लाइक</span> */}
-                  <span className="inline-flex items-center justify-center rounded-full   py-0.5 text-[10px] font-extrabold text-white">
+                  <span className="inline-flex items-center justify-center bg-black px-2 rounded-full   py-0.5 text-[10px] font-extrabold text-white">
                     {news.likeCounter ?? 0}
                   </span>
                 </button>

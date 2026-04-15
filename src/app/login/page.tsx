@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { KeyRound, Lock } from "lucide-react";
-
-const PASSCODE_FLAG_KEY = "charawan_passcode";
-const ADMIN_PASSCODE = "1112";
+import {
+  getExpectedAdminPasscode,
+  isAdminAuthenticatedClient,
+  persistAdminPasscode,
+} from "@/lib/admin-auth";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -13,12 +15,8 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    try {
-      if (localStorage.getItem(PASSCODE_FLAG_KEY) === "true") {
-        router.replace("/admin");
-      }
-    } catch {
-      // ignore
+    if (isAdminAuthenticatedClient()) {
+      router.replace("/admin");
     }
   }, [router]);
 
@@ -28,12 +26,17 @@ export default function LoginPage() {
       setError("कृपया पासकोड दर्ज करें।");
       return;
     }
-    if (next !== ADMIN_PASSCODE) {
+    const expected = getExpectedAdminPasscode();
+    if (!expected) {
+      setError("पासकोड सर्वर पर सेट नहीं है (NEXT_PUBLIC_PASSCODE)।");
+      return;
+    }
+    if (next !== expected) {
       setError("पासकोड गलत है।");
       return;
     }
     try {
-      localStorage.setItem(PASSCODE_FLAG_KEY, "true");
+      persistAdminPasscode(next);
       setError(null);
       router.push("/admin");
     } catch {

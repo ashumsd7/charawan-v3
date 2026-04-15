@@ -20,8 +20,7 @@ import {
   X,
 } from "lucide-react";
 import { CHARAWAN_NOTIFICATIONS_FIREBASE_URL } from "@/lib/notifications-firebase";
-
-const PASSCODE_FLAG_KEY = "charawan_passcode";
+import { isAdminAuthenticatedClient } from "@/lib/admin-auth";
 
 type Toast = { id: string; type: "success" | "error" | "info"; title: string; body?: string };
 
@@ -70,13 +69,7 @@ function calcTimeAgo(fromMs: number) {
 
 export default function ManageNotificationsPage() {
   const router = useRouter();
-  const [ok] = useState<boolean>(() => {
-    try {
-      return localStorage.getItem(PASSCODE_FLAG_KEY) === "true";
-    } catch {
-      return false;
-    }
-  });
+  const [ok] = useState<boolean>(() => isAdminAuthenticatedClient());
 
   useEffect(() => {
     if (!ok) router.replace("/login");

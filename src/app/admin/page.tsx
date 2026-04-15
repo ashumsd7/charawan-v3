@@ -11,8 +11,7 @@ import {
   ShieldAlert,
   Users,
 } from "lucide-react";
-
-const PASSCODE_FLAG_KEY = "charawan_passcode";
+import { isAdminAuthenticatedClient } from "@/lib/admin-auth";
 
 type AdminCard = {
   title: string;
@@ -25,13 +24,7 @@ type AdminCard = {
 
 export default function AdminPage() {
   const router = useRouter();
-  const [ok] = useState<boolean>(() => {
-    try {
-      return localStorage.getItem(PASSCODE_FLAG_KEY) === "true";
-    } catch {
-      return false;
-    }
-  });
+  const [ok] = useState<boolean>(() => isAdminAuthenticatedClient());
 
   useEffect(() => {
     if (!ok) router.replace("/login");
