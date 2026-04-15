@@ -10,7 +10,7 @@ export type NotificationItem = {
   timeLabel: string;
   likes: number;
   unread?: boolean;
-  thumbnail: string;
+  thumbnail?: string;
 };
 
 export type NotificationsPanelCopy = {
@@ -53,7 +53,7 @@ export function NotificationsSection({
           {preview.map((n) => (
             <article
               key={n.id}
-              className={`relative flex gap-4 overflow-hidden rounded-2xl border bg-card p-4 shadow-sm transition hover:shadow-md dark:bg-card ${
+              className={`relative flex gap-3 overflow-hidden rounded-2xl border bg-card p-3 shadow-sm transition hover:shadow-md dark:bg-card ${
                 n.unread
                   ? "border-teal-300/80 ring-1 ring-teal-400/30 dark:border-teal-700/50"
                   : "border-slate-200 dark:border-slate-700"
@@ -62,27 +62,35 @@ export function NotificationsSection({
               {n.unread ? (
                 <span className="absolute right-3 top-3 h-2.5 w-2.5 rounded-full bg-teal-500 shadow-[0_0_0_4px_rgba(20,184,166,0.25)]" />
               ) : null}
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800">
-                <Image
-                  src={n.thumbnail}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="64px"
-                />
+              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800">
+                {n.thumbnail ? (
+                  <Image
+                    src={n.thumbnail}
+                    alt=""
+                    fill
+                    className="object-cover"
+                    sizes="48px"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center text-slate-500 dark:text-slate-300">
+                    <Bell className="h-5 w-5" aria-hidden />
+                  </div>
+                )}
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
-                  <h3 className="text-base font-semibold text-foreground">{n.headline}</h3>
+                  <h3 className="text-sm font-semibold leading-snug text-foreground">
+                    {n.headline}
+                  </h3>
                   <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-muted dark:bg-slate-800">
                     <ListTree className="h-3 w-3" aria-hidden />
                     सूचना
                   </span>
                 </div>
-                <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-muted">
+                <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-muted">
                   {n.message}
                 </p>
-                <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted">
+                <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-muted">
                   <span className="font-medium text-foreground/80">{n.author}</span>
                   <span>·</span>
                   <time>{n.timeLabel}</time>

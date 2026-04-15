@@ -25,12 +25,16 @@ export const metadata: Metadata = {
 type HomeJson = typeof import("../../data/home.json");
 type SiteJson = typeof import("../../data/site.json");
 type EmergencyJson = typeof import("../../data/emergency-contacts.json");
+type DonateJson = typeof import("../../data/donate.json");
+type NotificationsJson = typeof import("../../data/notifications.json");
 
 export default async function HomePage() {
-  const [home, site, emergency] = await Promise.all([
+  const [home, site, emergency, donate, notifications] = await Promise.all([
     readJsonFile<HomeJson>("home.json"),
     readJsonFile<SiteJson>("site.json"),
     readJsonFile<EmergencyJson>("emergency-contacts.json"),
+    readJsonFile<DonateJson>("donate.json"),
+    readJsonFile<NotificationsJson>("notifications.json"),
   ]);
 
   return (
@@ -74,12 +78,12 @@ export default async function HomePage() {
           />
         </section>
 
-        <VillageSupportSection data={home.villageDevelopment} />
+        <VillageSupportSection data={home.villageDevelopment} donate={donate} />
 
         <NotificationsSection
-          panel={home.notificationsPanel}
-          items={home.notifications}
-          previewCount={4}
+          panel={notifications.panel}
+          items={notifications.items.slice(0, 5)}
+          previewCount={5}
         />
 
         <EmergencyContactsSection
