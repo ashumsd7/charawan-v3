@@ -1,7 +1,7 @@
 {
   "hi": {
     "nav.home": "मुख्य पेज",
-    "nav.shops": "दुकान खोजें",
+    "nav.shops": "संपर्क सूची",
     "nav.emergency": "आपातकालीन सम्पर्क",
     "nav.history": "इतिहास",
     "nav.gallery": "गैलरी",
@@ -25,7 +25,7 @@
   },
   "en": {
     "nav.home": "Home",
-    "nav.shops": "Find shops",
+    "nav.shops": "Contact list",
     "nav.emergency": "Emergency contacts",
     "nav.history": "History",
     "nav.gallery": "Gallery",

@@ -6,8 +6,8 @@ import { readJsonFile } from "@/lib/read-data";
 import type { ShopRecord } from "@/lib/read-data";
 
 export const metadata: Metadata = {
-  title: "दुकान खोजें",
-  description: "चरावां और आसपास की दुकानें व सेवाएँ — फोन, पता और विवरण।",
+  title: "संपर्क सूची",
+  description: "आस-पास के संपर्क ढूँढें — चरावां वेबसाइट पर दुकान, सेवा, फोन व पता।",
 };
 
 export const revalidate = 300;
@@ -46,12 +46,7 @@ export default async function ShopsPage() {
 
   return (
     <div className="village-page-bg min-h-screen">
-      <div className="mx-auto max-w-7xl px-4 pt-8 text-center sm:pt-10">
-        <h1 className="text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">दुकान खोजें</h1>
-      </div>
-      <div className="mt-6">
-        <ShopsDirectory shops={shops} fetchError={fetchError} siteOrigin={siteOrigin} />
-      </div>
+      <ShopsDirectory shops={shops} fetchError={fetchError} siteOrigin={siteOrigin} />
     </div>
   );
 }
