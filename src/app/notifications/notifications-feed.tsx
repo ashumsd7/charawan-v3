@@ -6,16 +6,22 @@ import axios from "axios";
 import {
   ArrowUpRight,
   Bell,
+  ChevronLeft,
+  ChevronRight,
   Heart,
   Flag,
   Loader2,
+  Maximize2,
   MoreHorizontal,
   RefreshCw,
   Share2,
+  X,
 } from "lucide-react";
 import { CHARAWAN_NOTIFICATIONS_FIREBASE_URL } from "@/lib/notifications-firebase";
 import { WHATSAPP_CONTACT_HREF } from "@/lib/constants";
 import { buildNotificationShareText } from "@/lib/notification-share-text";
+import { AnimatePresence, motion } from "framer-motion";
+import { createPortal } from "react-dom";
 
 type FirebaseNewsItem = {
   key?: string;
@@ -30,6 +36,118 @@ type FirebaseNewsItem = {
   likeCounter?: number;
   timeAgo?: string;
 };
+
+function NewsMedia({
+  img1,
+  img2,
+  title,
+  onExpand,
+}: {
+  img1?: string;
+  img2?: string;
+  title?: string;
+  onExpand: (src: string, alt: string) => void;
+}) {
+  const images = useMemo(
+    () =>
+      [
+        img1 ? { src: img1, alt: `${title ?? "पोस्ट"} — इमेज 1` } : null,
+        img2 ? { src: img2, alt: `${title ?? "पोस्ट"} — इमेज 2` } : null,
+      ].filter(Boolean) as { src: string; alt: string }[],
+    [img1, img2, title],
+  );
+
+  const [idx, setIdx] = useState(0);
+  const safeIdx = Math.min(idx, Math.max(0, images.length - 1));
+
+  if (images.length === 0) {
+    return (
+      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
+        <div className="flex aspect-[16/9] w-full items-center justify-center bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
+          <div className="flex items-center gap-2 rounded-full bg-white/70 px-3 py-2 text-xs font-extrabold text-slate-700 ring-1 ring-slate-200 backdrop-blur dark:bg-slate-900/60 dark:text-slate-200 dark:ring-slate-700">
+            <Bell className="h-4 w-4" aria-hidden />
+            सूचना
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (images.length === 1) {
+    const one = images[0];
+    return (
+      <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
+        <button
+          type="button"
+          onClick={() => onExpand(one.src, one.alt)}
+          className="absolute right-2 top-2 inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white shadow-sm backdrop-blur transition hover:bg-black/70 active:scale-95"
+          aria-label="इमेज फुल स्क्रीन"
+          title="फुल स्क्रीन"
+        >
+          <Maximize2 className="h-4 w-4" aria-hidden />
+        </button>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={one.src} alt={one.alt} className="aspect-[16/9] w-full object-cover" />
+      </div>
+    );
+  }
+
+  const current = images[safeIdx];
+  const canPrev = safeIdx > 0;
+  const canNext = safeIdx < images.length - 1;
+
+  return (
+    <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
+      <button
+        type="button"
+        onClick={() => onExpand(current.src, current.alt)}
+        className="absolute right-2 top-2 z-10 inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white shadow-sm backdrop-blur transition hover:bg-black/70 active:scale-95"
+        aria-label="इमेज फुल स्क्रीन"
+        title="फुल स्क्रीन"
+      >
+        <Maximize2 className="h-4 w-4" aria-hidden />
+      </button>
+
+      <button
+        type="button"
+        onClick={() => setIdx((v) => Math.max(0, v - 1))}
+        disabled={!canPrev}
+        aria-label="पिछली इमेज"
+        className={`absolute left-2 top-1/2 z-10 inline-flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white shadow-sm backdrop-blur transition active:scale-95 ${
+          canPrev ? "hover:bg-black/65" : "cursor-not-allowed opacity-40"
+        }`}
+      >
+        <ChevronLeft className="h-5 w-5" aria-hidden />
+      </button>
+      <button
+        type="button"
+        onClick={() => setIdx((v) => Math.min(images.length - 1, v + 1))}
+        disabled={!canNext}
+        aria-label="अगली इमेज"
+        className={`absolute right-2 top-1/2 z-10 inline-flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white shadow-sm backdrop-blur transition active:scale-95 ${
+          canNext ? "hover:bg-black/65" : "cursor-not-allowed opacity-40"
+        }`}
+      >
+        <ChevronRight className="h-5 w-5" aria-hidden />
+      </button>
+
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={current.src} alt={current.alt} className="aspect-[16/9] w-full object-cover" />
+
+      <div className="absolute bottom-2 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1 rounded-full bg-black/45 px-2 py-1 backdrop-blur">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setIdx(i)}
+            className={`h-2 w-2 rounded-full transition ${i === safeIdx ? "bg-white" : "bg-white/45 hover:bg-white/70"}`}
+            aria-label={`इमेज ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function calcTimeAgo(fromMs: number) {
   let seconds = Math.floor((Date.now() - fromMs) / 1000);
@@ -69,8 +187,12 @@ export function NotificationsFeed({
   variant?: "framed" | "plain";
   columns?: 1 | 2;
 }) {
+  const [mounted, setMounted] = useState(false);
   const [loading, setLoading] = useState(true);
   const [allNews, setAllNews] = useState<FirebaseNewsItem[]>([]);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => setMounted(true), []);
 
   const siteOrigin =
     typeof window !== "undefined" && window.location?.origin
@@ -105,6 +227,24 @@ export function NotificationsFeed({
   useEffect(() => {
     void callApi();
   }, [callApi]);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [lightbox]);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [lightbox]);
 
   const reportHref = useMemo(() => {
     const base = WHATSAPP_CONTACT_HREF;
@@ -178,6 +318,58 @@ export function NotificationsFeed({
           : ""
       }
     >
+      {mounted
+        ? createPortal(
+            <AnimatePresence>
+              {lightbox ? (
+                <motion.div
+                  key="lightbox"
+                  className="fixed left-0 top-0 z-[9999] grid h-[100dvh] w-screen place-items-center p-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <motion.button
+                    type="button"
+                    aria-label="बंद करें"
+                    onClick={() => setLightbox(null)}
+                    className="absolute inset-0 bg-black/75"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  />
+
+                  <motion.div
+                    className="relative z-[10000] w-full max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-black shadow-2xl"
+                    role="dialog"
+                    aria-modal="true"
+                    initial={{ opacity: 0, y: 12, scale: 0.98 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 12, scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 420, damping: 36 }}
+                  >
+                    <button
+                      type="button"
+                      aria-label="बंद करें"
+                      onClick={() => setLightbox(null)}
+                      className="absolute right-3 top-3 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/15 active:scale-95"
+                    >
+                      <X className="h-5 w-5" aria-hidden />
+                    </button>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={lightbox.src}
+                      alt={lightbox.alt}
+                      className="max-h-[85dvh] w-full object-contain"
+                    />
+                  </motion.div>
+                </motion.div>
+              ) : null}
+            </AnimatePresence>,
+            document.body,
+          )
+        : null}
+
       {showHeader ? (
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -252,52 +444,31 @@ export function NotificationsFeed({
                         <MoreHorizontal className="h-4 w-4" aria-hidden />
                       </button>
                     </div>
-
-                    {/* Content */}
-                    <div className="mt-2 space-y-1">
-                      {news.newsTitle ? (
-                        <p className="text-sm font-extrabold text-foreground">{news.newsTitle}</p>
-                      ) : null}
-                      {news.shortInfo ? (
-                        <p className="text-sm leading-relaxed text-foreground/90">
-                          {news.shortInfo}
-                        </p>
-                      ) : null}
-                      {news.detailedInfo?.trim() ? (
-                        <p className="text-xs leading-relaxed text-muted">{news.detailedInfo.trim()}</p>
-                      ) : null}
-                    </div>
                   </div>
+                </div>
+
+                {/* Content (start under avatar, no extra left gap) */}
+                <div className="mt-2 space-y-1">
+                  {news.newsTitle ? (
+                    <p className="text-sm font-extrabold text-foreground">{news.newsTitle}</p>
+                  ) : null}
+                  {news.shortInfo ? (
+                    <p className="text-sm leading-relaxed text-foreground/90">{news.shortInfo}</p>
+                  ) : null}
+                  {news.detailedInfo?.trim() ? (
+                    <p className="text-xs leading-relaxed text-muted">{news.detailedInfo.trim()}</p>
+                  ) : null}
                 </div>
               </div>
 
               {/* Media (always show placeholder like X) */}
               <div className="px-4 pb-4">
-                {news.img1 || news.img2 ? (
-                  <>
-                    {news.img1 ? (
-                      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={news.img1} alt="पोस्ट इमेज" className="aspect-[16/9] w-full object-cover" />
-                      </div>
-                    ) : null}
-                    {news.img2 ? (
-                      <div className={`${news.img1 ? "mt-2" : ""} overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800`}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={news.img2} alt="पोस्ट इमेज 2" className="aspect-[16/9] w-full object-cover" />
-                      </div>
-                    ) : null}
-                  </>
-                ) : (
-                  <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
-                    <div className="flex aspect-[16/9] w-full items-center justify-center bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
-                      <div className="flex items-center gap-2 rounded-full bg-white/70 px-3 py-2 text-xs font-extrabold text-slate-700 ring-1 ring-slate-200 backdrop-blur dark:bg-slate-900/60 dark:text-slate-200 dark:ring-slate-700">
-                        <Bell className="h-4 w-4" aria-hidden />
-                        सूचना
-                      </div>
-                    </div>
-                  </div>
-                )}
+                <NewsMedia
+                  img1={news.img1}
+                  img2={news.img2}
+                  title={news.newsTitle}
+                  onExpand={(src, alt) => setLightbox({ src, alt })}
+                />
               </div>
 
               {/* X/Twitter-like actions */}
