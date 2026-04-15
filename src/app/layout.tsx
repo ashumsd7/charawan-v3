@@ -27,9 +27,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const site = await readJsonFile<{
     seo: { defaultTitle: string; defaultDescription: string };
     village: { nameHi: string };
+    domain?: string;
   }>("site.json");
+  const baseUrl = `https://${site.domain || "charawan.netlify.app"}`;
   return {
-    metadataBase: new URL("https://charawan.netlify.app"),
+    metadataBase: new URL(baseUrl),
     title: {
       default: site.seo.defaultTitle,
       template: `%s · ${site.village.nameHi}`,
@@ -42,11 +44,21 @@ export async function generateMetadata(): Promise<Metadata> {
       title: site.seo.defaultTitle,
       description: site.seo.defaultDescription,
       siteName: site.village.nameHi,
+      url: baseUrl,
+      images: [
+        {
+          url: "/logo.png",
+          width: 512,
+          height: 512,
+          alt: site.village.nameHi,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: site.seo.defaultTitle,
       description: site.seo.defaultDescription,
+      images: ["/logo.png"],
     },
     icons: {
       icon: [{ url: "/logo.png" }],
