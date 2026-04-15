@@ -6,12 +6,12 @@ import axios from "axios";
 import {
   ArrowUpRight,
   Bell,
+  Heart,
   Flag,
   Loader2,
   MoreHorizontal,
   RefreshCw,
   Share2,
-  ThumbsUp,
 } from "lucide-react";
 import { CHARAWAN_NOTIFICATIONS_FIREBASE_URL } from "@/lib/notifications-firebase";
 import { WHATSAPP_CONTACT_HREF } from "@/lib/constants";
@@ -220,8 +220,12 @@ export function NotificationsFeed({
           {visible.map((news) => (
             <article
               key={news.key ?? String(news.timeStamp ?? Math.random())}
-              className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:shadow-md dark:border-slate-700 dark:bg-slate-900/40"
+              className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-gradient-to-b from-white via-slate-50 to-rose-50/30 shadow-sm ring-1 ring-slate-900/5 transition hover:-translate-y-[1px] hover:shadow-lg dark:border-slate-700 dark:from-slate-900/60 dark:via-slate-950/30 dark:to-rose-950/15 dark:ring-white/10"
             >
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sky-400 via-teal-400 to-rose-400 opacity-80"
+              />
               <div className="p-4">
                 {/* Header row (X-style) */}
                 <div className="flex items-start gap-3">
@@ -242,7 +246,7 @@ export function NotificationsFeed({
                       </div>
                       <button
                         type="button"
-                        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white/70 text-slate-700 shadow-sm transition hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:text-slate-200 dark:hover:bg-slate-900"
+                        className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white/70 text-slate-700 shadow-sm transition hover:bg-white hover:text-slate-900 active:scale-95 dark:border-slate-700 dark:bg-slate-900/40 dark:text-slate-200 dark:hover:bg-slate-900"
                         aria-label="अधिक"
                       >
                         <MoreHorizontal className="h-4 w-4" aria-hidden />
@@ -269,34 +273,45 @@ export function NotificationsFeed({
 
               {/* Media (always show placeholder like X) */}
               <div className="px-4 pb-4">
-                <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
-                  {news.img1 ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={news.img1} alt="पोस्ट इमेज" className="aspect-[16/9] w-full object-cover" />
-                  ) : (
-                    <div className="aspect-[16/9] w-full bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800" />
-                  )}
-                </div>
-                {news.img2 ? (
-                  <div className="mt-2 overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={news.img2} alt="पोस्ट इमेज 2" className="aspect-[16/9] w-full object-cover" />
+                {news.img1 || news.img2 ? (
+                  <>
+                    {news.img1 ? (
+                      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={news.img1} alt="पोस्ट इमेज" className="aspect-[16/9] w-full object-cover" />
+                      </div>
+                    ) : null}
+                    {news.img2 ? (
+                      <div className={`${news.img1 ? "mt-2" : ""} overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800`}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={news.img2} alt="पोस्ट इमेज 2" className="aspect-[16/9] w-full object-cover" />
+                      </div>
+                    ) : null}
+                  </>
+                ) : (
+                  <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 dark:border-slate-700 dark:bg-slate-800">
+                    <div className="flex aspect-[16/9] w-full items-center justify-center bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
+                      <div className="flex items-center gap-2 rounded-full bg-white/70 px-3 py-2 text-xs font-extrabold text-slate-700 ring-1 ring-slate-200 backdrop-blur dark:bg-slate-900/60 dark:text-slate-200 dark:ring-slate-700">
+                        <Bell className="h-4 w-4" aria-hidden />
+                        सूचना
+                      </div>
+                    </div>
                   </div>
-                ) : null}
+                )}
               </div>
 
               {/* X/Twitter-like actions */}
-              <div className="flex items-center justify-between border-t border-slate-200/70 px-4 py-3 dark:border-slate-700/60">
+              <div className="flex items-center justify-between border-t border-slate-200/70 bg-gradient-to-r from-slate-50 via-white to-rose-50/50 px-4 py-3 dark:border-slate-700/60 dark:from-slate-950/30 dark:via-slate-950/10 dark:to-rose-950/10">
                 <button
                   type="button"
                   onClick={() => void hitLike(news)}
-                  className="group inline-flex items-center gap-2 rounded-full px-2 py-2 text-xs font-extrabold text-slate-700 transition hover:bg-rose-50 hover:text-rose-700 dark:text-slate-200 dark:hover:bg-rose-950/30 dark:hover:text-rose-200"
+                  className="group inline-flex cursor-pointer items-center gap-2 rounded-full px-2 py-2 text-xs font-extrabold text-slate-700 transition hover:bg-rose-50 hover:text-rose-700 active:scale-[0.98] dark:text-slate-200 dark:hover:bg-rose-950/30 dark:hover:text-rose-200"
                 >
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition group-hover:bg-rose-100 dark:bg-slate-800 dark:group-hover:bg-rose-950/40">
-                    <ThumbsUp className="h-4 w-4" aria-hidden />
+                    <Heart className="h-4 w-4" aria-hidden />
                   </span>
                   <span className="hidden sm:inline">लाइक</span>
-                  <span className="inline-flex items-center justify-center rounded-full bg-slate-900 px-2 py-0.5 text-[10px] font-extrabold text-white dark:bg-white dark:text-slate-900">
+                  <span className="inline-flex items-center justify-center rounded-full bg-rose-600 px-2 py-0.5 text-[10px] font-extrabold text-white">
                     {news.likeCounter ?? 0}
                   </span>
                 </button>
@@ -304,7 +319,7 @@ export function NotificationsFeed({
                 <button
                   type="button"
                   onClick={() => void onShare(news)}
-                  className="group inline-flex items-center gap-2 rounded-full px-2 py-2 text-xs font-extrabold text-slate-700 transition hover:bg-sky-50 hover:text-sky-700 dark:text-slate-200 dark:hover:bg-sky-950/30 dark:hover:text-sky-200"
+                  className="group inline-flex cursor-pointer items-center gap-2 rounded-full px-2 py-2 text-xs font-extrabold text-slate-700 transition hover:bg-sky-50 hover:text-sky-700 active:scale-[0.98] dark:text-slate-200 dark:hover:bg-sky-950/30 dark:hover:text-sky-200"
                 >
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition group-hover:bg-sky-100 dark:bg-slate-800 dark:group-hover:bg-sky-950/40">
                     <Share2 className="h-4 w-4" aria-hidden />
@@ -316,7 +331,7 @@ export function NotificationsFeed({
                   href={reportHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full px-2 py-2 text-xs font-extrabold text-slate-700 transition hover:bg-amber-50 hover:text-amber-800 dark:text-slate-200 dark:hover:bg-amber-950/30 dark:hover:text-amber-200"
+                  className="group inline-flex cursor-pointer items-center gap-2 rounded-full px-2 py-2 text-xs font-extrabold text-slate-700 transition hover:bg-amber-50 hover:text-amber-800 active:scale-[0.98] dark:text-slate-200 dark:hover:bg-amber-950/30 dark:hover:text-amber-200"
                 >
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition group-hover:bg-amber-100 dark:bg-slate-800 dark:group-hover:bg-amber-950/40">
                     <Flag className="h-4 w-4" aria-hidden />
