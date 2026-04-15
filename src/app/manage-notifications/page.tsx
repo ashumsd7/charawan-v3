@@ -110,6 +110,9 @@ export default function ManageNotificationsPage() {
   const [editIsAdmin, setEditIsAdmin] = useState(true);
   const [editImg1, setEditImg1] = useState("");
   const [editImg2, setEditImg2] = useState("");
+  const [editUploading1, setEditUploading1] = useState(false);
+  const [editUploading2, setEditUploading2] = useState(false);
+  const [editSaveBusy, setEditSaveBusy] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState<null | {
     title: string;
     body: string;
@@ -159,6 +162,31 @@ export default function ManageNotificationsPage() {
     } finally {
       if (slot === 1) setUploading1(false);
       else setUploading2(false);
+    }
+  };
+
+  const onPickEditImage = async (slot: 1 | 2, file?: File | null) => {
+    if (!file) return;
+    if (slot === 1) setEditUploading1(true);
+    else setEditUploading2(true);
+    try {
+      const fd = new FormData();
+      fd.append("image", file);
+      const { data } = await axios.post<{ ok: boolean; url?: string; error?: string }>(
+        "/api/upload-image",
+        fd,
+        { timeout: 60_000 },
+      );
+      if (!data.ok || !data.url) throw new Error(data.error || "Upload failed");
+      if (slot === 1) setEditImg1(data.url);
+      else setEditImg2(data.url);
+      pushToast({ type: "success", title: "फोटो अपलोड हो गई", body: "Edit में इमेज लिंक लग गया।" });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : "अपलोड नहीं हो सका";
+      pushToast({ type: "error", title: "अपलोड विफल", body: msg });
+    } finally {
+      if (slot === 1) setEditUploading1(false);
+      else setEditUploading2(false);
     }
   };
 
@@ -297,13 +325,13 @@ export default function ManageNotificationsPage() {
     setEditingKey(null);
   };
 
-  const saveEdit = async () => {
-    if (!editingKey) return;
+  const saveEdit = async (): Promise<boolean> => {
+    if (!editingKey) return false;
     const cleanTitle = editNewsTitle.trim();
     const cleanShort = editShortInfo.trim();
     if (!cleanTitle || !cleanShort) {
       pushToast({ type: "error", title: "फ़ॉर्म अधूरा", body: "शीर्षक और छोटा विवरण लिखिए।" });
-      return;
+      return false;
     }
 
     const patch: FirebaseNewsItem = {
@@ -316,14 +344,20 @@ export default function ManageNotificationsPage() {
       img2: editImg2.trim(),
     };
 
-    await axios.patch(
-      `${stripJson(CHARAWAN_NOTIFICATIONS_FIREBASE_URL)}/${editingKey}.json`,
-      patch,
-      { timeout: 25_000, headers: { "Content-Type": "application/json" } },
-    );
-    pushToast({ type: "success", title: "अपडेट हो गया", body: "नोटिफिकेशन अपडेट सेव हो गया।" });
-    closeEdit();
-    await callApi();
+    try {
+      await axios.patch(
+        `${stripJson(CHARAWAN_NOTIFICATIONS_FIREBASE_URL)}/${editingKey}.json`,
+        patch,
+        { timeout: 25_000, headers: { "Content-Type": "application/json" } },
+      );
+      pushToast({ type: "success", title: "अपडेट हो गया", body: "नोटिफिकेशन अपडेट सेव हो गया।" });
+      closeEdit();
+      await callApi();
+      return true;
+    } catch {
+      pushToast({ type: "error", title: "अपडेट नहीं हो सका", body: "इंटरनेट/सर्वर समस्या हो सकती है।" });
+      return false;
+    }
   };
 
   const askDelete = (n: FirebaseNewsItem) => {
@@ -472,6 +506,45 @@ export default function ManageNotificationsPage() {
                 </div>
                 <div>
                   <label className="text-xs font-bold uppercase tracking-wider text-muted">Image 1</label>
+                  <div className="mt-2 flex flex-col gap-2">
+                    <label className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-sm font-extrabold text-foreground shadow-sm transition hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900">
+                      <UploadCloud className="h-4 w-4 text-slate-500" aria-hidden />
+                      {editUploading1 ? "अपलोड हो रहा है…" : "फोटो चुनें"}
+                      <input
+                        type="file"
+                        accept="image/png,image/jpeg"
+                        className="hidden"
+                        disabled={editUploading1}
+                        onChange={(e) => {
+                          const f = e.target.files?.[0];
+                          e.target.value = "";
+                          void onPickEditImage(1, f);
+                        }}
+                      />
+                    </label>
+
+                    {editImg1 ? (
+                      <div className="flex items-start gap-3">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={editImg1}
+                          alt="edit img1"
+                          className="h-20 w-20 rounded-2xl object-cover ring-1 ring-slate-200 dark:ring-slate-700"
+                        />
+                        <div className="min-w-0 flex-1">
+                          <p className="break-all text-xs text-muted">{editImg1}</p>
+                          <button
+                            type="button"
+                            onClick={() => setEditImg1("")}
+                            className="mt-2 inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-foreground transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+                          >
+                            <Trash2 className="h-4 w-4" aria-hidden />
+                            हटाएँ
+                          </button>
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
                   <input
                     value={editImg1}
                     onChange={(e) => setEditImg1(e.target.value)}
@@ -481,6 +554,45 @@ export default function ManageNotificationsPage() {
                 </div>
                 <div>
                   <label className="text-xs font-bold uppercase tracking-wider text-muted">Image 2</label>
+                  <div className="mt-2 flex flex-col gap-2">
+                    <label className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-sm font-extrabold text-foreground shadow-sm transition hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900">
+                      <UploadCloud className="h-4 w-4 text-slate-500" aria-hidden />
+                      {editUploading2 ? "अपलोड हो रहा है…" : "फोटो चुनें"}
+                      <input
+                        type="file"
+                        accept="image/png,image/jpeg"
+                        className="hidden"
+                        disabled={editUploading2}
+                        onChange={(e) => {
+                          const f = e.target.files?.[0];
+                          e.target.value = "";
+                          void onPickEditImage(2, f);
+                        }}
+                      />
+                    </label>
+
+                    {editImg2 ? (
+                      <div className="flex items-start gap-3">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={editImg2}
+                          alt="edit img2"
+                          className="h-20 w-20 rounded-2xl object-cover ring-1 ring-slate-200 dark:ring-slate-700"
+                        />
+                        <div className="min-w-0 flex-1">
+                          <p className="break-all text-xs text-muted">{editImg2}</p>
+                          <button
+                            type="button"
+                            onClick={() => setEditImg2("")}
+                            className="mt-2 inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-foreground transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+                          >
+                            <Trash2 className="h-4 w-4" aria-hidden />
+                            हटाएँ
+                          </button>
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
                   <input
                     value={editImg2}
                     onChange={(e) => setEditImg2(e.target.value)}
@@ -500,20 +612,11 @@ export default function ManageNotificationsPage() {
               </button>
               <button
                 type="button"
-                onClick={() =>
-                  setConfirmOpen({
-                    title: "Update confirm",
-                    body: "क्या आप यह बदलाव सेव करना चाहते हैं?",
-                    actionLabel: "अपडेट सेव करें",
-                    onConfirm: async () => {
-                      setConfirmOpen(null);
-                      await saveEdit();
-                    },
-                  })
-                }
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-4 py-2.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-emerald-700"
+                disabled={editSaveBusy || editUploading1 || editUploading2}
+                onClick={() => void saveEdit()}
+                className="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-4 py-2.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                अपडेट सेव करें
+                {editSaveBusy ? "सेव हो रहा है…" : "अपडेट सेव करें"}
               </button>
             </div>
           </div>
@@ -825,92 +928,94 @@ export default function ManageNotificationsPage() {
                   </div>
                 </div>
 
-                <div className="max-h-[70vh] overflow-auto rounded-2xl border border-slate-200 bg-white/60 shadow-sm dark:border-slate-700 dark:bg-slate-900/30">
-                  <table className="min-w-full text-left text-sm">
-                    <thead className="sticky top-0 bg-white/90 backdrop-blur dark:bg-slate-950/60">
-                      <tr className="text-xs font-extrabold text-muted">
-                        <th className="px-4 py-3">शीर्षक</th>
-                        <th className="px-4 py-3">रिपोर्टर</th>
-                        <th className="px-4 py-3">Type</th>
-                        <th className="px-4 py-3">Likes</th>
-                        <th className="px-4 py-3">Time</th>
-                        <th className="px-4 py-3 text-right">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-200/70 dark:divide-slate-700/60">
-                      {visible.map((n) => (
-                        <tr
-                          key={n.key ?? String(n.timeStamp ?? Math.random())}
-                          className="hover:bg-slate-50/70 dark:hover:bg-slate-900/30"
-                        >
-                          <td className="px-4 py-3">
-                            <p className="font-extrabold text-foreground">{n.newsTitle ?? "—"}</p>
-                            <p className="mt-1 line-clamp-1 text-xs text-muted">{n.shortInfo ?? ""}</p>
-                          </td>
-                          <td className="px-4 py-3">
-                            <p className="font-semibold text-foreground">{n.reporterName ?? "—"}</p>
-                          </td>
-                          <td className="px-4 py-3">
-                            <span
-                              className={`inline-flex items-center rounded-full px-2 py-1 text-[11px] font-extrabold ${
-                                n.isAdmin
-                                  ? "bg-amber-500/10 text-amber-900 ring-1 ring-amber-500/20 dark:text-amber-100"
-                                  : "bg-sky-500/10 text-sky-900 ring-1 ring-sky-500/20 dark:text-sky-100"
-                              }`}
-                            >
-                              {n.isAdmin ? "ADMIN" : "PUBLIC"}
-                            </span>
-                          </td>
-                          <td className="px-4 py-3">
-                            <button
-                              type="button"
-                              onClick={() => void hitLike(n)}
-                              className="inline-flex items-center gap-2 rounded-full bg-rose-600 px-3 py-1.5 text-xs font-extrabold text-white transition hover:bg-rose-700 active:scale-[0.98]"
-                            >
-                              +1
-                              <span className="rounded-full bg-white/20 px-2 py-0.5 text-[11px]">{n.likeCounter ?? 0}</span>
-                            </button>
-                          </td>
-                          <td className="px-4 py-3">
-                            <span className="inline-flex items-center gap-1 text-xs font-semibold text-muted">
-                              <Clock className="h-3.5 w-3.5" aria-hidden />
-                              {n.timeAgo ?? "—"}
-                            </span>
-                          </td>
-                          <td className="px-4 py-3">
-                            <div className="flex justify-end gap-2">
+                {!editOpen && !confirmOpen ? (
+                  <div className="max-h-[70vh] overflow-auto rounded-2xl border border-slate-200 bg-white/60 shadow-sm dark:border-slate-700 dark:bg-slate-900/30">
+                    <table className="min-w-full text-left text-sm">
+                      <thead className="sticky top-0 bg-white/90 backdrop-blur dark:bg-slate-950/60">
+                        <tr className="text-xs font-extrabold text-muted">
+                          <th className="px-4 py-3">शीर्षक</th>
+                          <th className="px-4 py-3">रिपोर्टर</th>
+                          <th className="px-4 py-3">Type</th>
+                          <th className="px-4 py-3">Likes</th>
+                          <th className="px-4 py-3">Time</th>
+                          <th className="px-4 py-3 text-right">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-200/70 dark:divide-slate-700/60">
+                        {visible.map((n) => (
+                          <tr
+                            key={n.key ?? String(n.timeStamp ?? Math.random())}
+                            className="hover:bg-slate-50/70 dark:hover:bg-slate-900/30"
+                          >
+                            <td className="px-4 py-3">
+                              <p className="font-extrabold text-foreground">{n.newsTitle ?? "—"}</p>
+                              <p className="mt-1 line-clamp-1 text-xs text-muted">{n.shortInfo ?? ""}</p>
+                            </td>
+                            <td className="px-4 py-3">
+                              <p className="font-semibold text-foreground">{n.reporterName ?? "—"}</p>
+                            </td>
+                            <td className="px-4 py-3">
+                              <span
+                                className={`inline-flex items-center rounded-full px-2 py-1 text-[11px] font-extrabold ${
+                                  n.isAdmin
+                                    ? "bg-amber-500/10 text-amber-900 ring-1 ring-amber-500/20 dark:text-amber-100"
+                                    : "bg-sky-500/10 text-sky-900 ring-1 ring-sky-500/20 dark:text-sky-100"
+                                }`}
+                              >
+                                {n.isAdmin ? "ADMIN" : "PUBLIC"}
+                              </span>
+                            </td>
+                            <td className="px-4 py-3">
                               <button
                                 type="button"
-                                onClick={() => openEdit(n)}
-                                className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-800 shadow-sm transition hover:bg-slate-50 active:scale-95 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
-                                aria-label="Edit"
-                                title="Edit"
+                                onClick={() => void hitLike(n)}
+                                className="inline-flex items-center gap-2 rounded-full bg-rose-600 px-3 py-1.5 text-xs font-extrabold text-white transition hover:bg-rose-700 active:scale-[0.98]"
                               >
-                                <Pencil className="h-4 w-4" aria-hidden />
+                                +1
+                                <span className="rounded-full bg-white/20 px-2 py-0.5 text-[11px]">{n.likeCounter ?? 0}</span>
                               </button>
-                              <button
-                                type="button"
-                                onClick={() => askDelete(n)}
-                                className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-rose-200 bg-rose-50 text-rose-800 shadow-sm transition hover:bg-rose-100 active:scale-95 dark:border-rose-900/40 dark:bg-rose-950/30 dark:text-rose-100 dark:hover:bg-rose-950/45"
-                                aria-label="Delete"
-                                title="Delete"
-                              >
-                                <Trash2 className="h-4 w-4" aria-hidden />
-                              </button>
-                            </div>
-                          </td>
-                        </tr>
-                      ))}
-                      {!visible.length ? (
-                        <tr>
-                          <td className="px-4 py-10 text-center text-sm font-semibold text-muted" colSpan={6}>
-                            कोई नोटिफिकेशन नहीं मिला।
-                          </td>
-                        </tr>
-                      ) : null}
-                    </tbody>
-                  </table>
-                </div>
+                            </td>
+                            <td className="px-4 py-3">
+                              <span className="inline-flex items-center gap-1 text-xs font-semibold text-muted">
+                                <Clock className="h-3.5 w-3.5" aria-hidden />
+                                {n.timeAgo ?? "—"}
+                              </span>
+                            </td>
+                            <td className="px-4 py-3">
+                              <div className="flex justify-end gap-2">
+                                <button
+                                  type="button"
+                                  onClick={() => openEdit(n)}
+                                  className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-800 shadow-sm transition hover:bg-slate-50 active:scale-95 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
+                                  aria-label="Edit"
+                                  title="Edit"
+                                >
+                                  <Pencil className="h-4 w-4" aria-hidden />
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => askDelete(n)}
+                                  className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-rose-200 bg-rose-50 text-rose-800 shadow-sm transition hover:bg-rose-100 active:scale-95 dark:border-rose-900/40 dark:bg-rose-950/30 dark:text-rose-100 dark:hover:bg-rose-950/45"
+                                  aria-label="Delete"
+                                  title="Delete"
+                                >
+                                  <Trash2 className="h-4 w-4" aria-hidden />
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
+                        {!visible.length ? (
+                          <tr>
+                            <td className="px-4 py-10 text-center text-sm font-semibold text-muted" colSpan={6}>
+                              कोई नोटिफिकेशन नहीं मिला।
+                            </td>
+                          </tr>
+                        ) : null}
+                      </tbody>
+                    </table>
+                  </div>
+                ) : null}
               </div>
             ) : null}
           </div>

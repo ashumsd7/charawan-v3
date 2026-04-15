@@ -25,7 +25,7 @@ const extraNav: { href: string; key: string }[] = [
   { href: "/about", key: "nav.about" },
   { href: "/links", key: "nav.links" },
   { href: "/donate", key: "nav.donate" },
-  { href: "/games", key: "nav.games" },
+ 
 ];
 
 export async function SiteHeader() {

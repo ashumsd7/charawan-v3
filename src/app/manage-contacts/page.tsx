@@ -54,6 +54,22 @@ function isValidIndianMobile(s: string) {
   return d.length === 10;
 }
 
+/**10-digit mobile for inputs only; empty second line when DB has tel:+91 or stray "91". */
+function mobile10ForInput(s: string) {
+  const d = onlyDigits(s);
+  if (!d) return "";
+  if (d.length === 12 && d.startsWith("91")) {
+    const rest = d.slice(2);
+    return rest.length === 10 ? rest : "";
+  }
+  if (d.length > 10) {
+    const last = d.slice(-10);
+    return last.length === 10 ? last : "";
+  }
+  if (d.length === 10) return d;
+  return "";
+}
+
 function telFromMobile(s: string) {
   const d = onlyDigits(s);
   return d.length ? `tel:+91${d}` : "";
@@ -143,6 +159,8 @@ export default function ManageContactsPage() {
   const [editVillageName, setEditVillageName] = useState("");
   const [editShopAddress, setEditShopAddress] = useState("");
   const [editOwnerPhoto, setEditOwnerPhoto] = useState<string>("");
+  const [editUploadingPhoto, setEditUploadingPhoto] = useState(false);
+  const [editSaveBusy, setEditSaveBusy] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState<null | {
     title: string;
     body: string;
@@ -291,6 +309,28 @@ export default function ManageContactsPage() {
     }
   };
 
+  const onPickEditOwnerPhoto = async (file?: File | null) => {
+    if (!file) return;
+    setEditUploadingPhoto(true);
+    try {
+      const fd = new FormData();
+      fd.append("image", file);
+      const { data } = await axios.post<{ ok: boolean; url?: string; error?: string }>(
+        "/api/upload-image",
+        fd,
+        { timeout: 60_000 },
+      );
+      if (!data.ok || !data.url) throw new Error(data.error || "Upload failed");
+      setEditOwnerPhoto(data.url);
+      pushToast({ type: "success", title: "फोटो अपलोड हो गई", body: "Edit में फोटो लिंक लग गया।" });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : "अपलोड नहीं हो सका";
+      pushToast({ type: "error", title: "अपलोड विफल", body: msg });
+    } finally {
+      setEditUploadingPhoto(false);
+    }
+  };
+
   const fetchList = useCallback(async () => {
     setListLoading(true);
     try {
@@ -337,8 +377,8 @@ export default function ManageContactsPage() {
     setEditSelectedShopType(normalizeShopType(s.shopType));
     setEditShopName(s.shopName ?? "");
     setEditOwenerName(s.owenerName ?? "");
-    setEditMobileNumber(onlyDigits(s.mobileNumber ?? ""));
-    setEditMobileNumber2(onlyDigits(s.mobileNumber2 ?? ""));
+    setEditMobileNumber(mobile10ForInput(s.mobileNumber ?? ""));
+    setEditMobileNumber2(mobile10ForInput(s.mobileNumber2 ?? ""));
     setEditShopOpenAt(s.openTime ?? "");
     setEditShopClosedAt(s.closeTime ?? "");
     setEditClosedOn(normalizeClosedOn(s.closedOn));
@@ -355,8 +395,35 @@ export default function ManageContactsPage() {
     setEditingKey(null);
   };
 
-  const saveEdit = async () => {
-    if (!editingKey) return;
+  const validateEditContact = (): boolean => {
+    const cleanShopName2 = editShopName.trim();
+    const cleanVillageName2 = editVillageName.trim();
+    if (!editSelectedShopType) {
+      pushToast({ type: "error", title: "एंट्री #1", body: "कृपया दुकान/सर्विस का प्रकार चुनें।" });
+      return false;
+    }
+    if (!cleanShopName2) {
+      pushToast({ type: "error", title: "एंट्री #2", body: "दुकान/सर्विस का नाम लि��िए।" });
+      return false;
+    }
+    if (!isValidIndianMobile(editMobileNumber)) {
+      pushToast({ type: "error", title: "एंट्री #4", body: "मोबाइल नंबर सही नहीं है (10 अंक)।" });
+      return false;
+    }
+    if (onlyDigits(editMobileNumber2).length > 0 && !isValidIndianMobile(editMobileNumber2)) {
+      pushToast({ type: "error", title: "एंट्री #5", body: "दूसरा मोबाइल नंबर सही नहीं है (10 अंक)।" });
+      return false;
+    }
+    if (editInCharawan === "outOfCharawan" && !cleanVillageName2) {
+      pushToast({ type: "error", title: "एंट्री #10.1", body: "अपने गाँव का नाम लि��िए।" });
+      return false;
+    }
+    return true;
+  };
+
+  const saveEdit = async (): Promise<boolean> => {
+    if (!editingKey) return false;
+    if (editSaveBusy) return false;
 
     const cleanShopName2 = editShopName.trim();
     const cleanVillageName2 = editVillageName.trim();
@@ -364,33 +431,15 @@ export default function ManageContactsPage() {
     const cleanDetails2 = editShopDetails.trim();
     const cleanOwner2 = editOwenerName.trim();
 
-    if (!editSelectedShopType) {
-      pushToast({ type: "error", title: "एंट्री #1", body: "कृपया दुकान/सर्विस का प्रकार चुनें।" });
-      return;
-    }
-    if (!cleanShopName2) {
-      pushToast({ type: "error", title: "एंट्री #2", body: "दुकान/सर्विस का नाम लिखिए।" });
-      return;
-    }
-    if (!isValidIndianMobile(editMobileNumber)) {
-      pushToast({ type: "error", title: "एंट्री #4", body: "मोबाइल नंबर सही नहीं है (10 अंक)।" });
-      return;
-    }
-    if (editMobileNumber2.trim() && !isValidIndianMobile(editMobileNumber2)) {
-      pushToast({ type: "error", title: "एंट्री #5", body: "दूसरा मोबाइल नंबर सही नहीं है (10 अंक)।" });
-      return;
-    }
-    if (editInCharawan === "outOfCharawan" && !cleanVillageName2) {
-      pushToast({ type: "error", title: "एंट्री #10.1", body: "अपने गाँव का नाम लिखिए।" });
-      return;
-    }
+    if (!validateEditContact()) return false;
 
+    setEditSaveBusy(true);
     const patch = {
       shopName: cleanShopName2,
       owenerName: cleanOwner2 || undefined,
       shopType: [editSelectedShopType],
       mobileNumber: telFromMobile(editMobileNumber),
-      mobileNumber2: editMobileNumber2.trim() ? telFromMobile(editMobileNumber2) : "",
+      mobileNumber2: onlyDigits(editMobileNumber2).length ? telFromMobile(editMobileNumber2) : "",
       openTime: editShopOpenAt || "",
       closeTime: editShopClosedAt || "",
       closedOn: editClosedOn.length ? editClosedOn : "",
@@ -401,13 +450,23 @@ export default function ManageContactsPage() {
       villageName: editInCharawan === "charawan" ? "चरावां" : cleanVillageName2 || "",
     };
 
-    await axios.patch(`${stripJson(CHARAWAN_SHOPS_FIREBASE_URL)}/${editingKey}.json`, patch, {
-      timeout: 25_000,
-      headers: { "Content-Type": "application/json" },
-    });
-    pushToast({ type: "success", title: "अपडेट हो गया", body: "कॉन्टैक्ट अपडेट सेव हो गया।" });
-    closeEdit();
-    await fetchList();
+    try {
+      await axios.patch(`${stripJson(CHARAWAN_SHOPS_FIREBASE_URL)}/${editingKey}.json`, patch, {
+        timeout: 25_000,
+        headers: { "Content-Type": "application/json" },
+      });
+      closeEdit();
+      await fetchList();
+      window.setTimeout(() => {
+        pushToast({ type: "success", title: "अपडेट हो गया", body: "कॉन्टैक्ट अपडेट सेव हो गया।" });
+      }, 0);
+      return true;
+    } catch {
+      pushToast({ type: "error", title: "अपडेट नहीं हो सका", body: "इंटरनेट/सर्वर समस्या हो सकती है।" });
+      return false;
+    } finally {
+      setEditSaveBusy(false);
+    }
   };
 
   const askDelete = (s: FirebaseShopItem) => {
@@ -669,6 +728,45 @@ export default function ManageContactsPage() {
 
                 <div className="sm:col-span-2">
                   <label className="text-sm font-extrabold text-foreground">फोटो/कार्ड लिंक (optional)</label>
+                  <div className="mt-2 flex flex-col gap-2">
+                    <label className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 text-sm font-extrabold text-foreground shadow-sm transition hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900">
+                      <UploadCloud className="h-4 w-4 text-slate-500" aria-hidden />
+                      {editUploadingPhoto ? "अपलोड हो रहा है…" : "फोटो चुनें"}
+                      <input
+                        type="file"
+                        accept="image/png,image/jpeg"
+                        className="hidden"
+                        disabled={editUploadingPhoto}
+                        onChange={(e) => {
+                          const f = e.target.files?.[0];
+                          e.target.value = "";
+                          void onPickEditOwnerPhoto(f);
+                        }}
+                      />
+                    </label>
+
+                    {editOwnerPhoto ? (
+                      <div className="flex items-start gap-3">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={editOwnerPhoto}
+                          alt="edit owner photo"
+                          className="h-20 w-20 rounded-2xl object-cover ring-1 ring-slate-200 dark:ring-slate-700"
+                        />
+                        <div className="min-w-0 flex-1">
+                          <p className="break-all text-xs text-muted">{editOwnerPhoto}</p>
+                          <button
+                            type="button"
+                            onClick={() => setEditOwnerPhoto("")}
+                            className="mt-2 inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-extrabold text-foreground transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+                          >
+                            <Trash2 className="h-4 w-4" aria-hidden />
+                            हटाएँ
+                          </button>
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
                   <input
                     value={editOwnerPhoto}
                     onChange={(e) => setEditOwnerPhoto(e.target.value)}
@@ -688,20 +786,11 @@ export default function ManageContactsPage() {
               </button>
               <button
                 type="button"
-                onClick={() =>
-                  setConfirmOpen({
-                    title: "Update confirm",
-                    body: "क्या आप यह बदलाव सेव करना चाहते हैं?",
-                    actionLabel: "अपडेट सेव करें",
-                    onConfirm: async () => {
-                      setConfirmOpen(null);
-                      await saveEdit();
-                    },
-                  })
-                }
-                className="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-4 py-2.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-emerald-700"
+                disabled={editSaveBusy || editUploadingPhoto}
+                onClick={() => void saveEdit()}
+                className="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-4 py-2.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                अपडेट सेव करें
+                {editSaveBusy ? "सेव हो रहा है…" : "अपडेट सेव करें"}
               </button>
             </div>
           </div>
@@ -834,74 +923,76 @@ export default function ManageContactsPage() {
               </div>
             </div>
 
-            <div className="mt-4 max-h-[70vh] overflow-auto rounded-2xl border border-slate-200 bg-white/60 shadow-sm dark:border-slate-700 dark:bg-slate-900/30">
-              <table className="min-w-full text-left text-sm">
-                <thead className="sticky top-0 bg-white/90 backdrop-blur dark:bg-slate-950/60">
-                  <tr className="text-xs font-extrabold text-muted">
-                    <th className="px-4 py-3">दुकान/सेवा</th>
-                    <th className="px-4 py-3">प्रकार</th>
-                    <th className="px-4 py-3">मोबाइल</th>
-                    <th className="px-4 py-3">गाँव</th>
-                    <th className="px-4 py-3 text-right">Actions</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-200/70 dark:divide-slate-700/60">
-                  {visible.map((s) => {
-                    const st = normalizeShopType(s.shopType);
-                    const stTitle = FILTERS.find((x) => x.value === st)?.title ?? (st || "—");
-                    return (
-                      <tr key={s.key ?? `${s.shopName}-${Math.random()}`} className="hover:bg-slate-50/70 dark:hover:bg-slate-900/30">
-                        <td className="px-4 py-3">
-                          <p className="font-extrabold text-foreground">{s.shopName ?? "—"}</p>
-                          <p className="mt-1 line-clamp-1 text-xs text-muted">{s.owenerName ?? ""}</p>
-                        </td>
-                        <td className="px-4 py-3">
-                          <span className="inline-flex items-center rounded-full bg-teal-500/10 px-2 py-1 text-[11px] font-extrabold text-teal-900 ring-1 ring-teal-500/20 dark:text-teal-100">
-                            {stTitle}
-                          </span>
-                        </td>
-                        <td className="px-4 py-3">
-                          <p className="font-semibold text-foreground">{onlyDigits(s.mobileNumber ?? "") || "—"}</p>
-                          <p className="mt-1 text-xs text-muted">{onlyDigits(s.mobileNumber2 ?? "")}</p>
-                        </td>
-                        <td className="px-4 py-3">
-                          <p className="font-semibold text-foreground">{s.villageName ?? "—"}</p>
-                        </td>
-                        <td className="px-4 py-3">
-                          <div className="flex justify-end gap-2">
-                            <button
-                              type="button"
-                              onClick={() => openEdit(s)}
-                              className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-800 shadow-sm transition hover:bg-slate-50 active:scale-95 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
-                              aria-label="Edit"
-                              title="Edit"
-                            >
-                              <Pencil className="h-4 w-4" aria-hidden />
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() => askDelete(s)}
-                              className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-rose-200 bg-rose-50 text-rose-800 shadow-sm transition hover:bg-rose-100 active:scale-95 dark:border-rose-900/40 dark:bg-rose-950/30 dark:text-rose-100 dark:hover:bg-rose-950/45"
-                              aria-label="Delete"
-                              title="Delete"
-                            >
-                              <Trash2 className="h-4 w-4" aria-hidden />
-                            </button>
-                          </div>
+            {!editOpen && !confirmOpen ? (
+              <div className="mt-4 max-h-[70vh] overflow-auto rounded-2xl border border-slate-200 bg-white/60 shadow-sm dark:border-slate-700 dark:bg-slate-900/30">
+                <table className="min-w-full text-left text-sm">
+                  <thead className="sticky top-0 bg-white/90 backdrop-blur dark:bg-slate-950/60">
+                    <tr className="text-xs font-extrabold text-muted">
+                      <th className="px-4 py-3">दुकान/सेवा</th>
+                      <th className="px-4 py-3">प्रकार</th>
+                      <th className="px-4 py-3">मोबाइल</th>
+                      <th className="px-4 py-3">गाँव</th>
+                      <th className="px-4 py-3 text-right">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200/70 dark:divide-slate-700/60">
+                    {visible.map((s) => {
+                      const st = normalizeShopType(s.shopType);
+                      const stTitle = FILTERS.find((x) => x.value === st)?.title ?? (st || "—");
+                      return (
+                        <tr key={s.key ?? `${s.shopName}-${Math.random()}`} className="hover:bg-slate-50/70 dark:hover:bg-slate-900/30">
+                          <td className="px-4 py-3">
+                            <p className="font-extrabold text-foreground">{s.shopName ?? "—"}</p>
+                            <p className="mt-1 line-clamp-1 text-xs text-muted">{s.owenerName ?? ""}</p>
+                          </td>
+                          <td className="px-4 py-3">
+                            <span className="inline-flex items-center rounded-full bg-teal-500/10 px-2 py-1 text-[11px] font-extrabold text-teal-900 ring-1 ring-teal-500/20 dark:text-teal-100">
+                              {stTitle}
+                            </span>
+                          </td>
+                          <td className="px-4 py-3">
+                            <p className="font-semibold text-foreground">{mobile10ForInput(s.mobileNumber ?? "") || "—"}</p>
+                            <p className="mt-1 text-xs text-muted">{mobile10ForInput(s.mobileNumber2 ?? "")}</p>
+                          </td>
+                          <td className="px-4 py-3">
+                            <p className="font-semibold text-foreground">{s.villageName ?? "—"}</p>
+                          </td>
+                          <td className="px-4 py-3">
+                            <div className="flex justify-end gap-2">
+                              <button
+                                type="button"
+                                onClick={() => openEdit(s)}
+                                className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-800 shadow-sm transition hover:bg-slate-50 active:scale-95 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
+                                aria-label="Edit"
+                                title="Edit"
+                              >
+                                <Pencil className="h-4 w-4" aria-hidden />
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => askDelete(s)}
+                                className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-rose-200 bg-rose-50 text-rose-800 shadow-sm transition hover:bg-rose-100 active:scale-95 dark:border-rose-900/40 dark:bg-rose-950/30 dark:text-rose-100 dark:hover:bg-rose-950/45"
+                                aria-label="Delete"
+                                title="Delete"
+                              >
+                                <Trash2 className="h-4 w-4" aria-hidden />
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                    {!visible.length ? (
+                      <tr>
+                        <td className="px-4 py-10 text-center text-sm font-semibold text-muted" colSpan={5}>
+                          {listLoading ? "लोड हो रहा है…" : "कोई एंट्री नहीं मिली।"}
                         </td>
                       </tr>
-                    );
-                  })}
-                  {!visible.length ? (
-                    <tr>
-                      <td className="px-4 py-10 text-center text-sm font-semibold text-muted" colSpan={5}>
-                        {listLoading ? "लोड हो रहा है…" : "कोई एंट्री नहीं मिली।"}
-                      </td>
-                    </tr>
-                  ) : null}
-                </tbody>
-              </table>
-            </div>
+                    ) : null}
+                  </tbody>
+                </table>
+              </div>
+            ) : null}
           </div>
         ) : showDialog ? (
           <div className="rounded-3xl border border-emerald-200 bg-emerald-50/80 p-6 shadow-sm dark:border-emerald-900/40 dark:bg-emerald-950/25 sm:p-8">

@@ -472,7 +472,7 @@ export function NotificationsFeed({
               </div>
 
               {/* X/Twitter-like actions */}
-              <div className="flex items-center justify-between border-t border-slate-200/70 bg-gradient-to-r from-slate-50 via-white to-rose-50/50 px-4 py-3 dark:border-slate-700/60 dark:from-slate-950/30 dark:via-slate-950/10 dark:to-rose-950/10">
+              <div className="flex items-center justify-start gap-2 border-t border-slate-200/70 bg-gradient-to-r from-slate-50 via-white to-rose-50/50 px-4 py-3 dark:border-slate-700/60 dark:from-slate-950/30 dark:via-slate-950/10 dark:to-rose-950/10">
                 <button
                   type="button"
                   onClick={() => void hitLike(news)}
@@ -481,8 +481,8 @@ export function NotificationsFeed({
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition group-hover:bg-rose-100 dark:bg-slate-800 dark:group-hover:bg-rose-950/40">
                     <Heart className="h-4 w-4" aria-hidden />
                   </span>
-                  <span className="hidden sm:inline">लाइक</span>
-                  <span className="inline-flex items-center justify-center rounded-full bg-rose-600 px-2 py-0.5 text-[10px] font-extrabold text-white">
+                  {/* <span className="hidden sm:inline">लाइक</span> */}
+                  <span className="inline-flex items-center justify-center rounded-full   py-0.5 text-[10px] font-extrabold text-white">
                     {news.likeCounter ?? 0}
                   </span>
                 </button>
