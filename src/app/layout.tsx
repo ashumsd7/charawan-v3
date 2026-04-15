@@ -48,6 +48,10 @@ export async function generateMetadata(): Promise<Metadata> {
       title: site.seo.defaultTitle,
       description: site.seo.defaultDescription,
     },
+    icons: {
+      icon: [{ url: "/logo.png" }],
+      apple: [{ url: "/logo.png" }],
+    },
     robots: { index: true, follow: true },
   };
 }
