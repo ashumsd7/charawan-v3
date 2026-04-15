@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   ArrowLeft,
@@ -8,8 +8,10 @@ import {
   Clock,
   Loader2,
   MapPin,
+  Pencil,
   Phone,
   PlusCircle,
+  Search,
   Store,
   Tag,
   Trash2,
@@ -57,6 +59,42 @@ function telFromMobile(s: string) {
   return d.length ? `tel:+91${d}` : "";
 }
 
+function stripJson(url: string) {
+  return url.replace(/\.json$/, "");
+}
+
+function normalizeShopType(st: FirebaseShopItem["shopType"]): string {
+  if (Array.isArray(st)) {
+    const v = st.find((x) => typeof x === "string" && x.trim());
+    return typeof v === "string" ? v : "";
+  }
+  return typeof st === "string" ? st : "";
+}
+
+function normalizeClosedOn(v: FirebaseShopItem["closedOn"]): string[] {
+  if (!v) return [];
+  if (Array.isArray(v)) return v.filter(Boolean);
+  if (typeof v === "string") return v ? [v] : [];
+  return [];
+}
+
+type FirebaseShopItem = {
+  key?: string;
+  shopName?: string;
+  owenerName?: string;
+  ownerPhoto?: string;
+  shopAddress?: string;
+  shopInfo?: string;
+  mobileNumber?: string;
+  mobileNumber2?: string;
+  openTime?: string;
+  closeTime?: string;
+  closedOn?: string[] | string;
+  shopType?: (string | null)[] | string;
+  villageName?: string;
+  inCharawan?: string;
+};
+
 export default function ManageContactsPage() {
   const router = useRouter();
   const [ok] = useState<boolean>(() => {
@@ -80,6 +118,37 @@ export default function ManageContactsPage() {
       setToasts((prev) => prev.filter((x) => x.id !== id));
     }, 3200);
   };
+
+  const [mode, setMode] = useState<"manage" | "add">("manage");
+
+  // list state
+  const [listLoading, setListLoading] = useState(false);
+  const [allShops, setAllShops] = useState<FirebaseShopItem[]>([]);
+  const [query, setQuery] = useState("");
+  const [filter, setFilter] = useState<"all" | string>("all");
+
+  // edit/delete dialogs
+  const [editOpen, setEditOpen] = useState(false);
+  const [editingKey, setEditingKey] = useState<string | null>(null);
+  const [editSelectedShopType, setEditSelectedShopType] = useState<string>("");
+  const [editShopName, setEditShopName] = useState("");
+  const [editOwenerName, setEditOwenerName] = useState("");
+  const [editMobileNumber, setEditMobileNumber] = useState("");
+  const [editMobileNumber2, setEditMobileNumber2] = useState("");
+  const [editShopOpenAt, setEditShopOpenAt] = useState("");
+  const [editShopClosedAt, setEditShopClosedAt] = useState("");
+  const [editClosedOn, setEditClosedOn] = useState<string[]>([]);
+  const [editShopDetails, setEditShopDetails] = useState("");
+  const [editInCharawan, setEditInCharawan] = useState<"" | "charawan" | "outOfCharawan">("");
+  const [editVillageName, setEditVillageName] = useState("");
+  const [editShopAddress, setEditShopAddress] = useState("");
+  const [editOwnerPhoto, setEditOwnerPhoto] = useState<string>("");
+  const [confirmOpen, setConfirmOpen] = useState<null | {
+    title: string;
+    body: string;
+    actionLabel: string;
+    onConfirm: () => void | Promise<void>;
+  }>(null);
 
   const [showDialog, setShowDialog] = useState(false);
   const [selectedShopType, setSelectedShopType] = useState<string>("");
@@ -222,6 +291,141 @@ export default function ManageContactsPage() {
     }
   };
 
+  const fetchList = useCallback(async () => {
+    setListLoading(true);
+    try {
+      const { data } = await axios.get<Record<string, FirebaseShopItem> | null>(CHARAWAN_SHOPS_FIREBASE_URL, {
+        timeout: 25_000,
+        headers: { Accept: "application/json" },
+      });
+      const list: FirebaseShopItem[] = [];
+      if (data && typeof data === "object") {
+        for (const [key, value] of Object.entries(data)) {
+          list.push({ ...value, key });
+        }
+      }
+      list.sort((a, b) => (a.shopName ?? "").localeCompare(b.shopName ?? ""));
+      setAllShops(list);
+    } catch {
+      pushToast({ type: "error", title: "लोड नहीं हो सका", body: "इंटरनेट/सर्वर समस्या हो सकती है।" });
+    } finally {
+      setListLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!ok) return;
+    if (mode !== "manage") return;
+    void fetchList();
+  }, [ok, mode, fetchList]);
+
+  const visible = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return allShops.filter((s) => {
+      const st = normalizeShopType(s.shopType);
+      if (filter !== "all" && st !== filter) return false;
+      if (!q) return true;
+      const hay = `${s.shopName ?? ""}\n${s.owenerName ?? ""}\n${s.shopAddress ?? ""}\n${s.shopInfo ?? ""}\n${s.villageName ?? ""}\n${s.mobileNumber ?? ""}\n${s.mobileNumber2 ?? ""}`.toLowerCase();
+      return hay.includes(q);
+    });
+  }, [allShops, query, filter]);
+
+  const openEdit = (s: FirebaseShopItem) => {
+    const key = s.key ?? null;
+    if (!key) return;
+    setEditingKey(key);
+    setEditSelectedShopType(normalizeShopType(s.shopType));
+    setEditShopName(s.shopName ?? "");
+    setEditOwenerName(s.owenerName ?? "");
+    setEditMobileNumber(onlyDigits(s.mobileNumber ?? ""));
+    setEditMobileNumber2(onlyDigits(s.mobileNumber2 ?? ""));
+    setEditShopOpenAt(s.openTime ?? "");
+    setEditShopClosedAt(s.closeTime ?? "");
+    setEditClosedOn(normalizeClosedOn(s.closedOn));
+    setEditShopDetails(s.shopInfo ?? "");
+    setEditInCharawan((s.inCharawan as "" | "charawan" | "outOfCharawan") ?? "");
+    setEditVillageName(s.villageName ?? "");
+    setEditShopAddress(s.shopAddress ?? "");
+    setEditOwnerPhoto(s.ownerPhoto ?? "");
+    setEditOpen(true);
+  };
+
+  const closeEdit = () => {
+    setEditOpen(false);
+    setEditingKey(null);
+  };
+
+  const saveEdit = async () => {
+    if (!editingKey) return;
+
+    const cleanShopName2 = editShopName.trim();
+    const cleanVillageName2 = editVillageName.trim();
+    const cleanAddress2 = editShopAddress.trim();
+    const cleanDetails2 = editShopDetails.trim();
+    const cleanOwner2 = editOwenerName.trim();
+
+    if (!editSelectedShopType) {
+      pushToast({ type: "error", title: "एंट्री #1", body: "कृपया दुकान/सर्विस का प्रकार चुनें।" });
+      return;
+    }
+    if (!cleanShopName2) {
+      pushToast({ type: "error", title: "एंट्री #2", body: "दुकान/सर्विस का नाम लिखिए।" });
+      return;
+    }
+    if (!isValidIndianMobile(editMobileNumber)) {
+      pushToast({ type: "error", title: "एंट्री #4", body: "मोबाइल नंबर सही नहीं है (10 अंक)।" });
+      return;
+    }
+    if (editMobileNumber2.trim() && !isValidIndianMobile(editMobileNumber2)) {
+      pushToast({ type: "error", title: "एंट्री #5", body: "दूसरा मोबाइल नंबर सही नहीं है (10 अंक)।" });
+      return;
+    }
+    if (editInCharawan === "outOfCharawan" && !cleanVillageName2) {
+      pushToast({ type: "error", title: "एंट्री #10.1", body: "अपने गाँव का नाम लिखिए।" });
+      return;
+    }
+
+    const patch = {
+      shopName: cleanShopName2,
+      owenerName: cleanOwner2 || undefined,
+      shopType: [editSelectedShopType],
+      mobileNumber: telFromMobile(editMobileNumber),
+      mobileNumber2: editMobileNumber2.trim() ? telFromMobile(editMobileNumber2) : "",
+      openTime: editShopOpenAt || "",
+      closeTime: editShopClosedAt || "",
+      closedOn: editClosedOn.length ? editClosedOn : "",
+      shopInfo: cleanDetails2 || "",
+      shopAddress: cleanAddress2 || "",
+      ownerPhoto: editOwnerPhoto || "",
+      inCharawan: editInCharawan || "",
+      villageName: editInCharawan === "charawan" ? "चरावां" : cleanVillageName2 || "",
+    };
+
+    await axios.patch(`${stripJson(CHARAWAN_SHOPS_FIREBASE_URL)}/${editingKey}.json`, patch, {
+      timeout: 25_000,
+      headers: { "Content-Type": "application/json" },
+    });
+    pushToast({ type: "success", title: "अपडेट हो गया", body: "कॉन्टैक्ट अपडेट सेव हो गया।" });
+    closeEdit();
+    await fetchList();
+  };
+
+  const askDelete = (s: FirebaseShopItem) => {
+    const key = s.key;
+    if (!key) return;
+    setConfirmOpen({
+      title: "Delete confirm",
+      body: `क्या आप «${s.shopName ?? "कॉन्टैक्ट"}» को हटाना चाहते हैं? यह वापस नहीं आएगा।`,
+      actionLabel: "हटाएँ",
+      onConfirm: async () => {
+        await axios.delete(`${stripJson(CHARAWAN_SHOPS_FIREBASE_URL)}/${key}.json`, { timeout: 25_000 });
+        pushToast({ type: "success", title: "हटा दिया गया", body: "कॉन्टैक्ट डिलीट हो गया।" });
+        setConfirmOpen(null);
+        await fetchList();
+      },
+    });
+  };
+
   if (!ok) {
     return (
       <div className="village-page-bg min-h-screen">
@@ -236,6 +440,274 @@ export default function ManageContactsPage() {
 
   return (
     <div className="village-page-bg min-h-screen">
+      {confirmOpen ? (
+        <div className="fixed inset-0 z-[90] grid place-items-center p-4">
+          <button
+            type="button"
+            className="absolute inset-0 bg-black/65"
+            onClick={() => setConfirmOpen(null)}
+            aria-label="बंद करें"
+          />
+          <div className="relative w-full max-w-lg rounded-3xl border border-white/10 bg-slate-950 p-5 text-white shadow-2xl">
+            <div className="flex items-start justify-between gap-3">
+              <div className="min-w-0">
+                <p className="text-sm font-extrabold">{confirmOpen.title}</p>
+                <p className="mt-1 text-xs text-white/75">{confirmOpen.body}</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setConfirmOpen(null)}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/15 active:scale-95"
+                aria-label="बंद करें"
+              >
+                <X className="h-4 w-4" aria-hidden />
+              </button>
+            </div>
+            <div className="mt-4 flex flex-wrap justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setConfirmOpen(null)}
+                className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-4 py-2 text-xs font-extrabold text-white transition hover:bg-white/10"
+              >
+                रद्द करें
+              </button>
+              <button
+                type="button"
+                onClick={() => void confirmOpen.onConfirm()}
+                className="inline-flex items-center justify-center rounded-2xl bg-rose-600 px-4 py-2 text-xs font-extrabold text-white transition hover:bg-rose-700"
+              >
+                {confirmOpen.actionLabel}
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      {editOpen ? (
+        <div className="fixed inset-0 z-[90] grid place-items-center p-4">
+          <button type="button" className="absolute inset-0 bg-black/65" onClick={closeEdit} aria-label="बंद करें" />
+          <div className="relative w-full max-w-5xl overflow-hidden rounded-3xl border border-slate-200 bg-card/95 shadow-2xl backdrop-blur dark:border-slate-700">
+            <div className="flex items-start justify-between gap-3 border-b border-slate-200 px-5 py-4 dark:border-slate-700">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-muted">Edit</p>
+                <p className="mt-1 text-lg font-extrabold text-foreground">कॉन्टैक्ट अपडेट करें</p>
+              </div>
+              <button
+                type="button"
+                onClick={closeEdit}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/70 text-slate-700 shadow-sm transition hover:bg-white active:scale-95 dark:border-slate-700 dark:bg-slate-900/40 dark:text-slate-200 dark:hover:bg-slate-900"
+                aria-label="बंद करें"
+              >
+                <X className="h-5 w-5" aria-hidden />
+              </button>
+            </div>
+            <div className="max-h-[75vh] overflow-y-auto p-5">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="sm:col-span-2">
+                  <label className="block text-sm font-extrabold text-foreground">
+                    <span className="text-rose-600">*</span> दुकान / सर्विस का प्रकार
+                  </label>
+                  <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+                    {FILTERS.map((f) => (
+                      <label
+                        key={f.value}
+                        className={`flex cursor-pointer items-center gap-2 rounded-2xl border px-3 py-2 text-sm font-semibold shadow-sm transition hover:bg-white dark:hover:bg-slate-900 ${
+                          editSelectedShopType === f.value
+                            ? "border-teal-500/60 bg-teal-50/70 text-teal-950 ring-2 ring-teal-500/20 dark:border-teal-500/40 dark:bg-teal-950/25 dark:text-teal-50"
+                            : "border-slate-200 bg-white/60 text-foreground dark:border-slate-700 dark:bg-slate-900/40"
+                        }`}
+                      >
+                        <input
+                          type="radio"
+                          name="editShopType"
+                          value={f.value}
+                          checked={editSelectedShopType === f.value}
+                          onChange={() => setEditSelectedShopType(f.value)}
+                          className="h-4 w-4 accent-teal-600"
+                        />
+                        <span className="truncate">{f.title}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-sm font-extrabold text-foreground">
+                    <span className="text-rose-600">*</span> दुकान / सर्विस का नाम
+                  </label>
+                  <input
+                    value={editShopName}
+                    onChange={(e) => setEditShopName(e.target.value)}
+                    maxLength={40}
+                    className="mt-2 h-11 w-full rounded-2xl border border-slate-200 bg-white/70 px-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-extrabold text-foreground">मालिक का नाम</label>
+                  <input
+                    value={editOwenerName}
+                    onChange={(e) => setEditOwenerName(e.target.value)}
+                    maxLength={40}
+                    className="mt-2 h-11 w-full rounded-2xl border border-slate-200 bg-white/70 px-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-extrabold text-foreground">
+                    <span className="text-rose-600">*</span> मोबाइल नंबर
+                  </label>
+                  <div className="mt-2 flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-3 shadow-sm dark:border-slate-700 dark:bg-slate-900/40">
+                    <Phone className="h-4 w-4 text-slate-400" aria-hidden />
+                    <input
+                      value={editMobileNumber}
+                      onChange={(e) => setEditMobileNumber(e.target.value)}
+                      inputMode="numeric"
+                      className="h-11 w-full bg-transparent text-sm font-semibold text-foreground outline-none placeholder:text-slate-400"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="text-sm font-extrabold text-foreground">मोबाइल नंबर (दूसरा)</label>
+                  <div className="mt-2 flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-3 shadow-sm dark:border-slate-700 dark:bg-slate-900/40">
+                    <Phone className="h-4 w-4 text-slate-400" aria-hidden />
+                    <input
+                      value={editMobileNumber2}
+                      onChange={(e) => setEditMobileNumber2(e.target.value)}
+                      inputMode="numeric"
+                      className="h-11 w-full bg-transparent text-sm font-semibold text-foreground outline-none placeholder:text-slate-400"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="text-sm font-extrabold text-foreground">खुलने का समय</label>
+                  <div className="mt-2 flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-3 shadow-sm dark:border-slate-700 dark:bg-slate-900/40">
+                    <Clock className="h-4 w-4 text-slate-400" aria-hidden />
+                    <input
+                      type="time"
+                      value={editShopOpenAt}
+                      onChange={(e) => setEditShopOpenAt(e.target.value)}
+                      className="h-11 w-full bg-transparent text-sm font-semibold text-foreground outline-none"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="text-sm font-extrabold text-foreground">बंद होने का समय</label>
+                  <div className="mt-2 flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-3 shadow-sm dark:border-slate-700 dark:bg-slate-900/40">
+                    <Clock className="h-4 w-4 text-slate-400" aria-hidden />
+                    <input
+                      type="time"
+                      value={editShopClosedAt}
+                      onChange={(e) => setEditShopClosedAt(e.target.value)}
+                      className="h-11 w-full bg-transparent text-sm font-semibold text-foreground outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div className="sm:col-span-2">
+                  <label className="text-sm font-extrabold text-foreground">दुकान/सर्विस के बारे में</label>
+                  <textarea
+                    value={editShopDetails}
+                    onChange={(e) => setEditShopDetails(e.target.value)}
+                    rows={4}
+                    className="mt-2 w-full rounded-2xl border border-slate-200 bg-white/70 p-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-sm font-extrabold text-foreground">यह कॉन्टैक्ट किस गाँव में है?</label>
+                  <div className="mt-3 space-y-2">
+                    <label className="flex cursor-pointer items-center gap-2 rounded-2xl border border-slate-200 bg-white/60 px-3 py-3 text-sm font-semibold text-foreground shadow-sm dark:border-slate-700 dark:bg-slate-900/40">
+                      <input
+                        type="radio"
+                        name="editInCharawan"
+                        value="charawan"
+                        checked={editInCharawan === "charawan"}
+                        onChange={() => setEditInCharawan("charawan")}
+                        className="h-4 w-4 accent-teal-600"
+                      />
+                      <span className="font-bold text-accent">चरावां में है</span>
+                    </label>
+                    <label className="flex cursor-pointer items-center gap-2 rounded-2xl border border-slate-200 bg-white/60 px-3 py-3 text-sm font-semibold text-foreground shadow-sm dark:border-slate-700 dark:bg-slate-900/40">
+                      <input
+                        type="radio"
+                        name="editInCharawan"
+                        value="outOfCharawan"
+                        checked={editInCharawan === "outOfCharawan"}
+                        onChange={() => setEditInCharawan("outOfCharawan")}
+                        className="h-4 w-4 accent-teal-600"
+                      />
+                      <span className="font-bold text-accent">चरावां से बाहर है</span>
+                    </label>
+                  </div>
+
+                  {editInCharawan === "outOfCharawan" ? (
+                    <div className="mt-3">
+                      <label className="text-sm font-extrabold text-foreground">
+                        <span className="text-rose-600">*</span> अपने गाँव का नाम
+                      </label>
+                      <input
+                        value={editVillageName}
+                        onChange={(e) => setEditVillageName(e.target.value)}
+                        maxLength={20}
+                        className="mt-2 h-11 w-full rounded-2xl border border-slate-200 bg-white/70 px-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
+                      />
+                    </div>
+                  ) : null}
+                </div>
+
+                <div>
+                  <label className="text-sm font-extrabold text-foreground">पूरा पता</label>
+                  <div className="mt-2 flex items-start gap-2 rounded-2xl border border-slate-200 bg-white/70 px-3 py-3 shadow-sm dark:border-slate-700 dark:bg-slate-900/40">
+                    <MapPin className="mt-0.5 h-4 w-4 text-slate-400" aria-hidden />
+                    <textarea
+                      value={editShopAddress}
+                      onChange={(e) => setEditShopAddress(e.target.value)}
+                      rows={4}
+                      className="w-full bg-transparent text-sm font-semibold text-foreground outline-none placeholder:text-slate-400"
+                    />
+                  </div>
+                </div>
+
+                <div className="sm:col-span-2">
+                  <label className="text-sm font-extrabold text-foreground">फोटो/कार्ड लिंक (optional)</label>
+                  <input
+                    value={editOwnerPhoto}
+                    onChange={(e) => setEditOwnerPhoto(e.target.value)}
+                    placeholder="https://..."
+                    className="mt-2 h-11 w-full rounded-2xl border border-slate-200 bg-white/70 px-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap justify-end gap-2 border-t border-slate-200 px-5 py-4 dark:border-slate-700">
+              <button
+                type="button"
+                onClick={closeEdit}
+                className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white/70 px-4 py-2.5 text-xs font-extrabold text-foreground shadow-sm transition hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900"
+              >
+                बंद करें
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  setConfirmOpen({
+                    title: "Update confirm",
+                    body: "क्या आप यह बदलाव सेव करना चाहते हैं?",
+                    actionLabel: "अपडेट सेव करें",
+                    onConfirm: async () => {
+                      setConfirmOpen(null);
+                      await saveEdit();
+                    },
+                  })
+                }
+                className="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-4 py-2.5 text-xs font-extrabold text-white shadow-sm transition hover:bg-emerald-700"
+              >
+                अपडेट सेव करें
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-10 sm:py-12">
         <Link
           href="/admin"
@@ -292,7 +764,146 @@ export default function ManageContactsPage() {
           ))}
         </div>
 
-        {showDialog ? (
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                setMode("manage");
+                setShowDialog(false);
+              }}
+              className={`inline-flex items-center justify-center gap-2 rounded-2xl border px-4 py-2.5 text-sm font-extrabold shadow-sm transition ${
+                mode === "manage"
+                  ? "border-slate-900 bg-slate-900 text-white hover:bg-slate-800 dark:border-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
+                  : "border-slate-200 bg-white/70 text-foreground hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900"
+              }`}
+            >
+              सभी एंट्री
+            </button>
+            <button
+              type="button"
+              onClick={() => setMode("add")}
+              className={`inline-flex items-center justify-center gap-2 rounded-2xl border px-4 py-2.5 text-sm font-extrabold shadow-sm transition ${
+                mode === "add"
+                  ? "border-slate-900 bg-slate-900 text-white hover:bg-slate-800 dark:border-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
+                  : "border-slate-200 bg-white/70 text-foreground hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900"
+              }`}
+            >
+              <PlusCircle className="h-4 w-4" aria-hidden />
+              नया जोड़ें
+            </button>
+          </div>
+
+          {mode === "manage" ? (
+            <button
+              type="button"
+              onClick={() => void fetchList()}
+              className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-4 py-2.5 text-sm font-extrabold text-foreground shadow-sm transition hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900"
+            >
+              {listLoading ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : null}
+              रिफ्रेश
+            </button>
+          ) : null}
+        </div>
+
+        {mode === "manage" ? (
+          <div className="rounded-3xl border border-slate-200 bg-card/90 p-4 shadow-sm backdrop-blur dark:border-slate-700 sm:p-6">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-1 items-center gap-2 rounded-2xl border border-slate-200 bg-white/70 px-3 shadow-sm dark:border-slate-700 dark:bg-slate-900/40">
+                <Search className="h-4 w-4 text-slate-400" aria-hidden />
+                <input
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search… (नाम/नंबर/पता)"
+                  className="h-11 w-full bg-transparent text-sm font-semibold text-foreground outline-none placeholder:text-slate-400"
+                />
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <select
+                  value={filter}
+                  onChange={(e) => setFilter(e.target.value)}
+                  className="h-11 rounded-2xl border border-slate-200 bg-white/70 px-3 text-sm font-extrabold text-foreground shadow-sm outline-none transition hover:bg-white dark:border-slate-700 dark:bg-slate-900/40 dark:hover:bg-slate-900"
+                >
+                  <option value="all">All प्रकार</option>
+                  {FILTERS.map((f) => (
+                    <option key={f.value} value={f.value}>
+                      {f.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className="mt-4 max-h-[70vh] overflow-auto rounded-2xl border border-slate-200 bg-white/60 shadow-sm dark:border-slate-700 dark:bg-slate-900/30">
+              <table className="min-w-full text-left text-sm">
+                <thead className="sticky top-0 bg-white/90 backdrop-blur dark:bg-slate-950/60">
+                  <tr className="text-xs font-extrabold text-muted">
+                    <th className="px-4 py-3">दुकान/सेवा</th>
+                    <th className="px-4 py-3">प्रकार</th>
+                    <th className="px-4 py-3">मोबाइल</th>
+                    <th className="px-4 py-3">गाँव</th>
+                    <th className="px-4 py-3 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200/70 dark:divide-slate-700/60">
+                  {visible.map((s) => {
+                    const st = normalizeShopType(s.shopType);
+                    const stTitle = FILTERS.find((x) => x.value === st)?.title ?? (st || "—");
+                    return (
+                      <tr key={s.key ?? `${s.shopName}-${Math.random()}`} className="hover:bg-slate-50/70 dark:hover:bg-slate-900/30">
+                        <td className="px-4 py-3">
+                          <p className="font-extrabold text-foreground">{s.shopName ?? "—"}</p>
+                          <p className="mt-1 line-clamp-1 text-xs text-muted">{s.owenerName ?? ""}</p>
+                        </td>
+                        <td className="px-4 py-3">
+                          <span className="inline-flex items-center rounded-full bg-teal-500/10 px-2 py-1 text-[11px] font-extrabold text-teal-900 ring-1 ring-teal-500/20 dark:text-teal-100">
+                            {stTitle}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3">
+                          <p className="font-semibold text-foreground">{onlyDigits(s.mobileNumber ?? "") || "—"}</p>
+                          <p className="mt-1 text-xs text-muted">{onlyDigits(s.mobileNumber2 ?? "")}</p>
+                        </td>
+                        <td className="px-4 py-3">
+                          <p className="font-semibold text-foreground">{s.villageName ?? "—"}</p>
+                        </td>
+                        <td className="px-4 py-3">
+                          <div className="flex justify-end gap-2">
+                            <button
+                              type="button"
+                              onClick={() => openEdit(s)}
+                              className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-800 shadow-sm transition hover:bg-slate-50 active:scale-95 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
+                              aria-label="Edit"
+                              title="Edit"
+                            >
+                              <Pencil className="h-4 w-4" aria-hidden />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => askDelete(s)}
+                              className="inline-flex h-9 w-9 items-center justify-center rounded-2xl border border-rose-200 bg-rose-50 text-rose-800 shadow-sm transition hover:bg-rose-100 active:scale-95 dark:border-rose-900/40 dark:bg-rose-950/30 dark:text-rose-100 dark:hover:bg-rose-950/45"
+                              aria-label="Delete"
+                              title="Delete"
+                            >
+                              <Trash2 className="h-4 w-4" aria-hidden />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                  {!visible.length ? (
+                    <tr>
+                      <td className="px-4 py-10 text-center text-sm font-semibold text-muted" colSpan={5}>
+                        {listLoading ? "लोड हो रहा है…" : "कोई एंट्री नहीं मिली।"}
+                      </td>
+                    </tr>
+                  ) : null}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ) : showDialog ? (
           <div className="rounded-3xl border border-emerald-200 bg-emerald-50/80 p-6 shadow-sm dark:border-emerald-900/40 dark:bg-emerald-950/25 sm:p-8">
             <p className="text-sm font-extrabold text-emerald-900 dark:text-emerald-100">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-xs font-extrabold text-rose-700 ring-1 ring-rose-200 dark:bg-slate-900/50 dark:text-rose-200 dark:ring-rose-900/40">
