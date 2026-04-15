@@ -61,7 +61,7 @@ export function ShopsDirectory({
               </p>
             </div>
             <Link
-              href="/add-contact"
+              href="/manage-contacts"
               className="inline-flex shrink-0 items-center justify-center self-start rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 shadow-sm transition hover:border-teal-600/40 hover:bg-teal-50/80 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:border-teal-500/40 dark:hover:bg-slate-700"
             >
               नया संपर्क जोड़ें

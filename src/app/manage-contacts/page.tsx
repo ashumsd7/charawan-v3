@@ -613,12 +613,7 @@ export default function ManageContactsPage() {
                 >
                   {isDisabled || isUploading ? "कृपया इंतज़ार करिये" : "जानकारी सेव करें"}
                 </button>
-                <p className="mt-2 text-xs text-muted">
-                  सेव करने पर यह डेटा आपकी दुकान सूची (Firebase) में जुड़ जाएगा।
-                </p>
-                <p className="mt-2 text-[11px] text-muted">
-                  नोट: अपलोड के लिए सर्वर पर <span className="font-mono">IMGBB_API_KEY</span> सेट करना होगा।
-                </p>
+                 
               </div>
             </div>
           </div>

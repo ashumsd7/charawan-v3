@@ -1,9 +1,10 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { Check, Clock, Copy, MapPin, PhoneCall, Share2, Store, Tag } from "lucide-react";
+import { Check, Clock, Copy, Flag, MapPin, PhoneCall, Share2, Store, Tag } from "lucide-react";
 import type { ShopWithKey } from "@/lib/shops-firebase";
 import { buildShopShareMessage } from "@/lib/shop-share-text";
+import { WHATSAPP_CONTACT_HREF } from "@/lib/constants";
 
 function telDigits(tel?: string) {
   if (!tel || !tel.startsWith("tel:")) return "";
@@ -136,6 +137,19 @@ export default function ShopCard({ data, siteOrigin }: { data: ShopWithKey; site
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-teal-500 via-emerald-500 to-amber-400 opacity-80"
       />
+      <a
+        href={WHATSAPP_CONTACT_HREF}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute right-16 top-3 flex h-12 w-12 flex-col items-center justify-center gap-0.5 rounded-2xl border border-slate-200/80 bg-white/80 text-slate-700 shadow-sm backdrop-blur transition hover:bg-white dark:border-slate-600 dark:bg-slate-900/70 dark:text-slate-200 dark:hover:bg-slate-900"
+        aria-label="रिपोर्ट करें"
+        title="रिपोर्ट करें"
+      >
+        <Flag className="h-4 w-4" aria-hidden />
+        <span className="text-[10px] font-extrabold leading-none text-slate-700 dark:text-slate-200">
+          रिपोर्ट
+        </span>
+      </a>
       <button
         type="button"
         translate="no"
