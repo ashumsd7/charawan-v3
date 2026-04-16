@@ -100,9 +100,12 @@ export async function SiteFooter() {
               </a>
             );
           })}
-          <a className="hover:text-accent" href={"mailto:hello@charawan.netlify.app"}>
+          {/* <a className="hover:text-accent" href={"mailto:hello@charawan.netlify.app"}>
             Email
-          </a>
+          </a> */}
+          <Link className="hover:text-accent" href="/admin">
+            Admin
+          </Link>
         </div>
       </div>
     </footer>

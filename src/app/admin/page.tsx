@@ -41,13 +41,6 @@ export default function AdminPage() {
         ringClass: "ring-sky-500/20",
       },
       {
-        title: "Manage Gallery",
-        icon: <ImageIcon className="h-5 w-5" aria-hidden />,
-        enabled: false,
-        bgClass: "bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-200",
-        ringClass: "ring-fuchsia-500/20",
-      },
-      {
         title: "Notifications",
         icon: <Bell className="h-5 w-5" aria-hidden />,
         href: "/manage-notifications",
@@ -56,19 +49,26 @@ export default function AdminPage() {
         ringClass: "ring-amber-500/20",
       },
       {
-        title: "Manage Links",
-        icon: <Link2 className="h-5 w-5" aria-hidden />,
-        enabled: false,
-        bgClass: "bg-teal-500/10 text-teal-800 dark:text-teal-200",
-        ringClass: "ring-teal-500/20",
-      },
-      {
         title: "Manage Donations",
         icon: <HandHeart className="h-5 w-5" aria-hidden />,
         href: "/manage-donations",
         enabled: true,
         bgClass: "bg-rose-500/10 text-rose-800 dark:text-rose-200",
         ringClass: "ring-rose-500/20",
+      },
+      {
+        title: "Manage Gallery",
+        icon: <ImageIcon className="h-5 w-5" aria-hidden />,
+        enabled: false,
+        bgClass: "bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-200",
+        ringClass: "ring-fuchsia-500/20",
+      },
+      {
+        title: "Manage Links",
+        icon: <Link2 className="h-5 w-5" aria-hidden />,
+        enabled: false,
+        bgClass: "bg-teal-500/10 text-teal-800 dark:text-teal-200",
+        ringClass: "ring-teal-500/20",
       },
       {
         title: "Manage Emergency Contacts",
@@ -101,7 +101,7 @@ export default function AdminPage() {
           <h1 className="mt-2 text-2xl font-extrabold tracking-tight text-foreground sm:text-3xl">
             आपका स्वागत है , Admin
           </h1>
-          <p className="mt-2 text-sm text-muted">यह पैनल अभी पासकोड-आधारित है।</p>
+           
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
