@@ -16,7 +16,7 @@ export function HomeNotificationsFeed() {
               <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-800 ring-1 ring-amber-500/20 dark:text-amber-200">
                 <Bell className="h-5 w-5" aria-hidden />
               </span>
-              ग्राम सूचना केंद्र
+              चरावां समाचार
             </h2>
             <p className="mt-2 max-w-3xl text-sm text-muted">
               गाँव की आधिकारिक व सामुदायिक अपडेट यहीं दिखाई जाती हैं।

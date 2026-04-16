@@ -46,7 +46,7 @@ export default async function NotificationsPage() {
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h1 className="text-3xl font-bold">ग्राम सूचना केंद्र</h1>
+            <h1 className="text-3xl font-bold">चरावां समाचार</h1>
             <p className="mt-1 text-sm text-muted">गाँव की आधिकारिक व सामुदायिक अपडेट।</p>
           </div>
           <div className="flex flex-wrap gap-2">

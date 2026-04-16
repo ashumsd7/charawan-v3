@@ -377,7 +377,7 @@ export function NotificationsFeed({
               <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-800 ring-1 ring-amber-500/20 dark:text-amber-200">
                 <Bell className="h-5 w-5" aria-hidden />
               </span>
-              ग्राम सूचना केंद्र
+              चरावां समाचार
             </h2>
           </div>
           <div className="flex flex-wrap gap-2">
