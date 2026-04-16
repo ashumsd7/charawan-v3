@@ -1,50 +1,28 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import axios from "axios";
 import { HeartHandshake, Home, MapPin, QrCode, Smartphone } from "lucide-react";
-import { readJsonFile } from "@/lib/read-data";
 import { donationQrSrc } from "@/lib/donation-qr";
 import { CopyPhoneButton } from "@/components/copy-phone-button";
 import { DonateTabs } from "@/components/donate/donate-tabs";
+import { CHARAWAN_DONATIONS_FIREBASE_URL, normalizeDonateDbShape, type DonateDbShape } from "@/lib/donations-firebase";
 
 export const metadata: Metadata = {
   title: "दान",
   description: "चरावां गाँव के विकास में योगदान — UPI व QR।",
 };
 
-type DonateJson = {
-  heading: string;
-  upiId: string;
-  qrImage: string;
-  shipTo: {
-    name: string;
-    addressLines: string[];
-    phone: string;
-  };
-  screenshotNoteHref: string;
-  screenshotNoteLabel: string;
-  bodyParagraphs: string[];
-  needs: {
-    id: string;
-    name: string;
-    image: string;
-    description: string;
-    priceStarts: number;
-    buyLink?: string;
-    paymentQrImage?: string;
-    timesDonated: number;
-    donors: {
-      name: string;
-      number?: string;
-      address?: string;
-      photo?: string;
-      description?: string;
-      thankYouNote?: string;
-    }[];
-  }[];
-};
+export const revalidate = 300;
 
 export default async function DonatePage() {
-  const data = await readJsonFile<DonateJson>("donate.json");
+  const { data: payload } = await axios.get(CHARAWAN_DONATIONS_FIREBASE_URL, {
+    timeout: 25_000,
+    headers: { Accept: "application/json" },
+  });
+  const data = normalizeDonateDbShape(payload);
+  if (!data) {
+    throw new Error("Invalid donations payload from Firebase");
+  }
 
   return (
     <div className="village-page-bg">

@@ -65,7 +65,8 @@ export default function AdminPage() {
       {
         title: "Manage Donations",
         icon: <HandHeart className="h-5 w-5" aria-hidden />,
-        enabled: false,
+        href: "/manage-donations",
+        enabled: true,
         bgClass: "bg-rose-500/10 text-rose-800 dark:text-rose-200",
         ringClass: "ring-rose-500/20",
       },

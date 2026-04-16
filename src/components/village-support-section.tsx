@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeartHandshake } from "lucide-react";
+import type { DonateDbShape } from "@/lib/donations-firebase";
 
 export type VillageDevelopment = {
   heading: string;
@@ -12,8 +13,6 @@ export type VillageDevelopment = {
   donateCta: string;
   donateHref: string;
 };
-
-type DonateJson = typeof import("../../data/donate.json");
 
 function takeRandom<T>(arr: T[], count: number) {
   if (!arr.length || count <= 0) return [];
@@ -30,7 +29,7 @@ export function VillageSupportSection({
   donate,
 }: {
   data: VillageDevelopment;
-  donate: DonateJson;
+  donate: DonateDbShape;
 }) {
   const needs = donate?.needs ?? [];
   const topNeeds = takeRandom(needs, 3);

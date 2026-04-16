@@ -18,6 +18,7 @@ import { VillageSupportSection } from "@/components/village-support-section";
 import { EmergencyContactsSection } from "@/components/emergency-contacts-section";
 import { homeCarouselPhotos } from "@/data/home-carousel-photos";
 import { WHATSAPP_CONTACT_HREF } from "@/lib/constants";
+import { CHARAWAN_DONATIONS_FIREBASE_URL, normalizeDonateDbShape, type DonateDbShape } from "@/lib/donations-firebase";
 
 export const metadata: Metadata = {
   title: "मुख्य पेज",
@@ -26,15 +27,22 @@ export const metadata: Metadata = {
 type HomeJson = typeof import("../../data/home.json");
 type SiteJson = typeof import("../../data/site.json");
 type EmergencyJson = typeof import("../../data/emergency-contacts.json");
-type DonateJson = typeof import("../../data/donate.json");
 
 export default async function HomePage() {
-  const [home, site, emergency, donate] = await Promise.all([
+  const [home, site, emergency, donatePayload] = await Promise.all([
     readJsonFile<HomeJson>("home.json"),
     readJsonFile<SiteJson>("site.json"),
     readJsonFile<EmergencyJson>("emergency-contacts.json"),
-    readJsonFile<DonateJson>("donate.json"),
+    fetch(CHARAWAN_DONATIONS_FIREBASE_URL, {
+      next: { revalidate: 300 },
+      headers: { Accept: "application/json" },
+    }).then((r) => r.json()),
   ]);
+  const donate: DonateDbShape = (() => {
+    const normalized = normalizeDonateDbShape(donatePayload);
+    if (!normalized) throw new Error("Invalid donations payload from Firebase");
+    return normalized;
+  })();
 
   return (
     <div className="village-page-bg">
