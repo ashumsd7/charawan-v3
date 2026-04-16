@@ -142,6 +142,7 @@ export function normalizeDonateDbShape(payload: unknown): DonateDbShape | null {
 }
 
 export function stripJson(url: string) {
-  return url.replace(/\.json$/, "");
+  // Handles both ".../foo.json" and the common RTDB root ".../.json"
+  return url.replace(/\/?\.json$/, "");
 }
 

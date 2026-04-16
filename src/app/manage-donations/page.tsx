@@ -352,11 +352,20 @@ export default function ManageDonationsPage() {
     };
 
     try {
-      const base = stripJson(CHARAWAN_DONATIONS_FIREBASE_URL);
-      await axios.put(`${base}/needs/${encodeURIComponent(record.id)}.json`, record, {
-        timeout: 25_000,
-        headers: { "Content-Type": "application/json" },
-      });
+      // Your RTDB currently stores `needs` as an ARRAY at root: { needs: [ ... ] }
+      // So we update the array by id and PATCH root.
+      const currentNeeds = Array.isArray(db.needs) ? db.needs : [];
+      const idx = currentNeeds.findIndex((x) => x.id === record.id);
+      const nextNeeds =
+        idx >= 0
+          ? currentNeeds.map((x, i) => (i === idx ? record : x))
+          : [...currentNeeds, record];
+
+      await axios.patch(
+        CHARAWAN_DONATIONS_FIREBASE_URL,
+        { needs: nextNeeds },
+        { timeout: 25_000, headers: { "Content-Type": "application/json" } },
+      );
       pushToast({ type: "success", title: "सेव हो गया", body: `Need «${record.name}» सेव हो गया।` });
       setNeedOpen(false);
       await fetchDb();
@@ -371,8 +380,13 @@ export default function ManageDonationsPage() {
     const yes = window.confirm(`Delete «${n.name}»? यह वापस नहीं आएगा।`);
     if (!yes) return;
     try {
-      const base = stripJson(CHARAWAN_DONATIONS_FIREBASE_URL);
-      await axios.delete(`${base}/needs/${encodeURIComponent(n.id)}.json`, { timeout: 25_000 });
+      const currentNeeds = Array.isArray(db.needs) ? db.needs : [];
+      const nextNeeds = currentNeeds.filter((x) => x.id !== n.id);
+      await axios.patch(
+        CHARAWAN_DONATIONS_FIREBASE_URL,
+        { needs: nextNeeds },
+        { timeout: 25_000, headers: { "Content-Type": "application/json" } },
+      );
       pushToast({ type: "success", title: "डिलीट", body: `Need «${n.name}» हट गया।` });
       await fetchDb();
     } catch {
@@ -510,7 +524,7 @@ export default function ManageDonationsPage() {
       {needOpen ? (
         <div className="fixed inset-0 z-[90] grid place-items-center p-4">
           <button type="button" className="absolute inset-0 bg-black/65" onClick={closeNeed} />
-          <div className="relative w-full max-w-5xl overflow-hidden rounded-3xl border border-slate-200 bg-card/95 shadow-2xl backdrop-blur dark:border-slate-700">
+          <div className="relative flex w-full max-w-5xl max-h-[90vh] flex-col overflow-hidden rounded-3xl border border-slate-200 bg-card/95 shadow-2xl backdrop-blur dark:border-slate-700">
             <div className="flex items-start justify-between gap-3 border-b border-slate-200 px-5 py-4 dark:border-slate-700">
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-muted">Need</p>
@@ -526,7 +540,7 @@ export default function ManageDonationsPage() {
               </button>
             </div>
 
-            <div className="grid gap-4 p-5 lg:grid-cols-2">
+            <div className="grid flex-1 gap-4 overflow-y-auto p-5 lg:grid-cols-2">
               <TextField label="Need id" value={needId} onChange={setNeedId} placeholder="e.g. anti-rabies-vaccine" />
               <TextField label="Need name" value={needName} onChange={setNeedName} />
 
@@ -538,6 +552,22 @@ export default function ManageDonationsPage() {
                   busy={uploadingNeedImage}
                   setBusy={setUploadingNeedImage}
                 />
+                <div className="mt-2 flex items-center gap-3">
+                  <div className="h-16 w-16 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-inner dark:border-slate-700">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={needImage?.trim() ? needImage : "/og-image-placeholder.svg"}
+                      alt={needName || "Need image"}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <p className="text-[11px] font-semibold text-muted">
+                    Paste URL या Upload के बाद preview यहाँ दिखेगा।
+                  </p>
+                </div>
               </div>
 
               <div className="lg:col-span-2">
@@ -625,6 +655,22 @@ export default function ManageDonationsPage() {
                               busy={false}
                               setBusy={() => {}}
                             />
+                            <div className="mt-2 flex items-center gap-3">
+                              <div className="h-14 w-14 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-inner dark:border-slate-700">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={d.photo?.trim() ? d.photo : "/og-image-placeholder.svg"}
+                                  alt={d.name || "Donor photo"}
+                                  className="h-full w-full object-cover"
+                                  loading="lazy"
+                                  decoding="async"
+                                  referrerPolicy="no-referrer"
+                                />
+                              </div>
+                              <p className="text-[11px] font-semibold text-muted">
+                                Paste URL या Upload के बाद preview यहाँ दिखेगा।
+                              </p>
+                            </div>
                             <p className="mt-1 text-[11px] font-semibold text-muted">
                               (Tip: ऊपर Upload button से donor photo भी डाल सकते हैं)
                             </p>
@@ -659,7 +705,7 @@ export default function ManageDonationsPage() {
               </div>
             </div>
 
-            <div className="flex flex-wrap justify-end gap-2 border-t border-slate-200 px-5 py-4 dark:border-slate-700">
+            <div className="sticky bottom-0 flex flex-wrap justify-end gap-2 border-t border-slate-200 bg-card/95 px-5 py-4 backdrop-blur dark:border-slate-700">
               <button
                 type="button"
                 onClick={closeNeed}
