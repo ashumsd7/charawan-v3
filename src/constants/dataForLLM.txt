@@ -1,0 +1,5235 @@
+# Charawan website — data dump for LLM / chatbot
+# Generated: 2026-04-22T21:06:52.372Z
+# Do not edit by hand; regenerate with: node scripts/dump-data-for-llm.mjs
+
+
+========================================================================
+LIVE: Charawan notifications (Firebase)
+========================================================================
+
+{
+  "-MkwTAGJAon9hIlnl-lM": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 10,
+    "newsTitle": "",
+    "reporterName": "एडमिन",
+    "shortInfo": "चरावां की वेबसाइट में आपका बहुत बहुत स्वागत है । ❤️",
+    "timeStamp": 1633102079304
+  },
+  "-MkwTUvTuk6AISLPqXHV": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "newsTitle": "कुल दुकानें",
+    "reporterName": "एडमिन",
+    "shortInfo": "अब तक वेबसाइट पर 90 से ज्यादा सर्विस और दुकानें जोड़ी जा चुकी है",
+    "timeStamp": 1633102157246
+  },
+  "-MkxSFfT__b8wE58yOIl": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "newsTitle": "",
+    "reporterName": "एडमिन",
+    "shortInfo": "शुभ रात्रि ✌️, ख्याल रखिये अपना",
+    "timeStamp": 1633118619168
+  },
+  "-MkzXh01lwYec1TSvSRb": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "newsTitle": "गांधी जयंती",
+    "reporterName": "एडमिन",
+    "shortInfo": "प्राथमिक विद्यालय चरावां में गांधी जयंती मनाई गई ।",
+    "timeStamp": 1633153580236
+  },
+  "-MkzjwCzCIXOoSg_VuQ9": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "newsTitle": "स्कूल के बारे में",
+    "reporterName": "एडमिन",
+    "shortInfo": "प्राथमिक विद्यालय खुल गया है, कृपया आने बच्चों को भेजें । धन्यवाद",
+    "timeStamp": 1633157065586
+  },
+  "-Ml-05hai2443tiyaPNH": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "newsTitle": "दुकान से संबंधित",
+    "reporterName": "",
+    "shortInfo": "वेबसाइट पर दुकानों की संख्या 96 हो चुकी है ।",
+    "timeStamp": 1633161524694
+  },
+  "-Ml-1DZOvxoI9g9Ay3G7": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "newsTitle": "मौसम",
+    "reporterName": "वालंटियर",
+    "shortInfo": "आज थोड़ी बारिश हुई",
+    "timeStamp": 1633161869680
+  },
+  "-Ml-IV_X4z1o-c367Dfn": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "newsTitle": "दुकानों की संख्या",
+    "reporterName": "एडमिन",
+    "shortInfo": "वेबसाइट पर दुकानों की संख्या 104 हुई ⭐",
+    "timeStamp": 1633166386864
+  },
+  "-Ml-Z1sqIPwoTqG2nXTU": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/SVCrTKS/SAVE-20211002-153217.jpg",
+    "img2": "https://i.ibb.co/ZYjvbk9/SAVE-20211002-153228.jpg",
+    "isAdmin": true,
+    "newsTitle": "आज गांधी जयंती मनाई गई ।",
+    "reporterName": "एडमिन",
+    "shortInfo": "प्राइमरी स्कूल चरावां में ग्राम प्रधान श्री अनिल कुमार जी और पूर्व प्रधान श्री संदीप तिवारी जी और स्कूल के माननीय अध्यापकों के उपस्थिति में गांधी जयंती के राष्ट्रीय पर्व मनाया गया । ",
+    "timeStamp": 1633170353661
+  },
+  "-Ml0D38xzY2y6DOF3xF5": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/K5vG1sX/images.jpg",
+    "isAdmin": true,
+    "newsTitle": "",
+    "reporterName": "एडमिन",
+    "shortInfo": "आप सभी को चरावां गाँव की ओर से गांधी जयंती की बहुत बहुत शुभकामनाएं ",
+    "timeStamp": 1633181777236
+  },
+  "-Ml0DlzbbJ1fmHtas4xJ": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/1LbKKmb/images-1.jpg",
+    "isAdmin": true,
+    "newsTitle": "",
+    "reporterName": "एडमिन",
+    "shortInfo": "लाल बहादुर शास्त्री जी के जयंती पर आप सभी को हार्दिक शुभकामनाएं ।",
+    "timeStamp": 1633181965095
+  },
+  "-Ml1PJgqPqxQGZsw9xCz": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 16,
+    "newsTitle": "03 अक्टूबर ",
+    "reporterName": "एडमिन",
+    "shortInfo": "03 अक्टूबर सूर्योदय 5:55 am बजे होगा सूर्यास्त 5:45 pm बजे होगा आपका दिन अच्छा रहे धन्यवाद |",
+    "timeStamp": 1633201768461
+  },
+  "-Ml4K2B-DJko7K2hW6Ar": {
+    "detailedInfo": "",
+    "img1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIzq1IGGfV7m8lwniQaXD-q4M73ApwomaPBOX_JV2eFedlG7OxXqS4Ahdn0ku14TLxCuU&usqp=CAU",
+    "isAdmin": true,
+    "newsTitle": "KLK फीडर अपडेट बीकापुर",
+    "reporterName": "एडमिन",
+    "shortInfo": "KLK फीडर अपडेट (बीकापुर) : 1 घंटे के लिए मेन सप्लाई फेल ",
+    "timeStamp": 1633250716669
+  },
+  "-Ml5ftw8G33NRUPniBjL": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "newsTitle": "मौसम",
+    "reporterName": "एडमिन",
+    "shortInfo": "आज शाम लगभग 8 बजे के बाद रुक रुक कर काफी बारिश हुई",
+    "timeStamp": 1633273324243
+  },
+  "-MlAJOEfTARd2W4sW_pf": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/FgGCWwT/IMG-20211004-171638.jpg",
+    "isAdmin": true,
+    "newsTitle": "बसपा की रैली",
+    "reporterName": "वालंटियर",
+    "shortInfo": "गाँव से आज बसपा की एक रैली निकाली ।",
+    "timeStamp": 1633351209290
+  },
+  "-MlB1TLNq5X_7cbw7RSe": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/c2ymQfp/images-2.jpg",
+    "isAdmin": true,
+    "newsTitle": "लाइट अपडेट",
+    "reporterName": "एडमिन",
+    "shortInfo": "मेन सप्लाई 8:00बजे फेल 9:40 तक सभी फीडर नार्मल होगे",
+    "timeStamp": 1633363287729
+  },
+  "-MlBEk-nQgOdlhlpAbJt": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "newsTitle": "",
+    "reporterName": "एडमिन",
+    "shortInfo": "अगले आदेश तक मेन सप्लाई फेल है जैसे ही कोई सूचना प्राप्त होगी सूचना ग्रुप मे भेजी जायेगी",
+    "timeStamp": 1633366767926
+  },
+  "-MlBEos4hBKqMcZXpa8i": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "newsTitle": "",
+    "reporterName": "एडमिन",
+    "shortInfo": "11:15 तक मेन सप्लाई प्राप्त होने की सम्भावना है \nलेकिन पक्का नही है आशा है",
+    "timeStamp": 1633366788214
+  },
+  "-MlBLkpZ6K32_BHORg5p": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "newsTitle": "",
+    "reporterName": "एडमिन",
+    "shortInfo": "सप्लाई आने का कोई निश्चित समय नही है जब सप्लाई प्राप्त होगी सभी फ़ीडर की सप्लाई चालू की जाएगी",
+    "timeStamp": 1633368606595
+  },
+  "-MlBhyZV5JH-AUokKzEj": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/G2rt2xF/IMG-20211005-003317.jpg",
+    "isAdmin": true,
+    "likeCounter": 9,
+    "newsTitle": "मौसम अपडेट ⛈️",
+    "reporterName": "एडमिन",
+    "shortInfo": "रात 12 बजकर 31 मिनट पर अचानक शुरू हुई  हल्की बारिश",
+    "timeStamp": 1633374644577
+  },
+  "-MlEcmFprQPtQz75XdCo": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/SNBpxHS/IMG-20210930-113244.jpg",
+    "isAdmin": true,
+    "likeCounter": 1,
+    "newsTitle": "मौसम 🌅",
+    "reporterName": "एडमिन",
+    "shortInfo": "दूध जैसे सफेद बादलों से बढ़ी गाव की सुंदरता ।",
+    "timeStamp": 1633423661881
+  },
+  "-MlFH8FQWmGwFUmkHyGd": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 1,
+    "newsTitle": "न्यूज़ ",
+    "reporterName": "सूरज पाठक",
+    "shortInfo": "प्रयागराज : \nबाघंबरी मठ के महंत बने बलबीर गिरि, चादर विधि की रस्म संपन्न",
+    "timeStamp": 1633434505203
+  },
+  "-MlFJQeFcSToUx3zVOIQ": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 22,
+    "newsTitle": "मौसम ",
+    "reporterName": "सूरज पाठक",
+    "shortInfo": "चक्रवाती तूफान के कारण अगले 48 घंटो में उत्तर प्रदेश व बिहार के कई इलाकों में भारी बारिश की संभावना",
+    "timeStamp": 1633435104585
+  },
+  "-MlFXIwHi2nSHSPp_EWq": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 14,
+    "newsTitle": "बिजली अपडेट 💥",
+    "reporterName": "एडमिन",
+    "shortInfo": "Rosting 18:10 to 21:10",
+    "timeStamp": 1633438742148
+  },
+  "-MlFXqLvWKmJcLppvBSf": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 1,
+    "newsTitle": "बिजली का अपडेट",
+    "reporterName": "एडमिन",
+    "shortInfo": "रात 9 बजकर 10 मिनट के बाद बिजली आएगी",
+    "timeStamp": 1633438882945
+  },
+  "-MlGAMLGxMH6lPzsbv_2": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 2,
+    "newsTitle": "लाइट अपडेट💥",
+    "reporterName": "एडमिन",
+    "shortInfo": "21.40 बजे मेन सप्लाई प्राप्त होगी",
+    "timeStamp": "1633435104585"
+  },
+  "-MlGAhb1-XMYA1xnBBzA": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 10,
+    "newsTitle": "लाइट अपडेट ⚡",
+    "reporterName": "एडमिन",
+    "shortInfo": "9:50 तक मेन सप्लाई प्राप्त होने की सम्भावना है",
+    "timeStamp": "1633435104585"
+  },
+  "-MlGHO2mDycmer9Iqniv": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 14,
+    "newsTitle": "लाइट⚡",
+    "reporterName": "एडमिन",
+    "shortInfo": "Manoj Dubey:\nमेन सप्लाई प्राप्त हो चुकी\n\nसभी फीडर नार्मल किये गये",
+    "timeStamp": "1633435104585"
+  },
+  "-MlKUOq-lpLovcEl4XUe": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 27,
+    "newsTitle": "दुकानों की संख्या 🏙️🏣",
+    "reporterName": "एडमिन",
+    "shortInfo": "दुकानों /सर्विस की संख्या 122 हुई ।🤞",
+    "timeStamp": "1633435104585"
+  },
+  "-MlLKpCckFIPQ7yCq0Kx": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 134,
+    "newsTitle": "न्यूज़ ",
+    "reporterName": "सूरज पाठक",
+    "shortInfo": "साइबर सेल ने पकड़ा बड़ा मामला\nअयोध्या।\n 11 लाख 25 हज़ार रुपये निकालने वाले अभियुक्त को किया गिरफ्तार। मोबाइल पर गूगल पे अकाउंट बनाकर 11 लाख 25 हज़ार अपने अकाउंट में किया ट्रांसफर। पुलिस ने 50 हज़ार रुपये नगद किया बरामद। 8 लाख रुपये का खरीदा हुआ सामान किया बरामद। 70 हज़ार रुपये अकाउंट में मौजूद किया सीज। थाना पूराकलंदर के दौलतपुर गांव का रहने वाला है अभियुक्त दुर्गेश।",
+    "timeStamp": 1633435104585
+  },
+  "-MlNxOOf8IOR__feP-PH": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 31,
+    "newsTitle": "नवरात्र",
+    "reporterName": "एडमिन",
+    "shortInfo": "आप सभी ग्राम वासियों को नवरात्रि की बहुत-बहुत शुभकामनाएं दुर्गे मां आपको सदैव सुखी और संपन्न रखें धन्यवाद",
+    "timeStamp": 1633580060985
+  },
+  "-MlOzfTkg3qMVTk4heV5": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 27,
+    "newsTitle": "नवरात्र का शुभारंभ",
+    "reporterName": "एडमिन",
+    "shortInfo": "आज नवरात्रि का शुभारंभ हुआ",
+    "timeStamp": 1633597436470
+  },
+  "-MlPSgdoZPhrhXoQnYk7": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 39,
+    "newsTitle": "दुर्गा पूजा की तैयारी",
+    "reporterName": "एडमिन",
+    "shortInfo": "चरावां गांव में दुर्गा पूजा की तैयारी जोरों शोरों से शुरु हो गई है",
+    "timeStamp": 1633605305268
+  },
+  "-MlQcC1-fuGVeFvrfF9X": {
+    "detailedInfo": "",
+    "isAdmin": true,
+    "likeCounter": 17,
+    "newsTitle": "🌈दुकानों और सर्विस की संख्या",
+    "reporterName": "एडमिन",
+    "shortInfo": "⭐दुकानों और सर्विस की संख्या 1️⃣3️⃣0️⃣ से भी ज्यादा हुई ।\n सभी का बहुत-बहुत धन्यवाद ⭐\ncharawan.in",
+    "timeStamp": 1633624836820
+  },
+  "-MlTWZZnOBUZ9Khc1G0O": {
+    "detailedInfo": "",
+    "likeCounter": 11,
+    "newsTitle": "न्यूज़",
+    "reporterName": "सूरज पाठक",
+    "shortInfo": "लखीमपुर खीरी हिंसा:\n *आरएसएस से जुड़े किसान संघ की मांग- गृह राज्यमंत्री अजय मिश्रा की भूमिका की हो जांच*",
+    "timeStamp": 1633673431452
+  },
+  "-MlTuAu1lZz9WSOQRpod": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/f4jQvFQ/IMG-20211008-132629.jpg",
+    "likeCounter": 3,
+    "newsTitle": "Website update",
+    "reporterName": "एडमिन",
+    "shortInfo": "अब आप अपनी दुकान और अपनी सर्विस की प्रोफाइल फोटो भी लगा सकते हैं साथ में ही आपको फेसबुक और व्हाट्सएप पर शेयर करने का भी ऑप्शन मिल रहा है आप इन दोनों बटन पर क्लिक करके आसानी से किसी भी दुकान है किसी भी सर्विस के डिटेल्स को किसी के पास भेज सकते हैं धन्यवाद",
+    "timeStamp": 1633679882345
+  },
+  "-MlUWqiOtLKZbQv7FK3i": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/F3TpFnT/IMG-20211008-145929.jpg",
+    "likeCounter": 69,
+    "newsTitle": "दुर्गा पूजा की तैयारी",
+    "reporterName": "एडमिन",
+    "shortInfo": "पंडाल सजना शुरू, दुर्गा पूजा की तैयारी में गाँव चरावां",
+    "timeStamp": 1633690281320
+  },
+  "-MlZuHi1kpWI9Pt77fGP": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/NZJp9ZT/IMG-20211009-172014.jpg",
+    "likeCounter": 30,
+    "newsTitle": "चरावां रामपुर रोड पर फंसी ट्रक",
+    "reporterName": "एडमिन",
+    "shortInfo": "चरावां रामपुर भगन रोड पर ट्रक फंसने से बड़े वाहनों का आवागमन ठप\nनए रोड के निर्माण के लिए गिट्टी से भरी थी पूरी ट्रक",
+    "timeStamp": 1633780572264
+  },
+  "-MlcznxKvb1pjkvxrcqq": {
+    "detailedInfo": "",
+    "likeCounter": 9,
+    "newsTitle": "न्यूज़",
+    "reporterName": "सूरज पाठक",
+    "shortInfo": "लखनऊ - मजिस्ट्रेट ने आशीष मिश्रा उर्फ मोनू को 14 दिन के लिए ज्यूडिशियल कस्टडी में जेल भेजा। स्पेशल रिमांड मजिस्ट्रेट दीक्षा भारती ने जेल भेजने का आदेश दिया। आशीष से पूछताछ के लिए पुलिस ने कस्टडी रिमांड की अर्जी दी। कस्टडी रिमांड की अर्जी पर सोमवार को होगी सुनवाई।",
+    "timeStamp": 1633849129960
+  },
+  "-MldW1SbPNq1J7KuFG4C": {
+    "detailedInfo": "",
+    "likeCounter": 9,
+    "newsTitle": "न्यूज़",
+    "reporterName": "सूरज पाठक",
+    "shortInfo": "*उत्तर प्रदेश में भी गहराया बिजली संकट, एनटीपीसी की दूसरी इकाई भी बंद*",
+    "timeStamp": 1633857840088
+  },
+  "-MljIuuVTTx-O5gHUHPj": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/FnyNk1c/IMG-20211011-175316.jpg",
+    "isAdmin": true,
+    "likeCounter": 6,
+    "newsTitle": "",
+    "reporterName": "एडमिन",
+    "shortInfo": "चरावां में मूर्ति पूजा का शुभारम्भ",
+    "timeStamp": 1633955064241
+  },
+  "-MloMC-neK1-t23BtAnw": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/GQLkTRF/IMG-20211012-172535.jpg",
+    "likeCounter": 6,
+    "newsTitle": "दुकानों की अपडेट",
+    "reporterName": "एडमिन",
+    "shortInfo": "चरावां और आस पास की दुकानों / सर्विस की संख्या 150 से भी पार हुई ।\n",
+    "timeStamp": 1634039810939
+  },
+  "-Mlu_RgeoddWHDcwwCsw": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/W05CLGd/IMG-20211012-235110.jpg",
+    "likeCounter": 104,
+    "newsTitle": "पूर्व विधायक अभय सिंह",
+    "reporterName": "एडमिन",
+    "shortInfo": "श्री नव दुर्गा पूजा समिति में पूर्व विधायक अभय सिंह आकर दर्शन किए",
+    "timeStamp": 1634144208051
+  },
+  "-Mm3sT3VtE1SW8vmjgzL": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/PrJTDXh/IMG-20211015-171339.jpg",
+    "likeCounter": 6,
+    "newsTitle": "माता जी का विसर्जन हुआ",
+    "reporterName": "एडमिन",
+    "shortInfo": "माता जी की मूर्ति का शांतिपूर्वक विसर्जन किया गया",
+    "timeStamp": 1634316966214
+  },
+  "-MmD2QHMmlAakt9TW-V7": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/kDr88rg/Remini20211017023807322.jpg",
+    "likeCounter": 32,
+    "newsTitle": "",
+    "reporterName": "एडमिन",
+    "shortInfo": "विसर्जन के समय श्री दुर्गा आरती के कुछ दृश्य",
+    "timeStamp": 1634470828897
+  },
+  "-Mn-x_3uA7W8WYUqfkaH": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/sjXqDB4/IMG-20211027-142528.jpg",
+    "likeCounter": 18,
+    "newsTitle": "छात्रवृत्ति आवेदन की तिथि बढ़ी",
+    "reporterName": "एडमिन",
+    "shortInfo": "छात्रवृत्ति आवेदन की तिथि 30 नवंबर तक बढ़ी",
+    "timeStamp": 1635324939201
+  },
+  "-MnfyFJdj3fg_udowPD4": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/0ZYJ5cd/images-1.jpg",
+    "likeCounter": 110,
+    "newsTitle": "शुभ दीपावली",
+    "reporterName": "एडमिन",
+    "shortInfo": " समस्त ग्राम वासियों की तरफ से आपको दीपावली की हार्दिक शुभकामनाएं",
+    "timeStamp": 1636046536817
+  },
+  "-MyQ8__9k149ZhgJGiIa": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/XVCVWZ6/images-14.jpg",
+    "likeCounter": 62,
+    "newsTitle": "होली",
+    "reporterName": "एडमिन",
+    "shortInfo": "होली की ढेरों शुभकामनाएं",
+    "timeStamp": 1647575453953
+  },
+  "-NCBn4zB5Qg4ghke6zFV": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/hycpyQ2/nava.jpg",
+    "likeCounter": 24,
+    "newsTitle": " नवरात्री की ढेरों शुभकामनाएं",
+    "reporterName": "एडमिन",
+    "shortInfo": "चरावां गांव की ओर से आप सभी को नवरात्री की ढेरों शुभकामनाएं",
+    "timeStamp": 1663440805084
+  },
+  "-OqHTsvTiX-az4nbzN-6": {
+    "detailedInfo": "",
+    "img1": "https://i.ibb.co/pjS3T5Yt/7116b8f3122f.jpg",
+    "img2": "",
+    "isAdmin": true,
+    "likeCounter": 8,
+    "newsTitle": "Happy Baisakhi",
+    "reporterName": "आशु",
+    "shortInfo": "यह हर्षोल्लास पर्व समृद्धि, सफलता और अच्छे स्वास्थ्य का आशीर्वाद लेकर आए।",
+    "timeStamp": 1776279062694
+  },
+  "-OqHYUZjqwIDauG532Cu": {
+    "detailedInfo": "चरावा में भाइयों के साथ मिलकर बड़े उत्साह और सम्मान के साथ जयंती मनाई गई और उन्हें श्रद्धापूर्वक याद किया गया।\n— संदीप तिवारी Ji",
+    "img1": "https://i.ibb.co/spb0CXFN/ee5ec7d9fd1f.jpg",
+    "img2": "https://i.ibb.co/qLdvScpv/bcf39c69d084.png",
+    "isAdmin": true,
+    "likeCounter": 8,
+    "newsTitle": "भीमराव अंबेडकर जी की जयंती.. | |",
+    "reporterName": "आशु",
+    "shortInfo": "जय भीम!\nडॉ. भीमराव अंबेडकर जी की जयंती पर आप सभी को हार्दिक शुभकामनाएं।",
+    "timeStamp": 1776280269131
+  },
+  "-OqRRv8O55kJthaAEGoP": {
+    "detailedInfo": "",
+    "img1": "",
+    "img2": "https://i.ibb.co/7PhFj2y/cb046bd7464d.jpg",
+    "isAdmin": true,
+    "likeCounter": 50,
+    "newsTitle": "अम्बेडकर जी जयंती",
+    "reporterName": "Charawan Reporter",
+    "shortInfo": "आप सभी क्षेत्रवासियों को सूचित करते हुए अत्यंत हर्ष हो रहा है कि विश्व रत्न, संविधान निर्माता बाबा साहेब डॉ. भीमराव अंबेडकर जी की 135वी ं जयंती के शुभ अवसर पर एक भव्य समारोह का आयोजन किया जा रहा है।\n\n• स्थानः चरावा ँ चौराहा (निकट सोसाइटी)\n\nदिनांक: 18 अप्रैल\n\n17\n\n• समयः दोपहर 3:00 बजे से (शुभारंभ)\n\nआप सभी सादर आमंत्रित हैं। आइए, बाबा साहेब के विचारों को जन-जन तक पहुँचान े के इस संकल्प मे ं सहभागी बनें।",
+    "timeStamp": 1776446319984
+  },
+  "-Oq_HWuNCyJxaHG-PrBA": {
+    "detailedInfo": "परशुराम जयंती हिंदू धर्म मे ं भगवान विष्णु के छठे अवतार भगवान परशुराम के जन्मोत्सव के रूप मे ं मनाई जाती है। यह पर्व वैशाख मास के शुक्ल पक्ष की तृतीया तिथि को आता है, जिसे अक्षय तृतीया भी कहा जाता है।",
+    "img1": "https://i.ibb.co/kg0VjLC3/2cdf7330c1dd.jpg",
+    "img2": "",
+    "isAdmin": true,
+    "likeCounter": 10,
+    "newsTitle": "भगवान श्री परशुराम जयंती",
+    "reporterName": "आशु",
+    "shortInfo": "परशुराम जयंती की ढेरों शुभकामनायें ।",
+    "timeStamp": 1776594590110
+  }
+}
+
+
+========================================================================
+LIVE: Charawan shops (Firebase)
+========================================================================
+
+{
+  "-MkWsixtWXs8BQcslLPN": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkWsixtWXs8BQcslLPN",
+    "mobileNumber": "tel:+919696865230",
+    "mobileNumber2": "tel:+919838539922",
+    "openTime": "08:00",
+    "owenerName": "अजीत कुमार तिवारी",
+    "ownerPhoto": "https://i.ibb.co/2yBzNf2/IMG-20211008-132346.jpg",
+    "shopAddress": "श्री हरि दुर्गा मंदिर के बगल",
+    "shopInfo": " (फुटकर एवं थोक विक्रेता )सभी प्रकार के इंजन स्पेयर पार्ट जनरेटर के स्पेयर पार्ट टुब्यल की बोरिंग नल की बोरिंग प्लाइ के स्टाइलस दरवाजे फाइवर् के दरवाजे लोहे के दरवाजे बिजली की फीटिंग के सामान टंकी की फिटिग के सामान व मिस्त्री  टाइल्स फर्श व दीवाल की खेत की समर सेबल् पंप घर की समर सेबल् पंप चारा काटने की मोटर टिल्लू पंप पेंट 2hp मे किलोशकर बरुना क्रामटंन जेके लुबि पंप प्रकाश पाइप किसान पाइप अपोलो पाइप आदि का विशाल संग्रह् ",
+    "shopName": "तिवारी हार्डवेयर एंड मशीनरी स्टोर्स",
+    "shopPhotos": "",
+    "shopType": [
+      "machineryStore"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkWzgsCh8qLP-mX9-5V": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkWzgsCh8qLP-mX9-5V",
+    "mobileNumber": "tel:+917239096065",
+    "mobileNumber2": "tel:+919616013139",
+    "openTime": "16:00",
+    "owenerName": "सुखराज यादव",
+    "ownerPhoto": "https://i.ibb.co/bRW8mJv/images-74.jpg",
+    "shopAddress": "मेन चौराहा",
+    "shopInfo": "चाउमीन बर्गर टिकिया चाट उपलब्ध ",
+    "shopName": "यादव चाउमीन एंड बर्गर कार्नर",
+    "shopPhotos": "",
+    "shopType": [
+      "fastfood"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkX09N_o-1GEFvUhXDz": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkX09N_o-1GEFvUhXDz",
+    "mobileNumber": "tel:+919721218468",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "राम तेज निषाद",
+    "ownerPhoto": "https://i.ibb.co/ynXGJt5/IMG-20211008-105443.jpg",
+    "shopAddress": "सोनू किराना स्टोर के बगल",
+    "shopInfo": "सिलाई में 20 वर्षों से ज्यादा का अनुभव ",
+    "shopName": "बॉम्बे टेलर्स",
+    "shopPhotos": "",
+    "shopType": [
+      "tailor"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkXEYIg-HCWSla7UR88": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-MkXEYIg-HCWSla7UR88",
+    "mobileNumber": "tel:+919984915000",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "संदीप तिवारी",
+    "ownerPhoto": "https://i.ibb.co/Wgg01DQ/photo.jpg",
+    "shopAddress": "ग्रामीण बैंक के बगल",
+    "shopInfo": "(PERFECT)परफेक्ट सीमेंट के थोक विक्रेता ,बेस्ट बिल्डिंग मटेरियल उपलब्ध ",
+    "shopName": "श्री लक्ष्मी नारायण ट्रेडर्स",
+    "shopPhotos": "",
+    "shopType": [
+      "buildingMaterials"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkXFC5OyAKdmr8FWpHe": {
+    "closeTime": "08:00",
+    "closedOn": [
+      "रविवार"
+    ],
+    "inCharawan": "charawan",
+    "key": "-MkXFC5OyAKdmr8FWpHe",
+    "mobileNumber": "tel:+919918112648",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "अरुण सिंह (पिंकू सिंह)",
+    "ownerPhoto": "https://i.ibb.co/JpVHPKg/images-75.jpg",
+    "shopAddress": "चौराहा",
+    "shopInfo": "मोबाइल एक्सेस्सरीज़ और ऑनलाइन वर्क जैसे फोटो कॉपी आदि के लिए सम्पर्क करें इलेक्ट्रिक सामन भी उपलब्ध हैं ",
+    "shopName": "अरुण कम्युनिकेशन",
+    "shopPhotos": "",
+    "shopType": [
+      "mobileStore",
+      "mobileRepair",
+      "photoStudio",
+      "prinitng",
+      "electronic"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkXHlBD0W8358OrHGrn": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkXHlBD0W8358OrHGrn",
+    "mobileNumber": "tel:+919670509293",
+    "mobileNumber2": "tel:+918933996252",
+    "openTime": "10:00",
+    "owenerName": "शिव कुमार तिवारी",
+    "ownerPhoto": "https://i.ibb.co/DgpZmcK/tea-leaves-1614772016-5741802.jpg",
+    "shopAddress": "किशोर जन सेवा केंद्र के बगल",
+    "shopInfo": "चायपत्ती सेलर (फुटकर एवं थोक विक्रेता )",
+    "shopName": "शिवम टी सेंटर",
+    "shopPhotos": "",
+    "shopType": [
+      "others"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkXIGyI6ERXO-hg31A8": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-MkXIGyI6ERXO-hg31A8",
+    "mobileNumber": "tel:+919838368699",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "रणजीत तिवारी",
+    "ownerPhoto": "https://i.ibb.co/pfHY5Nq/IMG-20211008-191833.jpg",
+    "shopAddress": "",
+    "shopInfo": "गेहूं की पिसाई और सरसो की पेराई होती है मोबिल आयल भी उपलब्ध है ",
+    "shopName": "आटा चक्की",
+    "shopPhotos": "",
+    "shopType": [
+      "chakki"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkXJRAqoZSo6OVTTw2d": {
+    "closeTime": "09:00",
+    "inCharawan": "charawan",
+    "key": "-MkXJRAqoZSo6OVTTw2d",
+    "mobileNumber": "tel:+916386172574",
+    "mobileNumber2": "tel:+91",
+    "openTime": "06:00",
+    "owenerName": "यदुनाथ तिवारी",
+    "ownerPhoto": "https://i.ibb.co/3cKQ6FT/IMG-20211008-020527.jpg",
+    "shopAddress": "चौराहा",
+    "shopInfo": "चरावां की सबसे पुरानी किराना दुकानों  में से एक, स्टेशनरी सामान भी उपलब्ध ",
+    "shopName": "सोनू किराना स्टोर",
+    "shopPhotos": "",
+    "shopType": [
+      "generalStore"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkXKGtZMcrgUuXAybQ3": {
+    "closeTime": "09:00",
+    "inCharawan": "charawan",
+    "key": "-MkXKGtZMcrgUuXAybQ3",
+    "mobileNumber": "tel:+918601177477",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "नीरज गुप्ता",
+    "ownerPhoto": "https://i.ibb.co/sqdL6qb/IMG-20211008-091519.jpg",
+    "shopAddress": "",
+    "shopInfo": "किराना एवं जनरल स्टोर ",
+    "shopName": "नीरज किराना स्टोर",
+    "shopPhotos": "",
+    "shopType": [
+      "generalStore"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkXKXT5sV2XdD-ac22q": {
+    "closeTime": "09:00",
+    "inCharawan": "charawan",
+    "key": "-MkXKXT5sV2XdD-ac22q",
+    "mobileNumber": "tel:+919984118891",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "अनूप तिवारी",
+    "ownerPhoto": "https://i.ibb.co/CzpDNTZ/images-16.jpg",
+    "shopAddress": "",
+    "shopInfo": "घर के सभी जनरल सामान उपलब्ध चौराहे की उभरती दुकानों में से एक ",
+    "shopName": "अनूप जनरल स्टोर",
+    "shopPhotos": "",
+    "shopType": [
+      "generalStore"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkXKtaP2rFBwtC2OzoS": {
+    "closeTime": "09:00",
+    "inCharawan": "charawan",
+    "key": "-MkXKtaP2rFBwtC2OzoS",
+    "mobileNumber": "tel:+919792064368",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "राजेन्द्र जायसवाल",
+    "ownerPhoto": "https://i.ibb.co/0p0Nr6L/images-76.jpg",
+    "shopAddress": "चौराहा",
+    "shopInfo": "चाय समोसा मिठाई उपलब्ध ",
+    "shopName": "जायसवाल स्वीट हाउस ",
+    "shopPhotos": "",
+    "shopType": [
+      "fastfood",
+      "hotel",
+      "coldDrink"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkXLVkgcux7-q9ZiP7a": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-MkXLVkgcux7-q9ZiP7a",
+    "mobileNumber": "tel:+919918822979",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "किशोर विश्वास",
+    "ownerPhoto": "https://i.ibb.co/cNMGxs7/IMG-20211008-020256.jpg",
+    "shopAddress": "वशिष्ठ कान्वेंट स्कूल के बगल",
+    "shopInfo": "सरकारी प्रमाण पत्र आय,जाति, निवास ,जन्म , मृत्यु तथा किसी भी ऑनलाइन सम्बन्धी कामों के लिए सम्पर्क करें ",
+    "shopName": "किशोर जन सेवा केंद्र",
+    "shopPhotos": "",
+    "shopType": [
+      "prinitng",
+      "janSewaKendra"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkXMXeiTmjRXWZcQS3O": {
+    "closeTime": "21:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkXMXeiTmjRXWZcQS3O",
+    "mobileNumber": "tel:+916393018441",
+    "mobileNumber2": "tel:+91",
+    "openTime": "06:00",
+    "owenerName": "लवकुश पाड़े",
+    "ownerPhoto": "https://i.ibb.co/cN2mTWZ/images-77.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "लवकुश डी जे एंड लाइट हाउस",
+    "shopPhotos": "",
+    "shopType": [
+      "lightHouse",
+      "soundServie",
+      "dj",
+      "decoration"
+    ],
+    "villageName": "बराव"
+  },
+  "-MkY5-tIzWj-J2gFLaYI": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkY5-tIzWj-J2gFLaYI",
+    "mobileNumber": "tel:+916387307334",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "बालकराम",
+    "ownerPhoto": "https://i.ibb.co/6nZGktk/images-78.jpg",
+    "shopAddress": "पलटूवीर",
+    "shopInfo": "समोसा चना चाय ( स्वादिष्ट )",
+    "shopName": "बालकराम समोसा",
+    "shopPhotos": "",
+    "shopType": [
+      "hotel",
+      "fastfood"
+    ],
+    "villageName": "चमनगंज"
+  },
+  "-MkY5uxWQqP4TefY34q4": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkY5uxWQqP4TefY34q4",
+    "mobileNumber": "tel:+919838368660",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "पवन तिवारी",
+    "ownerPhoto": "https://i.ibb.co/TkxwhK6/images-63.jpg",
+    "shopAddress": "जनसेवा केंद्र के बगल",
+    "shopInfo": "शादी विवाह पार्टी के लिए टेंट आदि के लिए सम्पर्क करें ",
+    "shopName": "जनता टेंट हाउस",
+    "shopPhotos": "",
+    "shopType": [
+      "tentHouse"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkY6dLla5BuIaZCTy5q": {
+    "closeTime": "08:00",
+    "closedOn": [
+      "रविवार"
+    ],
+    "inCharawan": "outOfCharawan",
+    "key": "-MkY6dLla5BuIaZCTy5q",
+    "mobileNumber": "tel:+917379787333",
+    "mobileNumber2": "tel:+918795143248",
+    "openTime": "06:00",
+    "owenerName": "राज कुमार शर्मा ",
+    "ownerPhoto": "https://i.ibb.co/k8GdJc7/download-2.jpg",
+    "shopAddress": "कोदैला इंटर कॉलेज के सामने",
+    "shopInfo": "जलेबी, ब्रेड पकोड़ा, चना समोसा, चाय ",
+    "shopName": "शर्मा जलेबी ",
+    "shopPhotos": "",
+    "shopType": [
+      "hotel",
+      "fastfood",
+      "coldDrink"
+    ],
+    "villageName": "कोदैला"
+  },
+  "-MkYHMsTvmjk7eu1Bx5K": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkYHMsTvmjk7eu1Bx5K",
+    "mobileNumber": "tel:+919838350627",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "एच. एन यादव",
+    "ownerPhoto": "https://i.ibb.co/NynWyQ3/images-79.jpg",
+    "shopAddress": "बॉम्बे टेलर्स के बगल",
+    "shopInfo": "कार्ड प्रिंटिंग एवं विडिओग्राफी के लिए सम्पर्क करें ",
+    "shopName": "राधा स्टूडियो & प्रिंटिंग प्रेस",
+    "shopPhotos": "",
+    "shopType": [
+      "prinitng",
+      "photoStudio",
+      "cycleStore"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkYlWTZZLXS8vu94AJe": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkYlWTZZLXS8vu94AJe",
+    "mobileNumber": "tel:+919565505033",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "विमल दुबे",
+    "ownerPhoto": "https://i.ibb.co/PF1pdRy/images-81.jpg",
+    "shopAddress": "रामपुर भगन रोड, जन सेवा केंद्र के पास",
+    "shopInfo": "इलेक्ट्रिक उपकरण जैसे टीवी आदि को रिपेयर करते हैं  ",
+    "shopName": "विमल इलेक्ट्रॉनिक्स",
+    "shopPhotos": "",
+    "shopType": [
+      "electronic",
+      "homeElectronic"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mk_MZAK8ncd2tGzauwT": {
+    "closeTime": "09:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mk_MZAK8ncd2tGzauwT",
+    "mobileNumber": "tel:+917891441318",
+    "mobileNumber2": "tel:+918289020994",
+    "openTime": "07:00",
+    "owenerName": "कृष",
+    "ownerPhoto": "https://i.ibb.co/bgyp2mx/images-80.jpg",
+    "shopAddress": "राजकीय आयुर्वेदिक चिकित्सालय के सामने बीकापुर",
+    "shopInfo": "छोला भटूरा , फ्राई राइस , बाटी चोखा , बर्गर ,कोल्डड्रिंक, चाउमीन, पनीर चिल्ली",
+    "shopName": "कृष फ़ास्ट फ़ूड कार्नर",
+    "shopPhotos": "",
+    "shopType": [
+      "coldDrink",
+      "fastfood",
+      "hotel"
+    ],
+    "villageName": "बीकापुर"
+  },
+  "-MkbETDXsiMTC7qeSXWY": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkbETDXsiMTC7qeSXWY",
+    "mobileNumber": "tel:+917460820918",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "ओम प्रकाश तिवारी",
+    "ownerPhoto": "https://i.ibb.co/Wy51wYp/images-82.jpg",
+    "shopAddress": "चौराहा",
+    "shopInfo": "शादी पार्टी में डी जे लाइट के लिए बुकिंग ",
+    "shopName": "श्री लक्ष्मीनारायण साउंड & लाइट हाउस ",
+    "shopPhotos": "",
+    "shopType": [
+      "lightHouse",
+      "soundServie",
+      "dj"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkeoukhsd-u7c9FzJFD": {
+    "closeTime": "06:00",
+    "closedOn": [
+      "रविवार"
+    ],
+    "inCharawan": "charawan",
+    "key": "-Mkeoukhsd-u7c9FzJFD",
+    "mobileNumber": "tel:+919919424026",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "अवधेश वर्मा (संचालक)",
+    "ownerPhoto": "https://i.ibb.co/3CDjTf2/IMG-20211008-191955.jpg",
+    "shopAddress": "अवधेश गुरुजी के बगल",
+    "shopInfo": "खाद और कीटनाशी सरकारी दाम पर उपलब्ध धान व् गेंहूं का क्रय होता है ",
+    "shopName": "सरकारी गोदाम",
+    "shopPhotos": "",
+    "shopType": [
+      "other",
+      "beej",
+      "charawanOffice"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mker4aZUcvHM6CZ_iUI": {
+    "closeTime": "10:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mker4aZUcvHM6CZ_iUI",
+    "mobileNumber": "tel:+919919981426",
+    "mobileNumber2": "tel:+91",
+    "openTime": "06:00",
+    "owenerName": "मुंशी",
+    "ownerPhoto": "https://i.ibb.co/ck0Zsdz/IMG-20211008-092458.jpg",
+    "shopAddress": "",
+    "shopInfo": "खेत जोतने के लिए व् ट्रॉली आदि के लिए सम्पर्क करें ",
+    "shopName": "मुंशी ट्रैक्टर ट्रॉली",
+    "shopPhotos": "",
+    "shopType": [
+      "tractors"
+    ],
+    "villageName": "कोदैला"
+  },
+  "-Mkew4aBWR8CB_m1iOio": {
+    "closeTime": "04:30",
+    "closedOn": "",
+    "inCharawan": "charawan",
+    "key": "-Mkew4aBWR8CB_m1iOio",
+    "mobileNumber": "tel:+919792182739",
+    "mobileNumber2": "",
+    "openTime": "10:00",
+    "owenerName": "बलवन्त सिंह",
+    "ownerPhoto": "https://i.ibb.co/LvPm0bD/images-83.jpg",
+    "shopAddress": "",
+    "shopInfo": "बस रोज़ जाने बाजार से होते हुए वाया चरावां फैज़ाबाद जाती है १० बजे चरावां से गुजरती है ...",
+    "shopName": "10 बजे बस ...",
+    "shopPhotos": "",
+    "shopType": [
+      "busService"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkewgjBkwCAt2ZNxODt": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkewgjBkwCAt2ZNxODt",
+    "mobileNumber": "tel:+919118958916",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/hHG4N7w/images-84.jpg",
+    "shopAddress": "",
+    "shopInfo": "बुकिंग आदि के लिए उपलब्ध",
+    "shopName": "थ्री व्हीलर टेम्पो",
+    "shopPhotos": "",
+    "shopType": [
+      "taxi"
+    ],
+    "villageName": "गैनी"
+  },
+  "-MkexBTi3rTNDFnGtPKK": {
+    "closeTime": "06:00",
+    "closedOn": [
+      "बुधवार"
+    ],
+    "inCharawan": "charawan",
+    "key": "-MkexBTi3rTNDFnGtPKK",
+    "mobileNumber": "tel:+919140863825",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "उपाध्याय",
+    "ownerPhoto": "https://i.ibb.co/3sqLdyJ/IMG-20211008-091811.jpg",
+    "shopAddress": "श्रीनाथ मिश्रा के घर के बगल",
+    "shopInfo": "",
+    "shopName": "डॉक्टर उपाध्याय ",
+    "shopPhotos": "",
+    "shopType": [
+      "doctors"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkexp-VFjhoogd9q5jc": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-Mkexp-VFjhoogd9q5jc",
+    "mobileNumber": "tel:+916394293446",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "डॉक्टर शर्मा",
+    "ownerPhoto": "https://i.ibb.co/3sqLdyJ/IMG-20211008-091811.jpg",
+    "shopAddress": "डिग्री कॉलेज के पास",
+    "shopInfo": "",
+    "shopName": "डॉक्टर शर्मा",
+    "shopPhotos": "",
+    "shopType": [
+      "doctors"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkey_us1Vvhc6cOHzRz": {
+    "closeTime": "06:00",
+    "inCharawan": "charawan",
+    "key": "-Mkey_us1Vvhc6cOHzRz",
+    "mobileNumber": "tel:+918858695063",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "चमक",
+    "ownerPhoto": "https://i.ibb.co/d41SPY3/IMG-20211009-001930.jpg",
+    "shopAddress": "चौराहा",
+    "shopInfo": "चरावां से रोज़ लखनऊ जाती है ",
+    "shopName": "महादेव बस सर्विस (लखनऊ तक)",
+    "shopPhotos": "",
+    "shopType": [
+      "taxi",
+      "busService"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkeyzugIsB0JyxUOtL3": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkeyzugIsB0JyxUOtL3",
+    "mobileNumber": "tel:+919838187742",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "लाली",
+    "ownerPhoto": "https://i.ibb.co/WDpWLqc/images-85.jpg",
+    "shopAddress": "कृषक मोड़",
+    "shopInfo": "किसी भी प्रकार की सिलाई का वर्षो का अनुभव",
+    "shopName": "लाली टेलर्स",
+    "shopPhotos": "",
+    "shopType": [
+      "tailor"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-MkezGndZNqRQJ1Ple7p": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkezGndZNqRQJ1Ple7p",
+    "mobileNumber": "tel:+919792554885",
+    "mobileNumber2": "tel:+91",
+    "openTime": "06:00",
+    "owenerName": "सभाजीत",
+    "ownerPhoto": "https://i.ibb.co/kHLZ7NG/images-86.jpg",
+    "shopAddress": "",
+    "shopInfo": "शादी व् पार्टी में बुकिंग के लिए सम्पर्क करें ",
+    "shopName": "सभाजीत कैटर्स",
+    "shopPhotos": "",
+    "shopType": [
+      "cetters"
+    ],
+    "villageName": "कोदैला"
+  },
+  "-Mkf-3ywsHJcdq4RTx3p": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-Mkf-3ywsHJcdq4RTx3p",
+    "mobileNumber": "tel:+919794987576",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "राम प्रसाद",
+    "ownerPhoto": "https://i.ibb.co/k3Gff4t/images-87.jpg",
+    "shopAddress": "चौराहे से बीकापुर रोड पर 100 मीटर दाहिनी ओर",
+    "shopInfo": "प्रमाणपत्र बनवाने के लिए फॉर्म ऑनलाइन भरने के लिए बैंकिंग काम हेतु सम्पर्क करें स्टेशनरी सामान भी उपलब्ध है ",
+    "shopName": "इंडियन कंप्यूटर्स",
+    "shopPhotos": "",
+    "shopType": [
+      "janSewaKendra",
+      "bank",
+      "prinitng",
+      "photoStudio",
+      "stationery"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkf-oaweB-c9tgSdnhE": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "key": "-Mkf-oaweB-c9tgSdnhE",
+    "mobileNumber": "tel:+917800557410",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "पंडित नीरज शास्त्री",
+    "ownerPhoto": "https://i.ibb.co/YjSCNsY/images-69.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "पंडित नीरज",
+    "shopPhotos": "",
+    "shopType": [
+      "pandit"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkf0QXiiJWqp1VjBLoM": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkf0QXiiJWqp1VjBLoM",
+    "mobileNumber": "tel:+919795950258",
+    "mobileNumber2": "tel:+91",
+    "openTime": "06:00",
+    "owenerName": "सोनी",
+    "ownerPhoto": "https://i.ibb.co/XtCS3bJ/images-88.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "सुमित सुजल ज्वेलर्स",
+    "shopPhotos": "",
+    "shopType": [
+      "jeweller"
+    ],
+    "villageName": "किसनगंज"
+  },
+  "-Mkf0xHMi2MZmYJZbfFe": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkf0xHMi2MZmYJZbfFe",
+    "mobileNumber": "tel:+918932855012",
+    "mobileNumber2": "tel:+919506053103",
+    "openTime": "10:00",
+    "owenerName": "राजा",
+    "ownerPhoto": "https://i.ibb.co/PF1pdRy/images-81.jpg",
+    "shopAddress": "चरावां मोड़ पर",
+    "shopInfo": "",
+    "shopName": "राजा इलेक्ट्रॉनिक",
+    "shopPhotos": "",
+    "shopType": [
+      "electronic"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-Mkf1iYWSrnQcmz-ZL1D": {
+    "closeTime": "02:00",
+    "closedOn": [
+      "रविवार"
+    ],
+    "inCharawan": "charawan",
+    "key": "-Mkf1iYWSrnQcmz-ZL1D",
+    "mobileNumber": "tel:+919936145354",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "प्रधानाचार्य ( प्रवीण सिंह )",
+    "ownerPhoto": "https://i.ibb.co/tHF5DGD/images-89.jpg",
+    "shopAddress": "चौराहे से गैनी रोड पर",
+    "shopInfo": "",
+    "shopName": "प्राथमिक विद्यालय चरावां",
+    "shopPhotos": "",
+    "shopType": [
+      "school"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkf4BJB77tZ7G6fJmqY": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkf4BJB77tZ7G6fJmqY",
+    "mobileNumber": "tel:+919670940817",
+    "mobileNumber2": "tel:+91",
+    "openTime": "06:00",
+    "owenerName": "नही पता",
+    "ownerPhoto": "https://i.ibb.co/NL4hY63/images-90.jpg",
+    "shopAddress": "चरावां मोड़",
+    "shopInfo": "",
+    "shopName": "फूल माली सर्विस( रोज़ के लिए)",
+    "shopPhotos": "",
+    "shopType": [
+      "maali"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-Mkf5aSxMbz0bDm8_Ogr": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkf5aSxMbz0bDm8_Ogr",
+    "mobileNumber": "tel:+91198",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/0KsvqPD/images-2.png",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "वोडाफोन/एयरटेल/जिओ",
+    "shopPhotos": "",
+    "shopType": [
+      "customerCare"
+    ],
+    "villageName": ""
+  },
+  "-Mkf62MS2JbW3LytG7yN": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkf62MS2JbW3LytG7yN",
+    "mobileNumber": "tel:+9118002089898",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/0fMqYTy/images-4.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "फ्लिपकार्ट केअर",
+    "shopPhotos": "",
+    "shopType": [
+      "customerCare"
+    ],
+    "villageName": ""
+  },
+  "-Mkf7laUl6ZLr6Gq0Wij": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkf7laUl6ZLr6Gq0Wij",
+    "mobileNumber": "tel:+919501795017",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/hyYhTdz/images-1.png",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "Dis TV केअर",
+    "shopPhotos": "",
+    "shopType": [
+      "customerCare"
+    ],
+    "villageName": ""
+  },
+  "-MkfNU1gu1IrqayOwaP7": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkfNU1gu1IrqayOwaP7",
+    "mobileNumber": "tel:+919628615985",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "मंसाराम यादव",
+    "ownerPhoto": "https://i.ibb.co/rM5fv6M/images-91.jpg",
+    "shopAddress": "कृषक मोड़",
+    "shopInfo": "ताज़ा  पनीर  दूध समोसा मटर कोल्ड्रिंक इमिरती जलेबी ब्रेड पकोड़ा अवं ताज़ी मिठाईओं के बुकिंग हेतु सम्पर्क करें ",
+    "shopName": "यादव मिष्ठान भंडार (मंसाराम)",
+    "shopPhotos": "",
+    "shopType": [
+      "fastfood",
+      "coldDrink",
+      "hotel"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-MkfOGkf3_uRF8uEU07R": {
+    "closeTime": "07:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkfOGkf3_uRF8uEU07R",
+    "mobileNumber": "tel:+9199984415810",
+    "mobileNumber2": "tel:+918887882366",
+    "openTime": "10:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/SvdC574/images-92.jpg",
+    "shopAddress": "",
+    "shopInfo": "ताज़ा केक ,पेटीज, और बेकरी आइटम्स के लिए सम्पर्क करें , कोल्ड ड्रिंक्स भी उपलब्ध है ",
+    "shopName": "बाबा बेकरी",
+    "shopPhotos": "",
+    "shopType": [
+      "backery",
+      "coldDrink"
+    ],
+    "villageName": "रामपुर बाजार इंडिया वन ATM के सामने "
+  },
+  "-MkfU6Zld2Hs6Wrq_CP2": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkfU6Zld2Hs6Wrq_CP2",
+    "mobileNumber": "tel:+919984820527",
+    "mobileNumber2": "tel:+919161300100",
+    "openTime": "09:00",
+    "owenerName": "नीरज कसौधन",
+    "ownerPhoto": "https://i.ibb.co/s5jWLpL/images-73.jpg",
+    "shopAddress": "",
+    "shopInfo": "किसी भी प्रकार के गिफ्ट आइटम्स कॉस्मेटिक आइटम्स के लिए मात्र एक दुकान ",
+    "shopName": "रोहित गिफ्ट / जनरल स्टोर",
+    "shopPhotos": "",
+    "shopType": [
+      "cosmetic",
+      "gifts"
+    ],
+    "villageName": "रामपुर बाजार"
+  },
+  "-MkfUx94V8bT10gTCTnV": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkfUx94V8bT10gTCTnV",
+    "mobileNumber": "tel:+917800557410",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/YjSCNsY/images-69.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "पंडित संतोष मिश्रा",
+    "shopPhotos": "",
+    "shopType": [
+      "pandit"
+    ],
+    "villageName": "मिश्र का पूरा, बराव"
+  },
+  "-Mkf_QyKV1THXcP_3xLS": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkf_QyKV1THXcP_3xLS",
+    "mobileNumber": "tel:112",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/Qvjk4n6/images-93.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "Emergency 112",
+    "shopPhotos": "",
+    "shopType": [
+      "emergency"
+    ],
+    "villageName": ""
+  },
+  "-Mkf_fzhUzt19Q3sxIcy": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkf_fzhUzt19Q3sxIcy",
+    "mobileNumber": "tel:108",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/3m5m27g/images-72.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "एम्बुलेंस ( उत्तर प्रदेश)",
+    "shopPhotos": "",
+    "shopType": [
+      "emergency"
+    ],
+    "villageName": ""
+  },
+  "-Mkf_pe6E5XdU4J1dMIE": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkf_pe6E5XdU4J1dMIE",
+    "mobileNumber": "tel:1090",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/9Tym0QS/images-71.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "महिला इमरजेंसी हेल्पलाइन",
+    "shopPhotos": "",
+    "shopType": [
+      "emergency"
+    ],
+    "villageName": ""
+  },
+  "-MkfaxQS6UeWmkKvrrvu": {
+    "closeTime": "",
+    "inCharawan": "",
+    "key": "-MkfaxQS6UeWmkKvrrvu",
+    "mobileNumber": "tel:+915224448080",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/Cw9dnK5/images.png",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "एयरटेल TV DTH",
+    "shopPhotos": "",
+    "shopType": [
+      "customerCare"
+    ]
+  },
+  "-MkfgZE9zpygD1ONF8aH": {
+    "closeTime": "",
+    "inCharawan": "",
+    "key": "-MkfgZE9zpygD1ONF8aH",
+    "mobileNumber": "tel:100",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/M1Z0HfN/images-70.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "पुलिस 101",
+    "shopPhotos": "",
+    "shopType": [
+      "emergency"
+    ]
+  },
+  "-Mkfh-ixUMC47lV4TaRL": {
+    "closeTime": "",
+    "inCharawan": "",
+    "key": "-Mkfh-ixUMC47lV4TaRL",
+    "mobileNumber": "tel:102",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/3p0GTnJ/images-22.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "एम्बुलेंस नेशनल",
+    "shopPhotos": "",
+    "shopType": [
+      "emergency"
+    ]
+  },
+  "-MkfhFcOlQYp_V7JZLDe": {
+    "closeTime": "",
+    "inCharawan": "",
+    "key": "-MkfhFcOlQYp_V7JZLDe",
+    "mobileNumber": "tel:1551",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/fCW2vtS/IMG-20211008-141019.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "किसान हेल्प लाइन",
+    "shopPhotos": "",
+    "shopType": [
+      "customerCare"
+    ]
+  },
+  "-MkfhPXeq5cbj_syWJTM": {
+    "closeTime": "",
+    "inCharawan": "",
+    "key": "-MkfhPXeq5cbj_syWJTM",
+    "mobileNumber": "tel:139",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/0mQxYJ6/images-3.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "रेलवे इन्क्वारी",
+    "shopPhotos": "",
+    "shopType": [
+      "customerCare"
+    ]
+  },
+  "-Mkfog9dM7V3YDbm3TDe": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "key": "-Mkfog9dM7V3YDbm3TDe",
+    "mobileNumber": "tel:+919628771123",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "अमित मौर्या",
+    "ownerPhoto": "https://i.ibb.co/GFszyzp/IMG-20211008-192137.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "कोटेदार",
+    "shopPhotos": "",
+    "shopType": [
+      "charawanOffice"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkgElcLXQ07l_xw1I23": {
+    "closeTime": "09:00",
+    "inCharawan": "charawan",
+    "key": "-MkgElcLXQ07l_xw1I23",
+    "mobileNumber": "tel:+919140302077",
+    "mobileNumber2": "tel:+91",
+    "openTime": "06:00",
+    "owenerName": "उदयचंद",
+    "ownerPhoto": "https://i.ibb.co/Hp2tF3W/IMG-20211009-000553.jpg",
+    "shopAddress": "प्राथमिक विद्यालय के पीछे",
+    "shopInfo": "लकड़ी के दरवाजे काउंटर खिड़की आदि बनाने के लिए सम्पर्क करे ",
+    "shopName": "उदयचंद",
+    "shopPhotos": "",
+    "shopType": [
+      "carpenter"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkgGufGVyhViP_U5Rrm": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkgGufGVyhViP_U5Rrm",
+    "mobileNumber": "tel:+917675843955",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/YjSCNsY/images-69.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "पंडित अखिलेश मिश्र",
+    "shopPhotos": "",
+    "shopType": [
+      "pandit"
+    ],
+    "villageName": "मिश्र का पूरा, बराव"
+  },
+  "-MkgJ6rwhDVLIq-vGtZm": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkgJ6rwhDVLIq-vGtZm",
+    "mobileNumber": "tel:+919628970979",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "शिवयज्ञ उपाध्याय",
+    "ownerPhoto": "https://i.ibb.co/BVtbFLc/images-68.jpg",
+    "shopAddress": "",
+    "shopInfo": "शादी पार्टी या किसी भी मौके पर बोलेरो बुकिंग के लिए सम्पर्क करें ",
+    "shopName": "बोलेरो (किराये पर)",
+    "shopPhotos": "",
+    "shopType": [
+      "rentCars"
+    ],
+    "villageName": "शिवरामपुर गाँव"
+  },
+  "-Mkh5zg7JL3y3jZtLtDs": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-Mkh5zg7JL3y3jZtLtDs",
+    "mobileNumber": "tel:+918418003407",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "राकेश जायसवाल",
+    "ownerPhoto": "https://i.ibb.co/cD9XJmx/images-67.jpg",
+    "shopAddress": "दुर्गा मंदिर के बगल, रामपुर रोड",
+    "shopInfo": "लोहे या लकड़ी के खिड़की गेट शटर ट्राली आदि बनवाने के लिए सम्पर्क करें ",
+    "shopName": "सूरज वेल्डिंग वर्कशॉप",
+    "shopPhotos": "",
+    "shopType": [
+      "welding",
+      "carpenter"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkh6LGvuWKzVhZn_qq-": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "key": "-Mkh6LGvuWKzVhZn_qq-",
+    "mobileNumber": "tel:+919839018844",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "अनिल कुमार ( प्रधान )",
+    "ownerPhoto": "https://i.ibb.co/fd3wnWJ/IMG-20211009-002535.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "ग्राम प्रधान ( चरावां )",
+    "shopPhotos": "",
+    "shopType": [
+      "charawanOffice"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkh8DRDkqMvAVFb1OKM": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "key": "-Mkh8DRDkqMvAVFb1OKM",
+    "mobileNumber": "tel:+918601177477",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "नीरज कसौधन",
+    "ownerPhoto": "https://i.ibb.co/7KDqhFG/IMG-20211008-091612.jpg",
+    "shopAddress": "हनुमान मंदिर के बगल",
+    "shopInfo": "आपके  सेवा के लिए पिकअप तैयार अभी कॉल करें ",
+    "shopName": "पिकअप सर्विस",
+    "shopPhotos": "",
+    "shopType": [
+      "pickup"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkiCVF9Cs6RJ8HM6feq": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkiCVF9Cs6RJ8HM6feq",
+    "mobileNumber": "tel:+918090302022",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "मोहित गुप्ता  ",
+    "ownerPhoto": "https://i.ibb.co/VJRcHWz/images-66.jpg",
+    "shopAddress": "चौराहा",
+    "shopInfo": "किसी कम्पनी के सिम या रिचार्ज के लिए सम्पर्क करें ",
+    "shopName": "मोहित मोबाइल शॉप (सनी )",
+    "shopPhotos": "",
+    "shopType": [
+      "mobileStore"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkjb8WibMr2nsISDCMv": {
+    "closeTime": "08:30",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkjb8WibMr2nsISDCMv",
+    "mobileNumber": "tel:+918052815208",
+    "mobileNumber2": "tel:+918080456456",
+    "openTime": "08:00",
+    "owenerName": "मो ज़ाहिद हुसैन",
+    "ownerPhoto": "https://i.ibb.co/93j8v69/images-55.jpg",
+    "shopAddress": "ठेका के बगल",
+    "shopInfo": "इलेक्ट्रिक और हार्डवेयर सामान उपलब्ध साइकिल एवं बाइक का पंचर भी बनाया जाता है ",
+    "shopName": "शादाब इलेक्ट्रिक एंड हार्डवेयर",
+    "shopPhotos": "",
+    "shopType": [
+      "cycleStore",
+      "bikeRepair",
+      "electronic",
+      "dieselPetrol"
+    ],
+    "villageName": "गैनी"
+  },
+  "-MkjfVjmYPi8_UzYzmga": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkjfVjmYPi8_UzYzmga",
+    "mobileNumber": "tel:+919795900238",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "अरविंद मौर्या",
+    "ownerPhoto": "https://i.ibb.co/J73qKCf/images-64.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "मौर्या टेंट हाउस",
+    "shopPhotos": "",
+    "shopType": [
+      null,
+      "tentHouse"
+    ],
+    "villageName": "गैनी"
+  },
+  "-MklDOCkuxqWgzXTmSWT": {
+    "closeTime": "09:00",
+    "inCharawan": "charawan",
+    "key": "-MklDOCkuxqWgzXTmSWT",
+    "mobileNumber": "tel:+917897492885",
+    "mobileNumber2": "tel:+919044768016",
+    "openTime": "08:00",
+    "owenerName": "अशोक कुमार गुप्ता",
+    "ownerPhoto": "https://i.ibb.co/jGbvtBm/images-3.png",
+    "shopAddress": "प्राइमरी स्कूल के बगल ",
+    "shopInfo": "आटा चक्की सरसो तेल सहित कॉस्मेटिक सामान कोल्ड्रिंक और गैस चूल्हा भी रिपेयर होता है ",
+    "shopName": "अशोक मल्टी शॉप",
+    "shopPhotos": "",
+    "shopType": [
+      "stationery",
+      "cosmetic",
+      "gasChulhaRepair",
+      "coldDrink",
+      "chakki",
+      "dieselPetrol"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mklicx76t_234BP7YVL": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mklicx76t_234BP7YVL",
+    "mobileNumber": "tel:+917081504227",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "राम केवल",
+    "ownerPhoto": "https://i.ibb.co/fGGvLNZ/images-60.jpg",
+    "shopAddress": "पुलिस चौकी के बगल",
+    "shopInfo": "",
+    "shopName": "ठेला सर्विस",
+    "shopPhotos": "",
+    "shopType": [
+      "thela "
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-Mkq1TN-ZJVFfwRWOdsX": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkq1TN-ZJVFfwRWOdsX",
+    "mobileNumber": "tel:+918081611572",
+    "mobileNumber2": "tel:+918853121572",
+    "openTime": "09:00",
+    "owenerName": "लकी रेडीमेड",
+    "ownerPhoto": "https://i.ibb.co/J5cSp3b/images-59.jpg",
+    "shopAddress": "",
+    "shopInfo": "शादी विवाह पार्टी मुंडन अवसर पर गुब्बारा सजावट,पॉपकॉर्न मशीन, कॉफी मशीन के लिए सम्पर्क करें",
+    "shopName": "पटेल गुब्बारा डेकोरेशन",
+    "shopPhotos": "",
+    "shopType": [
+      "decoration"
+    ],
+    "villageName": "ककराही चैराहा"
+  },
+  "-Mkq27BEZMWWlBMYiGwW": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-Mkq27BEZMWWlBMYiGwW",
+    "mobileNumber": "tel:+918853121572",
+    "mobileNumber2": "tel:+918081611572",
+    "openTime": "10:00",
+    "owenerName": "पुष्पराज वर्मा",
+    "ownerPhoto": "https://i.ibb.co/drKPFN5/images-58.jpg",
+    "shopAddress": "डिग्री कॉलज के सामने",
+    "shopInfo": "जीन्स शर्ट लोअर सूट साड़ी उपलब्ध",
+    "shopName": "लकी गारमेंट साड़ी सेंटर",
+    "shopPhotos": "",
+    "shopType": [
+      "garments",
+      "prinitng"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkq2xMTgMqtmd7pAPpS": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-Mkq2xMTgMqtmd7pAPpS",
+    "mobileNumber": "tel:+918004979241",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/zb32NCf/images-57.jpg",
+    "shopAddress": "डिग्री कॉलेज के सामने",
+    "shopInfo": "",
+    "shopName": "वर्मा आयुर्वेदिक",
+    "shopPhotos": "",
+    "shopType": [
+      "aayurvedic"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkqKdHrDezkkazcH6Oz": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkqKdHrDezkkazcH6Oz",
+    "mobileNumber": "tel:+919451707768",
+    "mobileNumber2": "tel:+917007897577",
+    "openTime": "10:00",
+    "owenerName": "रीति",
+    "ownerPhoto": "https://i.ibb.co/w47gYyD/images-56.jpg",
+    "shopAddress": "संस्कार अकेडमी के सामने",
+    "shopInfo": "",
+    "shopName": "रीति मेहंदी आर्ट",
+    "shopPhotos": "",
+    "shopType": [
+      "beautiParler"
+    ],
+    "villageName": "बीकापुर, चरावां मोड़ "
+  },
+  "-MkqKupsLYAjZ-pRb957": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkqKupsLYAjZ-pRb957",
+    "mobileNumber": "tel:+919918193331",
+    "mobileNumber2": "tel:+919451044609",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/fQshJ0V/download-1.jpg",
+    "shopAddress": "चरावां मोड़",
+    "shopInfo": "",
+    "shopName": "संस्कार अकेडमी",
+    "shopPhotos": "",
+    "shopType": [
+      "coaching"
+    ],
+    "villageName": "बीकापुर"
+  },
+  "-MkqLbxqBVv8BYqcAknq": {
+    "closeTime": "07:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkqLbxqBVv8BYqcAknq",
+    "mobileNumber": "tel:+919005643395",
+    "mobileNumber2": "tel:+917424904205",
+    "openTime": "09:00",
+    "owenerName": "राकेश सिंह",
+    "ownerPhoto": "https://i.ibb.co/93j8v69/images-55.jpg",
+    "shopAddress": "संस्कार अकेडमी के सामने, चरावां मोड़",
+    "shopInfo": "चद्दर, पाइप, कील, तार, फिटिंग, इंजन आयल, रस्सी नल, वाल पुट्ठी, पेण्ट और सेनेटरी एवं हार्डवेयर समान उपलब्ध",
+    "shopName": "मंगलम हार्ड वेयर सेनेटरी एवं पेण्ट स्टोर",
+    "shopPhotos": "",
+    "shopType": [
+      "machineryStore"
+    ],
+    "villageName": "बीकापुर"
+  },
+  "-MkqREL08Lpv1FwergLH": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkqREL08Lpv1FwergLH",
+    "mobileNumber": "tel:+919794153916",
+    "mobileNumber2": "tel:+917991621366",
+    "openTime": "10:00",
+    "owenerName": "भरत राज",
+    "ownerPhoto": "https://i.ibb.co/syy9S8v/images-21.jpg",
+    "shopAddress": "सुल्हेपुर चौराहा",
+    "shopInfo": "",
+    "shopName": "आशा मेडिकल स्टोर",
+    "shopPhotos": "",
+    "shopType": [
+      "medicalStore"
+    ],
+    "villageName": "उमरनी पिपरी"
+  },
+  "-MkqSnGm8o7xV6s-nlux": {
+    "closeTime": "06:00",
+    "inCharawan": "charawan",
+    "key": "-MkqSnGm8o7xV6s-nlux",
+    "mobileNumber": "tel:+918948144651",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "विनय तिवारी (बंटी)",
+    "ownerPhoto": "https://i.ibb.co/nR8rgLL/IMG-20211008-192415.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "बंटी इंजीनियर",
+    "shopPhotos": "",
+    "shopType": [
+      "homeElectronic"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkr77766Vf55aY0Mgah": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "key": "-Mkr77766Vf55aY0Mgah",
+    "mobileNumber": "tel:+918317005407",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "दिनेश कुमार",
+    "ownerPhoto": "https://i.ibb.co/KV9Thgc/images-54.jpg",
+    "shopAddress": "",
+    "shopInfo": "घर की बिजली बनवाने या घर मे वायरिंग आदि के लिए संपर्क करें",
+    "shopName": "दिनेश इलेक्ट्रीशियन",
+    "shopPhotos": "",
+    "shopType": [
+      "homeElectronic"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkr7R7wDYpZXSDfdvZz": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+919936569432",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "",
+    "shopAddress": "",
+    "shopInfo": "चरावां गाव के आधिकारिक सफाई कर्मी है । \n",
+    "shopName": "सफाई कर्मी ( चरावां )",
+    "shopPhotos": "",
+    "shopType": [
+      "charawanOffice"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkr7uDAi2RiNtTixIjS": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+918874499097",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "उमेश कुमार (लेखपाल )",
+    "ownerPhoto": "",
+    "shopAddress": "",
+    "shopInfo": "चरावां गाव के आधिकारिक लेखपाल हैं ।",
+    "shopName": "लेखपाल ( चरावां )",
+    "shopPhotos": "",
+    "shopType": [
+      "charawanOffice"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkr9ADQ4WTqmxrlltGN": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+919918118984",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "सुरेंद्र यादव",
+    "ownerPhoto": "",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "ग्राम रोजगार सेवक",
+    "shopPhotos": "",
+    "shopType": [
+      "charawanOffice"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkrBlrENpKIyvJsYvx_": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-MkrBlrENpKIyvJsYvx_",
+    "mobileNumber": "tel:+916394782873",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "इंद्रेश गिरी",
+    "ownerPhoto": "https://i.ibb.co/89R84qC/images-53.jpg",
+    "shopAddress": "रामपुर रोड चरावां",
+    "shopInfo": "सभी तरीके की पेस्टिसाइड उपलब्ध",
+    "shopName": "अभिनव बीज भंडार",
+    "shopPhotos": "",
+    "shopType": [
+      "beej"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkrCKpTTCeiXetb-08K": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-MkrCKpTTCeiXetb-08K",
+    "mobileNumber": "tel:+919918722934",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "राम सजीवन निषाद",
+    "ownerPhoto": "https://i.ibb.co/nrZj4rj/images-52.jpg",
+    "shopAddress": "सोनू किराना स्टोर के बगल",
+    "shopInfo": "पेस्टिसाइड्स उपलब्ध",
+    "shopName": "किसान बीज भंडार",
+    "shopPhotos": "",
+    "shopType": [
+      "beej"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkrDKeu5WMyI8Q_lXtR": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkrDKeu5WMyI8Q_lXtR",
+    "mobileNumber": "tel:+916394437172",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "राहुल निषाद",
+    "ownerPhoto": "https://i.ibb.co/b784Vxc/IMG-20211008-235210.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "राहुल डेकोरेशन",
+    "shopPhotos": "",
+    "shopType": [
+      "decoration",
+      "photoStudio"
+    ],
+    "villageName": "दहलवा बरांव"
+  },
+  "-MkrDz3oOVaYsRxMhLEe": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-MkrDz3oOVaYsRxMhLEe",
+    "mobileNumber": "tel:+919555119098",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "शुभम सिंह",
+    "ownerPhoto": "https://i.ibb.co/b794wyV/images-15.jpg",
+    "shopAddress": "ग्रामीण बैंक के सामने",
+    "shopInfo": "",
+    "shopName": "शुभम किराना स्टोर",
+    "shopPhotos": "",
+    "shopType": [
+      "generalStore"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkrFpowEoJo2YmkGoiU": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkrFpowEoJo2YmkGoiU",
+    "mobileNumber": "tel:+919838649186",
+    "mobileNumber2": "tel:+918127395886",
+    "openTime": "10:00",
+    "owenerName": "मनोज कुमार",
+    "ownerPhoto": "https://i.ibb.co/zGDdpps/IMG-20211008-021034.jpg",
+    "shopAddress": "चरावां मोड़",
+    "shopInfo": "कॉस्मेटिक, मोबाइल इयरफोन हैडफ़ोन, गैस चूल्हा रिपेयर आदि के लिए संपर्क करें ।",
+    "shopName": "आर्या कॉस्मेटिक & गिफ्ट सेंटर",
+    "shopPhotos": "",
+    "shopType": [
+      "gifts",
+      "gasService",
+      "gasChulhaRepair",
+      "mobileStore",
+      "cosmetic"
+    ],
+    "villageName": "रामपुरभगन"
+  },
+  "-MksT72FokhHuiQiYSoq": {
+    "closeTime": "05:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MksT72FokhHuiQiYSoq",
+    "mobileNumber": "tel:+919794136760",
+    "mobileNumber2": "tel:+917905718501",
+    "openTime": "09:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/F7Y8kmJ/images-2.jpg",
+    "shopAddress": "केनरा बैंक के सामने गली में",
+    "shopInfo": "ऑनलाइन बुक किये गए कोरियर्स को घर घर पहुचाते हैं ।",
+    "shopName": "ई कॉम एक्सप्रेस बीकापुर",
+    "shopPhotos": "",
+    "shopType": [
+      "customerCare"
+    ],
+    "villageName": "बीकापुर"
+  },
+  "-MksU6GdwNtK60vEuej_": {
+    "closeTime": "05:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MksU6GdwNtK60vEuej_",
+    "mobileNumber": "tel:+919598676878",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/2qb46Hj/images-1.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "ई कार्ट ( E Kart )",
+    "shopPhotos": "",
+    "shopType": [
+      "customerCare"
+    ],
+    "villageName": "गोसाईगंज"
+  },
+  "-MktolNNad_AiNEtSTKa": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MktolNNad_AiNEtSTKa",
+    "mobileNumber": "tel:+919839567152",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "श्याम बहादुर तिवारी",
+    "ownerPhoto": "https://i.ibb.co/52ZNRB3/images-50.jpg",
+    "shopAddress": "सोनू किराना स्टोर के बगल",
+    "shopInfo": "सभी प्रकार की ताजी मिठाईयां और ताज़ी जलेबी उपलब्ध ।",
+    "shopName": "श्याम मिष्ठान भंडार",
+    "shopPhotos": "",
+    "shopType": [
+      "hotel"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mku1zeATLe-iOzx7f7S": {
+    "closeTime": "06:00",
+    "inCharawan": "charawan",
+    "key": "-Mku1zeATLe-iOzx7f7S",
+    "mobileNumber": "tel:+917408836684",
+    "mobileNumber2": "tel:+91",
+    "openTime": "07:00",
+    "owenerName": "धनीराम यादव (बाबा)",
+    "ownerPhoto": "https://i.ibb.co/k3vrffK/images-49.jpg",
+    "shopAddress": "अरुण कम्युनिकेशन के बगल",
+    "shopInfo": "",
+    "shopName": "साईकल रिपेयर",
+    "shopPhotos": "",
+    "shopType": [
+      "cycleStore"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mku2nPxI7x6fC5b74x9": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-Mku2nPxI7x6fC5b74x9",
+    "mobileNumber": "tel:+916307045546",
+    "mobileNumber2": "tel:+919838713472",
+    "openTime": "08:00",
+    "owenerName": "केशवराम मौर्या",
+    "ownerPhoto": "https://i.ibb.co/QnJP3Fj/images-48.jpg",
+    "shopAddress": "सरकारी ठेका के बगल",
+    "shopInfo": "",
+    "shopName": "राइस मील ( आटा चक्की / तेल)",
+    "shopPhotos": "",
+    "shopType": [
+      "chakki"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mku4CWAcWOwECC_W3hY": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mku4CWAcWOwECC_W3hY",
+    "mobileNumber": "tel:+919792192439",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "माता प्रसाद मिश्रा ",
+    "ownerPhoto": "https://i.ibb.co/mNWkPdJ/images-47.jpg",
+    "shopAddress": "बरांव",
+    "shopInfo": "",
+    "shopName": "बोलेरो ( किराये पर )",
+    "shopPhotos": "",
+    "shopType": [
+      "rentCars"
+    ],
+    "villageName": "मिश्र का पूरा"
+  },
+  "-MkucXqM3NTBhwdDyJCI": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "key": "-MkucXqM3NTBhwdDyJCI",
+    "mobileNumber": "tel:+919565657298",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/n3gRtgh/images-46.jpg",
+    "shopAddress": "",
+    "shopInfo": "काम करवाने के लिए, पेड़ कटवाने के लिये संपर्क करें",
+    "shopName": "ओमकार",
+    "shopPhotos": "",
+    "shopType": [
+      "woodCutter",
+      "helper"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkueJyCzlI1JoHnmfb7": {
+    "closeTime": "06:00",
+    "inCharawan": "charawan",
+    "key": "-MkueJyCzlI1JoHnmfb7",
+    "mobileNumber": "tel:+917705886516",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "मोहम्मद सोनू",
+    "ownerPhoto": "https://i.ibb.co/Fx2P6r0/images-45.jpg",
+    "shopAddress": "सोनू किराना स्टोर के सामने",
+    "shopInfo": "",
+    "shopName": "सोनू हेयर कटिंग सैलून",
+    "shopPhotos": "",
+    "shopType": [
+      "barber"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mkv2DmFwM6otlrAmYJi": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-Mkv2DmFwM6otlrAmYJi",
+    "mobileNumber": "tel:+919598202255",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "यशवंत",
+    "ownerPhoto": "https://i.ibb.co/S74km0c/images-44.jpg",
+    "shopAddress": "बीकापुर रोड",
+    "shopInfo": "",
+    "shopName": "यशवंत बुक डिपो",
+    "shopPhotos": "",
+    "shopType": [
+      "stationery"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkzKfUFlFHjl7mQIEgn": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-MkzKfUFlFHjl7mQIEgn",
+    "mobileNumber": "tel:+919506862398",
+    "mobileNumber2": "tel:+917317288544",
+    "openTime": "09:00",
+    "owenerName": "संदीप निषाद",
+    "ownerPhoto": "https://i.ibb.co/CH1CDG8/images-43.jpg",
+    "shopAddress": "हनुमान मंदिर के सामने",
+    "shopInfo": "मोटर वाइंडिंग होती है, पंखें आदि बनाये जाते हैं",
+    "shopName": "सदीप इलेक्ट्रानिक्स मोटर बैंडिंग",
+    "shopPhotos": "",
+    "shopType": [
+      "electronic"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MkzZbn7xWB-WYeLW0GR": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkzZbn7xWB-WYeLW0GR",
+    "mobileNumber": "tel:+916387635322",
+    "mobileNumber2": "tel:+919161425439",
+    "openTime": "",
+    "owenerName": "कोमल",
+    "ownerPhoto": "https://i.ibb.co/3kLkG2x/images-42.jpg",
+    "shopAddress": "बनकटा",
+    "shopInfo": "डी जे साउंड के लिए संपर्क करें",
+    "shopName": "कोमल DJ",
+    "shopPhotos": "",
+    "shopType": [
+      "dj",
+      "soundServie"
+    ],
+    "villageName": "बनकटा बीकापुर"
+  },
+  "-MkzZz8xsEBFGLCJkzGk": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkzZz8xsEBFGLCJkzGk",
+    "mobileNumber": "tel:+917754909325",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "मिथुन",
+    "ownerPhoto": "https://i.ibb.co/nrCF8TN/images-41.jpg",
+    "shopAddress": "धर्मगंज अयोध्या",
+    "shopInfo": "",
+    "shopName": "मिथुन DJ",
+    "shopPhotos": "",
+    "shopType": [
+      "dj",
+      "soundServie"
+    ],
+    "villageName": "किसनगंज"
+  },
+  "-Mkz_lCTrFlSJZm0_-T0": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkz_lCTrFlSJZm0_-T0",
+    "mobileNumber": "tel:+919005675994",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "अंकित जायसवाल",
+    "ownerPhoto": "https://i.ibb.co/YkrhfBp/images-20.jpg",
+    "shopAddress": "",
+    "shopInfo": "जर प्रकार की दवाएं उपलब्ध हैं",
+    "shopName": "अंकित मेडिकल स्टोर",
+    "shopPhotos": "",
+    "shopType": [
+      "medicalStore"
+    ],
+    "villageName": "जानाबाज़ार"
+  },
+  "-MkzaMi43uaaWQwmanCz": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkzaMi43uaaWQwmanCz",
+    "mobileNumber": "tel:+919919174711",
+    "mobileNumber2": "tel:+918299093588",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/3p0GTnJ/images-22.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "चितवन सर्जिकल सेंटर",
+    "shopPhotos": "",
+    "shopType": [
+      "hospital"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-MkzabajZnNpCh2YZ_GK": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MkzabajZnNpCh2YZ_GK",
+    "mobileNumber": "tel:+918874380940",
+    "mobileNumber2": "tel:+919554277684",
+    "openTime": "",
+    "owenerName": "राजेन्द्र गौड़",
+    "ownerPhoto": "https://i.ibb.co/NVSJC8y/images-40.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "विशाल कैटर्स",
+    "shopPhotos": "",
+    "shopType": [
+      "cetters"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-Mkzb26d4ece2cfKcCWZ": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-Mkzb26d4ece2cfKcCWZ",
+    "mobileNumber": "tel:+919453660344",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "अमन",
+    "ownerPhoto": "https://i.ibb.co/2jbwffC/images-39.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "अमन ज्वेलर्स",
+    "shopPhotos": "",
+    "shopType": [
+      "jeweller"
+    ],
+    "villageName": "रामपुर भगन चरावां मो"
+  },
+  "-Ml-9kKZhGsu_PSp6Boa": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-Ml-9kKZhGsu_PSp6Boa",
+    "mobileNumber": "tel:+919654420209",
+    "mobileNumber2": "tel:+919999799656",
+    "openTime": "09:00",
+    "owenerName": "अक्षत",
+    "ownerPhoto": "https://i.ibb.co/smjXRJX/images-38.jpg",
+    "shopAddress": "ग्रामीण बैंक के सामने",
+    "shopInfo": "",
+    "shopName": "अक्षत इलेक्ट्रानिक्स मोबाइल स्टोर",
+    "shopPhotos": "",
+    "shopType": [
+      "mobileStore",
+      "electronic"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Ml-ADdYPLFPsZGlXcSC": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-Ml-ADdYPLFPsZGlXcSC",
+    "mobileNumber": "tel:+919918592057",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "रमेश तिवारी",
+    "ownerPhoto": "https://i.ibb.co/SPkdKfb/images-37.jpg",
+    "shopAddress": "चरावाँ बाजार, अयोध्या",
+    "shopInfo": "",
+    "shopName": "आर्या रेडीमेड गारमेंट्स  एण्ड  शू हाउस",
+    "shopPhotos": "",
+    "shopType": [
+      "chappal",
+      "garments"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Ml-B8wfB--H1KW9RulY": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "key": "-Ml-B8wfB--H1KW9RulY",
+    "mobileNumber": "tel:+917408051351",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "जगलाल विश्वकर्मा",
+    "ownerPhoto": "https://i.ibb.co/qY7H0Hv/images-36.jpg",
+    "shopAddress": "गैनी रोड",
+    "shopInfo": "हमारे यहाँ लकड़ी से सम्बंधित बेड, सोफा, सिंगारदानी, मोडलर किचन, खिड़की, जगता,दरवाजा का कार्य सन्तोषजनक होता है।",
+    "shopName": "विश्वकर्मा वर्क्स",
+    "shopPhotos": "",
+    "shopType": [
+      "carpenter"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Ml-Bct0ReSj5AaVLb0V": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-Ml-Bct0ReSj5AaVLb0V",
+    "mobileNumber": "tel:+919984188037",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "ए के",
+    "ownerPhoto": "https://i.ibb.co/HGqRMRr/images-35.jpg",
+    "shopAddress": "",
+    "shopInfo": "जेन्ट्स जीन्स, पैन्ट, शर्ट, जाकेट, अण्डर गारमेन्ट, लेडीज लेंगी, जीन्स, टॉप",
+    "shopName": "ए. के गारमेन्ट एंड गिफ्ट कार्नर",
+    "shopPhotos": "",
+    "shopType": [
+      "garments",
+      "gifts"
+    ],
+    "villageName": "गैनी अयोध्या"
+  },
+  "-Ml-CTP5zgHBlh2suR17": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-Ml-CTP5zgHBlh2suR17",
+    "mobileNumber": "tel:+919919709950",
+    "mobileNumber2": "tel:+919670165428",
+    "openTime": "09:00",
+    "owenerName": "मंसाराम यादव",
+    "ownerPhoto": "https://i.ibb.co/R97FwF5/images-34.jpg",
+    "shopAddress": "बेनीगद्द्दौपुर, गैनीबाजार, विकास खण्ड: तारून, जिला फैजाबाद",
+    "shopInfo": "अर्जेन्ट फोट/आय/जाति/मूल निवास/जन्म/मृत्यु / वृद्धा पेंशन/छात्रवृत्ति/पैन कार्ड एवं इण्टरनेट सम्बन्धी कार्य",
+    "shopName": "सूरज जन सेवा केन्द्र",
+    "shopPhotos": "",
+    "shopType": [
+      "prinitng",
+      "janSewaKendra"
+    ],
+    "villageName": "गैनी"
+  },
+  "-Ml-Da1a6VQhVgl8d8C6": {
+    "closeTime": "06:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-Ml-Da1a6VQhVgl8d8C6",
+    "mobileNumber": "tel:+916000000000",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/BCHw012/images-33.jpg",
+    "shopAddress": "बीकापुर रोड, बेनीगद्दौपुर",
+    "shopInfo": "हमारे यहाँ दुल्हन मेकअप ब्राइडल मेकअप, हेयर कटिंग, मेहंदी एवं किराये पर ज्वेलरी, लहंगा उपलब्ध है",
+    "shopName": "लक्ष्मी ब्यूटी पार्लर & कॉस्मेटिक",
+    "shopPhotos": "",
+    "shopType": [
+      "beautiParler",
+      "cosmetic"
+    ],
+    "villageName": "गैनी"
+  },
+  "-Ml-FDPfhQwUFkk6Oi5-": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-Ml-FDPfhQwUFkk6Oi5-",
+    "mobileNumber": "tel:+9172759914979",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "सुनील कुमार शर्मा",
+    "ownerPhoto": "https://i.ibb.co/J7j34RS/images-31.jpg",
+    "shopAddress": "चमनगंज/ जाना बाजार, बीकापुर मोड़ अयोध्या",
+    "shopInfo": "",
+    "shopName": "सुनील हेयर ड्रेसिंग & वर्मा टेंट लाइट",
+    "shopPhotos": "",
+    "shopType": [
+      "lightHouse",
+      "tentHouse",
+      "decoration",
+      "barber"
+    ],
+    "villageName": "जाने"
+  },
+  "-Ml-HRk2UFHXyX0EjhQd": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-Ml-HRk2UFHXyX0EjhQd",
+    "mobileNumber": "tel:+917388747238",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "प्रो.M.S. Ansari",
+    "ownerPhoto": "https://i.ibb.co/8NmjCFd/images-30.jpg",
+    "shopAddress": "श्रीनाथ जी के घर के बगल",
+    "shopInfo": "हमारे यहाँ सभी प्रकार के कपडो की सिलाई की जाती हैं।",
+    "shopName": "मयूर टेलर्स  इस्पेस्लीस्ट जेन्टस",
+    "shopPhotos": "",
+    "shopType": [
+      "tailor"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Ml10mJFh0Xtos4wbxWE": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-Ml10mJFh0Xtos4wbxWE",
+    "mobileNumber": "tel:+919415345035",
+    "mobileNumber2": "tel:+919795194340",
+    "openTime": "",
+    "owenerName": "रतन",
+    "ownerPhoto": "https://i.ibb.co/GcH4Rpf/images-29.jpg",
+    "shopAddress": "",
+    "shopInfo": "हमारे यहाँ फूल एवं हॉफ कैटरिंग का काम किया जाता है • हमारे यहाँ शादी विवाह से सम्बन्धित सभी व्यवस्थाएं उपलब्ध है ,हमारे यहाँ शादी-विवाह, मुण्डन एवं भण्डारे आदि के शुभ अवसरों पर मिठाईयां एवं भोजन बनवाने के लिए सम्पर्क करें कॉफी मशीन, कच्चा छेना, दूध, दही, पनीर, खोचा, आइसक्रीम, मक्खन, क्रीम महाराजा सेट, लाईट, टेन्ट डी.जे., जयमाल, दरबारी, मिक्की माउस, गेट हाथी, गुब्बारा, अंकल आंटी, कार्टुन आदि उपलब्ध है",
+    "shopName": "रतन कैटर्स",
+    "shopPhotos": "",
+    "shopType": [
+      "cetters"
+    ],
+    "villageName": "रामपुर भगन कृषक रोड"
+  },
+  "-MlE_w-4BtyquoUa5_G6": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlE_w-4BtyquoUa5_G6",
+    "mobileNumber": "tel:+919450042791",
+    "mobileNumber2": "tel:+916306020028",
+    "openTime": "",
+    "owenerName": "श्रीनिवास जायसवाल",
+    "ownerPhoto": "https://i.ibb.co/zPwt0NL/images-28.jpg",
+    "shopAddress": " शिवरामपुर",
+    "shopInfo": "सस्ते दाम पर मज़बूत ईंट उपलब्ध",
+    "shopName": "कुबेर ब्रिक फील्ड  ",
+    "shopPhotos": "",
+    "shopType": [
+      "bricks"
+    ],
+    "villageName": "(गोपालापुर) "
+  },
+  "-MlF3J9RuOQqFY4OOAb5": {
+    "closeTime": "20:00",
+    "inCharawan": "charawan",
+    "key": "-MlF3J9RuOQqFY4OOAb5",
+    "mobileNumber": "tel:+918810409627",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "अजय तिवारी",
+    "ownerPhoto": "https://i.ibb.co/Qf9nmTm/images-27.jpg",
+    "shopAddress": "",
+    "shopInfo": "गैनी रोड",
+    "shopName": "M Care शूज शॉप",
+    "shopPhotos": "",
+    "shopType": [
+      "chappal"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlF4hZDSysPSJLENGV7": {
+    "closeTime": "19:00",
+    "closedOn": {
+      "6": "रविवार"
+    },
+    "inCharawan": "outOfCharawan",
+    "key": "-MlF4hZDSysPSJLENGV7",
+    "mobileNumber": "tel:+916387284220",
+    "mobileNumber2": "tel:+91",
+    "openTime": "20:00",
+    "owenerName": "शेषनाथ यादव ",
+    "ownerPhoto": "https://i.ibb.co/TmV2LvK/images-26.jpg",
+    "shopAddress": "हैदरगंज रोड जाना बाजार अयोध्या उत्तर प्रदेश ",
+    "shopInfo": "हमारे यहाँ शादी विबाह मुंडन पार्टी हेतु डीजे, साउंड सर्विस कैमरा उपलब्ध है ।",
+    "shopName": "दीपांशु राजा मोबाइल डीजे ",
+    "shopPhotos": "",
+    "shopType": [
+      "photoStudio"
+    ],
+    "villageName": "जाना बाजार"
+  },
+  "-MlF8g9x_oh2auhYL5os": {
+    "closeTime": "21:00",
+    "inCharawan": "charawan",
+    "key": "-MlF8g9x_oh2auhYL5os",
+    "mobileNumber": "tel:+917398298834",
+    "mobileNumber2": "tel:+91",
+    "openTime": "15:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/MSXY67V/images-25.jpg",
+    "shopAddress": "दुकान मेन चौराहे पर वाज़िद अली की दुकान के सामने लगती है",
+    "shopInfo": "सभी तरह की ताजी सब्जियां उपलब्ध, आर्डर पर भी सब्जियां मंगाई जाती हैं । ",
+    "shopName": "मौर्या सब्जी की दुकान",
+    "shopPhotos": "",
+    "shopType": [
+      "vegetables"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlFRTUnam9cxYL2F1bH": {
+    "closeTime": "21:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlFRTUnam9cxYL2F1bH",
+    "mobileNumber": "tel:+919889815503",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "दादा फुटवेअर",
+    "ownerPhoto": "https://i.ibb.co/8d9mp5w/IMG-20211008-082526.jpg",
+    "shopAddress": "",
+    "shopInfo": "मेन्स वेयर\n\nलेडीज वेयर\n\nकिड्स वेयर\n\nदुल्हन साड़ीघर",
+    "shopName": "दादा फूट वेयर एण्ड गारमेन्ट्स",
+    "shopPhotos": "",
+    "shopType": [
+      "garments",
+      "chappal"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-MlFTcIp-NhaIQnyOX8L": {
+    "closeTime": "21:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlFTcIp-NhaIQnyOX8L",
+    "mobileNumber": "tel:+919451871480",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "लक्ष्मी",
+    "ownerPhoto": "https://i.ibb.co/vz3nXM8/images-1.png",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "लक्ष्मी जनरल स्टोर एंड चूनी भंडार",
+    "shopPhotos": "",
+    "shopType": [
+      "generalStore"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-MlFbKUJvn-qg-XXV7GW": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "key": "-MlFbKUJvn-qg-XXV7GW",
+    "mobileNumber": "tel:+919616137795",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "जितेंद्र निषाद",
+    "ownerPhoto": "https://i.ibb.co/jVb8TWs/IMG-20211008-092105.jpg",
+    "shopAddress": "निकट संत राम प्रसाद चौधरी महाविद्यालय दहलवा बरांव अयोध्या ",
+    "shopInfo": "5 से 12 क्लास तक कोचिंग ",
+    "shopName": "जितेंद्र कोचिंग इंस्टिट्यूट",
+    "shopPhotos": "",
+    "shopType": [
+      "coaching"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlFcNhBWN9fo_hOm_NR": {
+    "closeTime": "04:00",
+    "closedOn": [
+      "रविवार"
+    ],
+    "inCharawan": "charawan",
+    "key": "-MlFcNhBWN9fo_hOm_NR",
+    "mobileNumber": "tel:+918874207357",
+    "mobileNumber2": "tel:+919453440300",
+    "openTime": "10:00",
+    "owenerName": "मैनेजर अमित त्रिपाठी",
+    "ownerPhoto": "https://i.ibb.co/MkWhNWv/images-5.jpg",
+    "shopAddress": "बड़ोदा उत्तर प्रदेश ग्रामीण बैंक निकट श्री लक्ष्मी नारायण ट्रेडर्स जाना बाजार रोड अयोध्या  ",
+    "shopInfo": "बड़ोदा उत्तर प्रदेश ग्रमीण बैंक चरावां में बैंक से सम्बंधित किसी भी समस्या के लिए इन नंबरो पर सम्पर्क कर सकते है ।",
+    "shopName": "बड़ोदा उत्तर प्रदेश ग्रामीण बैंक चरावां ",
+    "shopPhotos": "",
+    "shopType": [
+      "customerCare",
+      "bank"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlFdSAAbJaDh5X_t2S6": {
+    "closeTime": "12:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlFdSAAbJaDh5X_t2S6",
+    "mobileNumber": "tel:+919454403313",
+    "mobileNumber2": "tel:+91112",
+    "openTime": "00:58",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/Yb7PrKL/IMG-20211008-015103.jpg",
+    "shopAddress": "तारुन थाना क्षेत्र",
+    "shopInfo": "24 घंटे आपकी सेवा में तात्पर्य",
+    "shopName": "तारुन थानाध्यक्ष",
+    "shopPhotos": "",
+    "shopType": [
+      "emergency"
+    ],
+    "villageName": "तारुन "
+  },
+  "-MlGHr-Lrp3iBgOePuxf": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-MlGHr-Lrp3iBgOePuxf",
+    "mobileNumber": "tel:+917408187084",
+    "mobileNumber2": "tel:+91",
+    "openTime": "15:30",
+    "owenerName": "मिठाईलाल",
+    "ownerPhoto": "https://i.ibb.co/bbsNhhv/images-14.jpg",
+    "shopAddress": "मेन चौराहा जाना बाजार रोड मोहित मोबाइल शॉप के बगल",
+    "shopInfo": "शादी-विवाह एवं पार्टी में चाट ,चाउमीन और फुल्की की बुकिंग के लिए सम्पर्क करें |",
+    "shopName": "मिठाईलाल चाट भण्डार",
+    "shopPhotos": "",
+    "shopType": [
+      "fastfood"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlGK5FlemZ_e-PQkjdk": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlGK5FlemZ_e-PQkjdk",
+    "mobileNumber": "tel:+916394437172",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "राहुल निषाद",
+    "ownerPhoto": "https://i.ibb.co/ck0Zsdz/IMG-20211008-092458.jpg",
+    "shopAddress": "बरांव",
+    "shopInfo": "रोटावेटर, कल्टीवेटर , आदि से खेत मे जुताई करवाने के लिए संपर्क करें ।",
+    "shopName": "ट्रेक्टर जुताई",
+    "shopPhotos": "",
+    "shopType": [
+      "tractors"
+    ],
+    "villageName": "दहलवा"
+  },
+  "-MlIDAwjAl06-6dxzSn0": {
+    "closeTime": "10:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlIDAwjAl06-6dxzSn0",
+    "mobileNumber": "tel:+919151134649",
+    "mobileNumber2": "tel:+919839465468",
+    "openTime": "08:00",
+    "owenerName": "Shyam ji",
+    "ownerPhoto": "https://i.ibb.co/LZ1jGGr/images-6.jpg",
+    "shopAddress": ", khapradhi, Ayodhya,224205",
+    "shopInfo": "हमारे यहां शुभ अवसरों पर लाइट ,साउंड सर्विस एंव डीजे की बुकिंग की जाती हैं।",
+    "shopName": "Shyamji light house and sound service",
+    "shopPhotos": "",
+    "shopType": [
+      "electronic",
+      "dj",
+      "lightHouse",
+      "decoration",
+      "soundServie"
+    ],
+    "villageName": "Ankari"
+  },
+  "-MlIGYOCNpyQFzneNaSg": {
+    "closeTime": "07:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlIGYOCNpyQFzneNaSg",
+    "mobileNumber": "tel:+919198335633",
+    "mobileNumber2": "tel:+919191134659",
+    "openTime": "07:00",
+    "owenerName": "अरुण कुमार",
+    "ownerPhoto": "https://i.ibb.co/QH4VGb8/IMG-20211008-092458.jpg",
+    "shopAddress": "अंकारी, बिशुन बाबा रोड,श्याम जी लाईट हाउस ।",
+    "shopInfo": "हमारे यहां सभी प्रकार से जुताई की जाती है।",
+    "shopName": "ट्रैक्टर जुताई",
+    "shopPhotos": "",
+    "shopType": [
+      "tractors"
+    ],
+    "villageName": "अंकारी"
+  },
+  "-MlIurgzUOQ0OhcXtkS9": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlIurgzUOQ0OhcXtkS9",
+    "mobileNumber": "tel:+919984775718",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "पप्पू निषाद",
+    "ownerPhoto": "https://i.ibb.co/sCxLDw6/images-24.jpg",
+    "shopAddress": "",
+    "shopInfo": " घर बनाने का ठेका भी लेते है नए मॉडल का घर भी बनाते है नक्शे के साथ",
+    "shopName": "नए मॉडल का घर",
+    "shopPhotos": "",
+    "shopType": [
+      "homeMistri"
+    ],
+    "villageName": "दहलवा ( बराव)"
+  },
+  "-MlKSyXW4M9oDSdq0X99": {
+    "closeTime": "04:00",
+    "closedOn": [
+      "रविवार"
+    ],
+    "inCharawan": "outOfCharawan",
+    "key": "-MlKSyXW4M9oDSdq0X99",
+    "mobileNumber": "tel:+919839387985",
+    "mobileNumber2": "tel:+919838320294",
+    "openTime": "10:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/HFFzcCX/IMG-20211008-092349.jpg",
+    "shopAddress": "चरावां बीकापुर रोड",
+    "shopInfo": "बी.ए. उर्दू हिन्दी, अंग्रेजी संस्कृत समाजशास्त्र\nएम.ए. भूगोल हिन्दी समाजशास्त्र \nएम. एस. सी. रसायन विज्ञान एवं वनस्पति विज्ञान बी.टी. सी. डी. एल एड",
+    "shopName": "संत रामप्रसाद चौधरी ग्राम पीजी कालेज",
+    "shopPhotos": "",
+    "shopType": [
+      "school"
+    ],
+    "villageName": "कोदैला बरांव"
+  },
+  "-MlKTdmbrFiYvp0V6SZu": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlKTdmbrFiYvp0V6SZu",
+    "mobileNumber": "tel:+918953135104",
+    "mobileNumber2": "tel:+918924077846",
+    "openTime": "10:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/pZy0D0g/IMG-20211008-092244.jpg",
+    "shopAddress": "बीकापुर रोड",
+    "shopInfo": "सौन्दर्य प्रसाधन सिलाई\n\nशिखाया जाता है।",
+    "shopName": "अंश ब्यूटी पार्लर",
+    "shopPhotos": "",
+    "shopType": [
+      "beautiParler",
+      "silayi",
+      "cosmetic"
+    ],
+    "villageName": "उमरनी पिपरी चौराहा"
+  },
+  "-MlKU-YmjNG7MdxEaF0-": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MlKU-YmjNG7MdxEaF0-",
+    "mobileNumber": "tel:+919565959144",
+    "mobileNumber2": "tel:+919792445011",
+    "openTime": "10:00",
+    "owenerName": "सुभाष",
+    "ownerPhoto": "https://i.ibb.co/K0F65QT/IMG-20211008-145929.jpg",
+    "shopAddress": "क्रिकेट स्टेडियम के सामने",
+    "shopInfo": "",
+    "shopName": "सुभाष टेंट हाउस",
+    "shopPhotos": "",
+    "shopType": [
+      "tentHouse"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlL8Ux9ocBonnjyEaxQ": {
+    "closeTime": "06:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlL8Ux9ocBonnjyEaxQ",
+    "mobileNumber": "tel:+919919395713",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "छोटे लाल",
+    "ownerPhoto": "https://i.ibb.co/L0T1cQ9/IMG-20211006-171642.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "छोटे लाल मिस्त्री ठेकेदार",
+    "shopPhotos": "",
+    "shopType": [
+      "homeMistri"
+    ],
+    "villageName": "दहलवा"
+  },
+  "-MlLKVmHJTQdyuB13Wqt": {
+    "closeTime": "07:00",
+    "closedOn": [
+      "रविवार"
+    ],
+    "inCharawan": "outOfCharawan",
+    "key": "-MlLKVmHJTQdyuB13Wqt",
+    "mobileNumber": "tel:+919838622693",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "गंगाराम ",
+    "ownerPhoto": "https://i.ibb.co/c36x6D5/IMG-20211008-092105.jpg",
+    "shopAddress": "जाना बाजार रोड लश्करी पब्लिक स्कूल के सामने बीकापुर अयोध्या ।।",
+    "shopInfo": "कंप्यूटर कोचिंग क्लासेज , आधार कार्ड संसोधन केंद्र ,श्रम विभाग पंजीयन केंद्र ।।",
+    "shopName": "नेटप्रो कोचिंग इंस्टिट्यूट",
+    "shopPhotos": "",
+    "shopType": [
+      "coaching"
+    ],
+    "villageName": "बीकापुर "
+  },
+  "-MlOwF4z0is4umENWUhu": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MlOwF4z0is4umENWUhu",
+    "mobileNumber": "tel:+919918673158",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "Rajneesh Tiwari ",
+    "ownerPhoto": "https://i.ibb.co/Ntb6qXG/IMG-20211008-091811.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "Doctor Rajneesh Tiwari ",
+    "shopPhotos": "",
+    "shopType": [
+      "doctors"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlOxt0aZRWnMw2kn6kD": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "key": "-MlOxt0aZRWnMw2kn6kD",
+    "mobileNumber": "tel:+917408600764",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "संतोष ",
+    "ownerPhoto": "https://i.ibb.co/GkbK6wt/IMG-20211008-211138.jpg",
+    "shopAddress": "डिहवा",
+    "shopInfo": "",
+    "shopName": "संतोष",
+    "shopPhotos": "",
+    "shopType": [
+      "helper"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlPzbngSVpeFvUZhbh0": {
+    "closeTime": "09:00",
+    "inCharawan": "charawan",
+    "key": "-MlPzbngSVpeFvUZhbh0",
+    "mobileNumber": "tel:+918953052161",
+    "mobileNumber2": "tel:+91",
+    "openTime": "15:00",
+    "owenerName": "सियाराम मौर्या",
+    "ownerPhoto": "https://i.ibb.co/7YzpY7g/IMG-20211008-014258.jpg",
+    "shopAddress": "मेन चौराहा",
+    "shopInfo": "ताजी सब्जी वगैरह मंगाने के लिए संपर्क करें  चौराहे पर हमेशा ताजी सब्जी उपलब्ध रहती है",
+    "shopName": "सियाराम सब्जी की दुकान",
+    "shopPhotos": "",
+    "shopType": [
+      "vegetables"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlQ-yIF7jQvg1SXJyyO": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlQ-yIF7jQvg1SXJyyO",
+    "mobileNumber": "tel:+919455002617",
+    "mobileNumber2": "tel:+919696621129",
+    "openTime": "",
+    "owenerName": "बिक्रम",
+    "ownerPhoto": "https://i.ibb.co/LZ1jGGr/images-6.jpg",
+    "shopAddress": " रामपुर अहिरौली",
+    "shopInfo": "",
+    "shopName": "कौशल डी.जे.  लाइट हाउस लाइट सर्विस",
+    "shopPhotos": "",
+    "shopType": [
+      "dj",
+      "lightHouse",
+      "soundServie",
+      "photoStudio"
+    ],
+    "villageName": "दूबे का पुरवा,"
+  },
+  "-MlQLYpKHa0WZuDaCTmI": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-MlQLYpKHa0WZuDaCTmI",
+    "mobileNumber": "tel:+918104516375",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:30",
+    "owenerName": "राम बचन निषाद",
+    "ownerPhoto": "https://i.ibb.co/zGFY1DL/images-5.jpg",
+    "shopAddress": "चरांवा बाजार से 300 मीटर संत राम प्रसाद PG कॉलेज के पहले",
+    "shopInfo": "",
+    "shopName": "दाद खाज खुजली की आयुर्वेदिक दवा",
+    "shopPhotos": "",
+    "shopType": [
+      "customerCare"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlQNdJc97YObWuNgHyX": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-MlQNdJc97YObWuNgHyX",
+    "mobileNumber": "tel:+917309416002",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "करमचंद वर्मा",
+    "ownerPhoto": "https://i.ibb.co/Ntb6qXG/IMG-20211008-091811.jpg",
+    "shopAddress": "बड़ौदा पूर्वी उत्तर प्रदेश ग्रामीण बैंक के बगल ",
+    "shopInfo": "",
+    "shopName": "डॉ वर्मा",
+    "shopPhotos": "",
+    "shopType": [
+      "doctors"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlUqORx9ooH3a6UYTOB": {
+    "closeTime": "18:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlUqORx9ooH3a6UYTOB",
+    "mobileNumber": "tel:+919936539370",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/QM59030/IMG-20211008-175225.jpg",
+    "shopAddress": "",
+    "shopInfo": "अनुभवी होम्योपैथिक चिकित्सक",
+    "shopName": "होम्योपैथिक दराबगंज",
+    "shopPhotos": "",
+    "shopType": [
+      "homeopathic",
+      "doctors"
+    ],
+    "villageName": "दराबगंज"
+  },
+  "-MlVmQes3SR0ylxseq8U": {
+    "closeTime": "19:00",
+    "inCharawan": "outOfCharawan",
+    "key": "-MlVmQes3SR0ylxseq8U",
+    "mobileNumber": "tel:+919795856008",
+    "mobileNumber2": "tel:+918052773683",
+    "openTime": "09:30",
+    "owenerName": "Akhilesh verma",
+    "ownerPhoto": "https://i.ibb.co/Dfg3sPW/1633711423111695235358784395245.jpg",
+    "shopAddress": "Umarni pipari chauraha Bikapur Faizabad 224203",
+    "shopInfo": "हमारे यहाँ प्रेस, मिक्सर, जूसर, फ्रिज, AC, LED, TV, आदि के थोक एवम् फुटकर बिक्रेता",
+    "shopName": "Verma Electric &Electronics",
+    "shopPhotos": "",
+    "shopType": [
+      "electronic"
+    ],
+    "villageName": "सुल्हेपुर"
+  },
+  "-MlabbqbzS90W9NMaxXW": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+918756030412",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "मुकेश",
+    "ownerPhoto": "https://i.ibb.co/rmp0k7Y/IMG-20211010-012117.jpg",
+    "shopAddress": "",
+    "shopInfo": "घर ऑफिस दुकान पेंट करवाने के लिए संपर्क करें हमारे पास अनुभवी पेंटर हैं",
+    "shopName": "मुकेश पेंटर",
+    "shopType": [
+      "painter"
+    ],
+    "villageName": "कोदैला"
+  },
+  "-Mlae4mkmCzuCZHI6trj": {
+    "closeTime": "19:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919161629714",
+    "mobileNumber2": "tel:+916387300160",
+    "openTime": "09:00",
+    "owenerName": "प्रदीप मिस्त्री",
+    "ownerPhoto": "https://i.ibb.co/gWvsdWV/IMG-20211010-013414.jpg",
+    "shopAddress": "कंचन डॉक्टर चश्मा वाले के थोड़ा आगे तारुन रोड",
+    "shopInfo": "लकड़ी के दरवाजे, चौखट-वाजू, खिड़की, वेड, सोफा, श्रृंगारदान, प्लाई दरवाजा, एल्यूमीनियम दरवाजा सलाइडर खिड़की, पार्टीशन आदि आर्डर देने पा उचित मूल्य में तैयार किया जाता है। एक बार सेवा का अवसर देकर गुणवत्ता पहचानें",
+    "shopName": "प्रदीप फर्नीचर हाउस",
+    "shopType": [
+      "carpenter",
+      "furniture"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-MlcRGRlVqHjW1WgljwF": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919919408175",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/Rh0wVXB/images-2.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "Dr Yadav",
+    "shopType": [
+      "animalDoctors"
+    ],
+    "villageName": "Kodaila"
+  },
+  "-MlcXKi0yuM02mBzcoWQ": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+918052147411",
+    "mobileNumber2": "tel:+919120172071",
+    "openTime": "",
+    "owenerName": "सुशील",
+    "ownerPhoto": "",
+    "shopAddress": "बरावं",
+    "shopInfo": "",
+    "shopName": "सुशील कुमार",
+    "shopType": [
+      "helper"
+    ],
+    "villageName": "मिश्र का पूरा"
+  },
+  "-MlcvobWNli51HevCXz-": {
+    "closeTime": "20:00",
+    "closedOn": "",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+919559585567",
+    "mobileNumber2": "",
+    "openTime": "10:00",
+    "owenerName": "सनित",
+    "ownerPhoto": "https://i.ibb.co/m4LP4GW/IMG-20211010-120842.jpg",
+    "shopAddress": "मेन चरावां चौराहा",
+    "shopInfo": "",
+    "shopName": "सनित हेयर कटिंग",
+    "shopType": [
+      "barber"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlcwXShK0e2V3RcJPVh": {
+    "closeTime": "19:00",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+919984833485",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "कृष्णा नंद दुबे",
+    "ownerPhoto": "https://i.ibb.co/gWfT2pp/images-95.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "श्री हनुमत कृपा लाइट डेकोरेशन",
+    "shopType": [
+      "lightHouse",
+      "soundServie",
+      "dj"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mlcx66PUq3AvtQornhh": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919565476144",
+    "mobileNumber2": "tel:+919473012824",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/Wzb7Pgn/images-96.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "डॉक्टर वर्मा (पशु वाले)",
+    "shopType": [
+      "animalDoctors"
+    ],
+    "villageName": "ककराही"
+  },
+  "-MlcxqGdPSnAKgqZaPcp": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+918052826556",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "हज़ारी प्रसाद",
+    "ownerPhoto": "https://i.ibb.co/0nSstm9/IMG-20211010-121857.jpg",
+    "shopAddress": "अरुण कम्युनिकेशन के सामने",
+    "shopInfo": "कीटनाशक, किराना, चप्पल जूता, कपड़ा , हार्डवेयर समान उपलब्ध",
+    "shopName": "अमन किराना स्टोर (हज़ारी)",
+    "shopType": [
+      "generalStore",
+      "beej",
+      "chappal",
+      "garments",
+      "machineryStore"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mldslgm-OWKHYJMZyyQ": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919956155271",
+    "mobileNumber2": "tel:+918127774420",
+    "openTime": "",
+    "owenerName": "रोहित कसौधन",
+    "ownerPhoto": "https://i.ibb.co/09GfTmG/images-32.jpg",
+    "shopAddress": "",
+    "shopInfo": "हमारे यहाँ कॉफी मशीन, चीनी गोला, पापकॉर्न, अंकल आंटी, दबान, नोकर, लाला - लाली इत्यादि की बुकिंग के लिए रूपर्क करें।",
+    "shopName": "महाकाल जयमाल ,शगुन ब्यूटी पार्लर",
+    "shopType": [
+      "decoration",
+      "beautiParler"
+    ],
+    "villageName": "स्टेशन रोड, बीकापुर,"
+  },
+  "-Mldw0_Q9gfO-iF5poWl": {
+    "closeTime": "21:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919670957014",
+    "mobileNumber2": "tel:+91",
+    "openTime": "14:00",
+    "owenerName": "प्रमोद",
+    "ownerPhoto": "https://i.ibb.co/QMdDYXy/images-91.jpg",
+    "shopAddress": "",
+    "shopInfo": "हमारे यहाँ स्पेशल टिक्की व सूजी के गोल गप्प मिलते हैं ।",
+    "shopName": "प्रमोद चाट भण्डार",
+    "shopType": [
+      "fastfood"
+    ],
+    "villageName": "बीकापुर"
+  },
+  "-MldxATuw-llziDLtBGB": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919793151542",
+    "mobileNumber2": "tel:+918528864238",
+    "openTime": "",
+    "owenerName": "रागिनी",
+    "ownerPhoto": "https://i.ibb.co/M8pjWF3/IMG-20211010-165610.jpg",
+    "shopAddress": "दराबगंज ",
+    "shopInfo": "हमारे यहां सभी प्रकार के कास्मेटिक आइटम आर्टीफिशियल ज्वेतरी\n\nमेकअप के सामान आदि उचित मूल्य पर उपलब्ध है।\n\nदुल्हन को सजाया जाता है, लहंगा और ज्वेलरी किराये पर उपलब्ध है।\nयहाँ स्तर फाल यागा, बटन, बकरम, लाउज डोरी, लटकन आदि उचित मूल्य पर उपलब्ध",
+    "shopName": "रागिनी सौन्दर्य प्रसाधन : श्रृंगार पैलेस",
+    "shopType": [
+      "beautiParler",
+      "cosmetic",
+      "gifts"
+    ],
+    "villageName": "तोरो माफी"
+  },
+  "-MleXpSH255gZObR1DYt": {
+    "closeTime": "20:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919621075832",
+    "mobileNumber2": "tel:+918005042920",
+    "openTime": "10:00",
+    "owenerName": "एम वर्मा",
+    "ownerPhoto": "https://i.ibb.co/DtspJ9c/download-3.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "दीप ट्रेडर्स एण्ड ट्रेडिंग कम्पनी",
+    "shopType": [
+      "buildingMaterials"
+    ],
+    "villageName": "उमरनी पिपरी चौराहा"
+  },
+  "-Mleg2z35IUJ7gJARLaQ": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+917518416589",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/p41dSKW/IMG-20211010-202124.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "दुल्हन ब्यूटी पार्लर",
+    "shopType": [
+      "beautiParler"
+    ],
+    "villageName": "बीकापुर"
+  },
+  "-Mlehu_1MN1QOueuwKtV": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+917054039995",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "अज़मत",
+    "ownerPhoto": "https://i.ibb.co/MsL4Y4w/images-97.jpg",
+    "shopAddress": "",
+    "shopInfo": "मोरंग बाल सीमेंट सरिया आदि विल्डिंग मिटीरियल के विक्रेता।",
+    "shopName": "अजमत ट्रेडर्स",
+    "shopType": [
+      "buildingMaterials"
+    ],
+    "villageName": "दराबगंज"
+  },
+  "-MliSEn4_bshhgES_SAk": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+917302983076",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "सुदीप तिवारी",
+    "ownerPhoto": "https://i.ibb.co/LdqFCvN/IMG-20211011-135514.jpg",
+    "shopAddress": "",
+    "shopInfo": "घर की बिजली रिपेयर और प्लंबर जैसे वर्क के लिए संपर्क करें",
+    "shopName": "शानू ( सुदीप तिवारी )",
+    "shopType": [
+      "plumber",
+      "homeElectronic"
+    ],
+    "villageName": "खौ पुर"
+  },
+  "-Mlnp_aJ2VwsRDAFWTfc": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919161913779",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "संजीत यादव",
+    "ownerPhoto": "https://i.ibb.co/R2sLhmB/IMG-20211012-145614.jpg",
+    "shopAddress": "",
+    "shopInfo": "दूध खरीदने के लिए संपर्क करें",
+    "shopName": "यादव दूध वाले",
+    "shopType": [
+      "milk"
+    ],
+    "villageName": "समदा"
+  },
+  "-Mlnr69PIKhALpKlZNcj": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+918808898571",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "बैजनाथ",
+    "ownerPhoto": "https://i.ibb.co/crLHJb3/images-98.jpg",
+    "shopAddress": "",
+    "shopInfo": "टंकी फिटिंग, पलबरिंग काम कर लिए",
+    "shopName": "बैजनाथ प्लम्बर (टंकी फिटिंग मिस्त्री)",
+    "shopType": [
+      "plumber"
+    ],
+    "villageName": "बरांव"
+  },
+  "-Mlo6lsQT2THkiTzngZT": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+919792772166",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/6mbPTxY/IMG-20211012-144008.jpg",
+    "shopAddress": "जय माता दी मार्केट, चरावां बीकापुर रोड",
+    "shopInfo": "\"हमारे यहां सभी इलेक्ट्रॉनिक्स सामान वेचे व रिपेयर किये जाते हैं।",
+    "shopName": "ए.के. इलेक्ट्रॉनिक्स",
+    "shopType": [
+      "electronic"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MloFtileLaI_r9qJexb": {
+    "closeTime": "20:00",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+916392441872",
+    "mobileNumber2": "tel:+91",
+    "openTime": "15:00",
+    "owenerName": "बृजेश",
+    "ownerPhoto": "https://i.ibb.co/0BfDPzy/IMG-20211012-165828.jpg",
+    "shopAddress": "",
+    "shopInfo": "मोमोज़ ,स्प्रिंग रोल उपलब्ध",
+    "shopName": "बृजेश कबाब पराठा",
+    "shopType": [
+      "fastfood"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MlpDG9ys_WGE3GletJ-": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+916307620581",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "मस्तराम",
+    "ownerPhoto": "https://i.ibb.co/71zSsCN/images-99.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "मस्तराम डीजे",
+    "shopType": [
+      "dj"
+    ],
+    "villageName": "गैनी"
+  },
+  "-MlsvhPszuxMfo81FWhr": {
+    "closeTime": "08:00",
+    "closedOn": [
+      "रविवार"
+    ],
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+917379375121",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "VIKAS KUMAR",
+    "ownerPhoto": "https://i.ibb.co/6DXyVQj/IMG-20211013-144102.jpg",
+    "shopAddress": "",
+    "shopInfo": "वित्तीय समावेशन के अन्तर्गत बैंक ऑफ बड़ौदा की पहल\nबैंक ऑफ बड़ौदा लिंक शाखा",
+    "shopName": "बैंकिंग सेवा केन्द्र",
+    "shopType": [
+      "bank"
+    ],
+    "villageName": "रामपुरभगन"
+  },
+  "-Mlt91lPnkiiSWkaHHU7": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+917570971501",
+    "mobileNumber2": "tel:+919260966490",
+    "openTime": "",
+    "owenerName": "डॉ एस के पांडे",
+    "ownerPhoto": "https://i.ibb.co/F6vD1vq/IMG-20211013-144504.jpg",
+    "shopAddress": "जन सेवा केन्द्र के सामने, यमपुर भगन, अयोध्या",
+    "shopInfo": "",
+    "shopName": "सरस्वती डेन्टल क्लीनिक (दांत का अस्पताल)",
+    "shopType": [
+      "hospital"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MltA8DYZ4PzA8_3GU51": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919936428295",
+    "mobileNumber2": "tel:+917897459874",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/sJq74r1/IMG-20211013-144700.jpg",
+    "shopAddress": "",
+    "shopInfo": "Tv या किसी भी इलेक्ट्रिक समान को रिपेयर कराएं",
+    "shopName": "कुमार इलेक्ट्रॉनिक्स",
+    "shopType": [
+      "electronic"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-MltAs0ZgvNcznHG6wLM": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+918318706130",
+    "mobileNumber2": "tel:+919919643803",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/xXv6PPL/IMG-20211013-144740.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "जायसवाल मेडिकल स्टोर",
+    "shopType": [
+      "medicalStore"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-MltCkEOlCb80DYlT02F": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919560525068",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "Mohd Mohsin Khan ",
+    "ownerPhoto": "https://i.ibb.co/Yy8DMGY/IMG-20211013-145017.jpg",
+    "shopAddress": "खान डॉ के बगल",
+    "shopInfo": "(कम्प्यूटराइज्ड आई टेस्टिग)",
+    "shopName": "दिल्ली ऑप्टिकल्स (फ्री आई टेस्टिंग)",
+    "shopType": [
+      "chashma"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MltDNF2bdv4gMCbMYSI": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919792140499",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "Gautam Soni",
+    "ownerPhoto": "https://i.ibb.co/BKx1DMR/IMG-20211013-145018.jpg",
+    "shopAddress": "चरावां मोड़",
+    "shopInfo": "| मोबाइल सेन्टर मोबाइल रिपेयरिंग सॉफ्टवेयर, नये हेण्डसेट\n\nमो- 9792140499\n\nइन्टरनेट लेमिनेशन एवं रिचार्ज कूपन उपलब्ध है",
+    "shopName": "लकी | मोबाइल सेन्टर",
+    "shopType": [
+      "mobileStore",
+      "mobileRepair"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MltEFeory17fdo5ygUg": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+918052093930",
+    "mobileNumber2": "tel:+919839890808",
+    "openTime": "",
+    "owenerName": "पं. दिनेश शास्त्री",
+    "ownerPhoto": "https://i.ibb.co/kJd5VTQ/IMG-20211013-145020.jpg",
+    "shopAddress": "चरावां मोड़",
+    "shopInfo": "संस्थापक / महंत ब्रह्मलीन पूज्य पं. दया शंकर शास्त्री जी महाराज\nश्रीमद्भगवत कथा ,राम कथा वक्ता, ज्योतिष परामर्शदाता",
+    "shopName": "हनुमानगढ़ी रामपुर",
+    "shopType": [
+      "pandit"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MltGPk5IBfW9gzKcKqP": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919838855897",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "डी पी प्रजापति",
+    "ownerPhoto": "https://i.ibb.co/JBVcYKf/IMG-20211013-145023.jpg",
+    "shopAddress": "चरावां मोड़",
+    "shopInfo": "दन्त रोग विशेसज्ञ",
+    "shopName": "प्रजापति डेंटल क्लिनिक",
+    "shopType": [
+      "hospital",
+      "doctors"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MltH3JNeIDkglVP5zTw": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+917234071000",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/TTr2KQ1/IMG-20211013-145125.jpg",
+    "shopAddress": "निकट- कृषक मोड़, रामपुर भगन- फैजाबाद",
+    "shopInfo": "",
+    "shopName": "दिशा पैथ लैब",
+    "shopType": [
+      "hospital"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-Mltd7Q8YlSRCMkwFGs6": {
+    "closeTime": "09:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919794943458",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "कमलेश कुमार",
+    "ownerPhoto": "https://i.ibb.co/sq4K7ZW/IMG-20211013-145626.jpg",
+    "shopAddress": "कृषक मोड़",
+    "shopInfo": "नोट-हमारे यहाँ सभी प्रकार की शुद्ध मिठाइयाँ एवं ताजा पनीर व सफल मटर उपलब्ध है।",
+    "shopName": "राजेश मिष्ठान भण्डार",
+    "shopType": [
+      "hotel"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MlteZ0GEBhNjjH-T0gI": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919838398573",
+    "mobileNumber2": "tel:+919415918780",
+    "openTime": "",
+    "owenerName": "डा. एम.ए. खान",
+    "ownerPhoto": "https://i.ibb.co/60cYGsh/IMG-20211013-145856.jpg",
+    "shopAddress": "चरावां मोड़",
+    "shopInfo": "",
+    "shopName": "जनता क्लीनिक (खान डॉक्टर)",
+    "shopType": [
+      "doctors"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MltfSEAYqiQ6EqLTz8N": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+917819003277",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "नरेश सिंह",
+    "ownerPhoto": "https://i.ibb.co/yWqRFgm/IMG-20211013-145616.jpg",
+    "shopAddress": "",
+    "shopInfo": "थोक व फुटकर विक्रेता",
+    "shopName": "बालाजी सीड्स कंपनी",
+    "shopType": [
+      "beej"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MltkX5OhsQj4N4W_Tj1": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+917897021188",
+    "mobileNumber2": "tel:+918299404154",
+    "openTime": "08:00",
+    "owenerName": "मुकेश तिवारी",
+    "ownerPhoto": "",
+    "shopAddress": "बीकापुर रोड",
+    "shopInfo": "",
+    "shopName": "तिवारी अग्रिजेक्शन",
+    "shopType": [
+      "beej"
+    ],
+    "villageName": "चरावां"
+  },
+  "-Mlu8FFFUY_OVlh6GrPX": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+917007296710",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "पंकज",
+    "ownerPhoto": "https://i.ibb.co/TYknngc/IMG-20211013-145137.jpg",
+    "shopAddress": "कृषक मोड़",
+    "shopInfo": "अंग्रेज़ी , पशु व आयुर्वेदिक दवाएं उपलब्ध",
+    "shopName": "न्यू तिवारी मेडिकल स्टोर",
+    "shopType": [
+      "medicalStore",
+      "aayurvedic"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MluB_rw9yLquazaqLMI": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+918004897846",
+    "mobileNumber2": "tel:+91",
+    "openTime": "09:00",
+    "owenerName": "बबलू प्रजापति",
+    "ownerPhoto": "https://i.ibb.co/LJ7yy9G/images-22.jpg",
+    "shopAddress": "मेन चरावां चौराहा",
+    "shopInfo": "आयुर्वेदिक, अंग्रेज़ी  दवाएं उपलब्ध",
+    "shopName": "बॉस मेडिकल स्टोर ( प्रजापति )",
+    "shopType": [
+      "medicalStore",
+      "aayurvedic"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MmH9DXolplddN98Ck74": {
+    "closeTime": "20:00",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+919838532288",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "रोशनलाल जायसवाल",
+    "ownerPhoto": "https://i.ibb.co/2KP2SLc/images-22.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "रोशन मेडिकल स्टोर",
+    "shopType": [
+      "medicalStore"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MmHeXJ7R0_gZIkmpCr_": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919453774402",
+    "mobileNumber2": "tel:+919453774403",
+    "openTime": "10:00",
+    "owenerName": "सोनू",
+    "ownerPhoto": "https://i.ibb.co/12g1tSd/IMG-20211018-143642.jpg",
+    "shopAddress": "पुराना बैंक",
+    "shopInfo": "नोट- सभी कम्पनियों के न्यू टैंड सेट एण्ड मोबाइल, FRP LOGK, साफ्टवेयर, व बैक कवर, ग्लास, बैटरी आदि उपलब्ध है।\nयहाँ पर बैटरी चार्जर, लीड कनेक्टर, ब्लूटूथ, MPएवंइड कवर, ईअरफोन गया हैड सेट सभी कम्पनियों के रिचार्ज आदि",
+    "shopName": "सोनू मोबाइल सेन्टर",
+    "shopType": [
+      "mobileStore",
+      "prinitng"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MmHoTMFeEN1Ivcauvld": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919450617007",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/xD9nfMf/IMG-20211018-151759.jpg",
+    "shopAddress": "केशव मेडिकल के बगल",
+    "shopInfo": "",
+    "shopName": "ॐ होम्यो  दवाखाना",
+    "shopType": [
+      "homeopathic"
+    ],
+    "villageName": "बीकापुर"
+  },
+  "-MmHokyx-2FFy72nmLNU": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919936491462",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "केशव",
+    "ownerPhoto": "https://i.ibb.co/Sy7XdV8/IMG-20211018-151802.jpg",
+    "shopAddress": "",
+    "shopInfo": "अंग्रेजी, पशुओं एवं आयुर्वेदिक दवाओं के विक्रेता",
+    "shopName": "केशव मेडिकल स्टोर",
+    "shopType": [
+      "medicalStore"
+    ],
+    "villageName": "बीकापुर"
+  },
+  "-MmHzXg8CXLUhV_nOajx": {
+    "closeTime": "07:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919415214060",
+    "mobileNumber2": "tel:+91",
+    "openTime": "11:00",
+    "owenerName": "शर्मा",
+    "ownerPhoto": "https://i.ibb.co/dMqsrtt/IMG-20211018-160837.jpg",
+    "shopAddress": "चरावां मोड़",
+    "shopInfo": "चाट फुल्की टिकिया",
+    "shopName": "शर्मा चाट भंडार",
+    "shopType": [
+      "fastfood"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MmI1ojtRR2W-B9BN57J": {
+    "closeTime": "06:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919792072002",
+    "mobileNumber2": "tel:+91",
+    "openTime": "22:00",
+    "owenerName": "जे पी वर्मा",
+    "ownerPhoto": "https://i.ibb.co/C2R5vXc/IMG-20211018-160930.jpg",
+    "shopAddress": "",
+    "shopInfo": "हमारे यहाँ S.B.L., R.W., W.S.I, ADEL आदि कम्पनियों की दवा उपलब्ध है",
+    "shopName": "एलेन होम्यो हॉल",
+    "shopType": [
+      "homeopathic"
+    ],
+    "villageName": "रामपुर चरावां मोड़"
+  },
+  "-MmQA7NsNFmuWRFTNZYw": {
+    "closeTime": "",
+    "inCharawan": "",
+    "mobileNumber": "tel:+917706929582",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "बिनोद तिवारी माउज़र",
+    "ownerPhoto": "https://i.ibb.co/0s2kGm9/IMG-20211020-061743.jpg",
+    "shopAddress": "",
+    "shopInfo": "गिट्टी मोरंग बालू सरिया सीमेंट रिंग / ट्रेक्टर ट्रॉली / बोलेरो",
+    "shopName": "प्रभु ट्रेडर्स माउज़र",
+    "shopType": [
+      "buildingMaterials",
+      "rentCars",
+      "tractors"
+    ]
+  },
+  "-MmR6jnHA9h-N_VHrfoV": {
+    "closeTime": "07:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919452486452",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "सरकारी",
+    "ownerPhoto": "https://i.ibb.co/yVg1CPX/Screenshot-2021-10-20-10-41-26-222-com-google-android-apps-photos.jpg",
+    "shopAddress": "",
+    "shopInfo": "सस्ती दवाइयाँ उपलब्ध",
+    "shopName": "प्रधानमंत्री  भारतीय जन औषधि केन्द्र",
+    "shopType": [
+      "medicalStore"
+    ],
+    "villageName": "रामपुर भगन-फैजाबाद"
+  },
+  "-MmR869C8WwYBjrZi5kC": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919076683408",
+    "mobileNumber2": "tel:+919696454548",
+    "openTime": "",
+    "owenerName": "अनूप यादव",
+    "ownerPhoto": "https://i.ibb.co/yFX6ph6/Screenshot-2021-10-20-10-48-02-200-com-miui-gallery.jpg",
+    "shopAddress": "",
+    "shopInfo": "डेरी\n\nबेकर्स\n\nआइस्क्रीम पार्लर\nराजभोग, पनीर, सफल मटर, खोया आदि मिलता है",
+    "shopName": "वैष्णवी स्वीट्स",
+    "shopType": [
+      "backery",
+      "coldDrink",
+      "dairy"
+    ],
+    "villageName": "बीकापुर"
+  },
+  "-MmbaDUMIlMJbgKetVYv": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+919984659057",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "राम केवल",
+    "ownerPhoto": "",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "पोस्ट मैन चरावां",
+    "shopType": [
+      "charawanOffice"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MmlEodRR6KXNn1L52qA": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+919721979152",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/ZWHSYFh/IMG-20211024-131004.jpg",
+    "shopAddress": "",
+    "shopInfo": "बीकापुर से गैनी",
+    "shopName": "यादव भूत पूर्व सैनिक",
+    "shopType": [
+      "taxi"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MmlF9XixuVvfg5qUgR2": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+919984229378",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/xqYf4wF/IMG-20211024-131203.jpg",
+    "shopAddress": "",
+    "shopInfo": "बीकापुर से गैनी",
+    "shopName": "जयप्रकाश टेम्पू सर्विस",
+    "shopType": [
+      "taxi"
+    ],
+    "villageName": "चरावां"
+  },
+  "-MnOjCiAcwMhe3FaIi6x": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+916307780989",
+    "mobileNumber2": "tel:+919455201885",
+    "openTime": "10:00",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/bBHJfgL/IMG-20211101-095036.jpg",
+    "shopAddress": "बैंक ऑफ बड़ौदा के सामने, फैज़ाबाद रोड",
+    "shopInfo": "शुद्ध शाकाहारी भोजनालय होम डिलीवरी की सुविधा उपलब्ध",
+    "shopName": "स्वाद रेस्टोरेंट एंड बेकर्स",
+    "shopType": [
+      "fastfood",
+      "coldDrink",
+      "hotel",
+      "backery"
+    ],
+    "villageName": "बीकापुर"
+  },
+  "-MnPa6Nz4Cu9db9Yd-cy": {
+    "closeTime": "06:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919795459798",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "Mohammad Arif",
+    "ownerPhoto": "https://i.ibb.co/Cv2qnGH/IMG-20211101-135018.jpg",
+    "shopAddress": "रामपुर भगन, फैजाबाद",
+    "shopInfo": "हमारे यहाँ सभी दो पहिया गाड़ियों की सर्विस होती है एवं सभी स्पेयर पार्ट्स उपलब्ध है।",
+    "shopName": "Arif auto parts आरिफ आटो सर्विस",
+    "shopType": [
+      "bikeRepair"
+    ],
+    "villageName": "मीतनपुर,"
+  },
+  "-MnPpihQk7VCIgravCK5": {
+    "closeTime": "08:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+917525012616",
+    "mobileNumber2": "tel:+919792073433",
+    "openTime": "10:00",
+    "owenerName": "",
+    "ownerPhoto": "",
+    "shopAddress": "",
+    "shopInfo": "होम्योपैथिक की सभी दवाएं जर्मन SBL इंडियन जर्मन कंपनियों की मिलती हैं",
+    "shopName": "आशू होम्यो हाल",
+    "shopType": [
+      "homeopathic"
+    ],
+    "villageName": "रामपुरभगन"
+  },
+  "-MnPqDWVG5kbRDxp3EyO": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919450620074",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "अजय",
+    "ownerPhoto": "https://i.ibb.co/bgPLD87/IMG-20211101-150226.jpg",
+    "shopAddress": "",
+    "shopInfo": "अंग्रेजी आयुर्वेदिक एवं पशुओं की दवाई के विक्रेता",
+    "shopName": "अजय मेडिकल स्टोर",
+    "shopType": [
+      "medicalStore"
+    ],
+    "villageName": "रामपुर भगन"
+  },
+  "-MnQETrgWd6JJudjv_BB": {
+    "closeTime": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+918840420781",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/K9D6Cdc/IMG-20211029-204748.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "अम्बरीष जनरल / गिफ्ट / फुट वियर",
+    "shopType": [
+      "cosmetic",
+      "gifts",
+      "chappal"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-MnQF31jBRsNb4qDUE8r": {
+    "closeTime": "07:00",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919453221513",
+    "mobileNumber2": "tel:+917600384852",
+    "openTime": "07:00",
+    "owenerName": "प्रमोद मिश्रा",
+    "ownerPhoto": "https://i.ibb.co/9cKzwCm/IMG-20211101-165408.jpg",
+    "shopAddress": "चरावां मोड़",
+    "shopInfo": "समस्त उत्पाद-दूध, दही, खोया, घी, मट्ठा, मक्खन, पेड़ा, सफल मटर पनीर, लडडू, गुलाब जामुन, सोन पापड़ी आदि",
+    "shopName": "आयूषी हर्षी न्यू पराग मिल्क बार",
+    "shopType": [
+      "dairy",
+      "milk"
+    ],
+    "villageName": "रामपुर "
+  },
+  "-MxhgUM2m3VwNkUH3ZB5": {
+    "closeTime": "19:00",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+918299060611",
+    "mobileNumber2": "tel:+919161046000",
+    "openTime": "09:00",
+    "owenerName": "सूरज पाठक",
+    "ownerPhoto": "https://i.ibb.co/9r0xbmb/Whats-App-Image-2022-01-24-at-6-52-34-PM.jpg",
+    "shopAddress": "चरावां चौराहा निकट ग्रामीण बैंक बीकापुर रोड अयोध्या ",
+    "shopInfo": "हमारे यहाँ सभी प्रकार की ऑनलाइन सेवाएँ उपलब्ध है |",
+    "shopName": "श्री लक्ष्मी नारायण जन सेवा केंद्र",
+    "shopType": [
+      "janSewaKendra"
+    ],
+    "villageName": "चरावां"
+  },
+  "-My_gKK1tPEFAbvFO_QX": {
+    "closeTime": "",
+    "inCharawan": "",
+    "mobileNumber": "tel:+919598855381",
+    "mobileNumber2": "tel:+919452101155",
+    "openTime": "",
+    "owenerName": "",
+    "ownerPhoto": "https://i.ibb.co/HPJyYrY/IMG-20220320-102648.jpg",
+    "shopAddress": "",
+    "shopInfo": "अखंड नगर से KGMU लखनऊ\n, रामपुर भगन सुबह 6:45 से 7:15 के बीच मिलेगी",
+    "shopName": "अवध बस एक्सप्रेस",
+    "shopType": [
+      "busService"
+    ]
+  },
+  "-N-DgvCAY0oIOP49upLE": {
+    "closeTime": "22:00",
+    "closedOn": [
+      "मंगलवार"
+    ],
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+917309485985",
+    "mobileNumber2": "tel:+91",
+    "openTime": "10:00",
+    "owenerName": "साबिर",
+    "ownerPhoto": "https://i.ibb.co/SQmdh3q/IMG-20220409-195119.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "जनता हेयर कटिंग",
+    "shopType": [
+      "barber"
+    ],
+    "villageName": "रामपुर"
+  },
+  "-OqGzbw1c6meyopO-NvV": {
+    "closeTime": "",
+    "closedOn": "",
+    "inCharawan": "outOfCharawan",
+    "mobileNumber": "tel:+919670100049",
+    "mobileNumber2": "",
+    "openTime": "",
+    "owenerName": "Pawan",
+    "ownerPhoto": "https://i.ibb.co/TzYBgSx/82d4d51214e4.jpg",
+    "shopAddress": "",
+    "shopInfo": "Chai, Milk and all dairy products",
+    "shopName": "Pawan Dairy",
+    "shopType": [
+      "milk"
+    ],
+    "villageName": "Rampur Bhagan"
+  },
+  "-OqH1t95HFpnInKOpVQj": {
+    "closeTime": "",
+    "closedOn": [
+      "रविवार"
+    ],
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+919616137795",
+    "mobileNumber2": "",
+    "openTime": "",
+    "owenerName": "Jitendra",
+    "ownerPhoto": "",
+    "shopAddress": "",
+    "shopInfo": "class 6th to 12 coaching",
+    "shopName": "Jeet coaching Classes",
+    "shopType": [
+      "coaching"
+    ],
+    "villageName": "चरावां"
+  },
+  "-OqJPLLpQTOlSnC5N4uu": {
+    "closeTime": "",
+    "closedOn": "",
+    "inCharawan": "charawan",
+    "mobileNumber": "tel:+917698442138",
+    "mobileNumber2": "",
+    "openTime": "",
+    "owenerName": "पवन यादव",
+    "ownerPhoto": "https://i.ibb.co/V03nkQtF/7e6a3a7cc05f.jpg",
+    "shopAddress": "गैनी रोड",
+    "shopInfo": "",
+    "shopName": "पवन डेरी चरावां",
+    "shopType": [
+      "dairy"
+    ],
+    "villageName": "चरावां"
+  }
+}
+
+
+========================================================================
+LIVE: Charawan donations (Firebase)
+========================================================================
+
+{
+  "banner": {
+    "image": "https://image.freepik.com/free-photo/people-holding-rubber-heart_1150-18576.jpg",
+    "mobileImage": "https://i.ibb.co/BGQmRTk/donat.png",
+    "title": "दान — चरावां |"
+  },
+  "bodyParagraphs": [
+    "सबसे पहले तो हम आपका बहुत बहुत आभार प्रगट करते हैं आपने डोनेशन में अपनी रूचि दिखाई, अगर आप भी चरावां गांव के विकास में योगदान देना चाहते हैं तो नीचे दिए गए QR कोड या फिर इस UPI ID पर कोई भी राशि भेज सकते हैं। आपके द्वारा भेजी गयी राशि आप पर निर्भर करता है की आप उसे गुप्त रखना चाहते है या फिर आप दूसरों को भी बताना चाहेंगे जिससे और लोग आप के मदद से प्रेरित होकर सामने आये। आपके द्वारा दी गयी राशि कुछ भी हो सकती है — 1 रूपये का भी किया गया दान सराहनीये होगा। धन्यवाद।",
+    "नोट: किसी भी राशि को भेजने के बाद कृपया सम्पर्क के माध्यम से पेमेंट का स्क्रीनशॉट हम तक ज़रूर पहुँचा दें। साथ में आप ये भी लिख सकते हैं की हम आपके द्वारा प्राप्त राशि कहाँ और किस प्रकार प्रयोग करें। अगर आप इसे गुप्त रखना चाहते हैं तो हम आपका धन्यवाद देते हैं और हम आपको आशा दिलाते हैं की आपके द्वारा दी हुई राशि का हम सही जगह और सही समय पर प्रयोग करेंगे। धन्यवाद।"
+  ],
+  "heading": "करिये गांव का समर्थन ||",
+  "needs": [
+    {
+      "buyLink": "",
+      "description": "Street dogs के लिए rabies vaccine support (QR से योगदान)।",
+      "donors": [
+        {
+          "address": "",
+          "description": "",
+          "name": "आशु तिवारी",
+          "number": "",
+          "photo": "https://avatars.githubusercontent.com/u/40313523?v=4",
+          "thankYouNote": "बहुत बहुत धन्यवाद — आपके सहयोग से ज़रूरतमंदों तक मदद पहुँचेगी।"
+        }
+      ],
+      "id": "anti-rabies-vaccine",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrWkxOJnxARve1yXMzUtXV5jAMSux1crwtmw&s",
+      "name": "एंटी-रेबीज वैक्सीन",
+      "paymentQrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
+      "priceStarts": 149,
+      "timesDonated": 0
+    },
+    {
+      "buyLink": "",
+      "description": "एक गरीब बच्ची के लिए चप्पल (₹200 से)।",
+      "id": "slippers-for-a-poor-girl",
+      "image": "https://i.ibb.co/rjmfG9D/7752fc326e4e.jpg",
+      "name": "एक गरीब बच्ची के लिए चप्पल ||",
+      "paymentQrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
+      "priceStarts": 199,
+      "timesDonated": 0
+    },
+    {
+      "buyLink": "",
+      "description": "कॉपी/पेन/किताब आदि के लिए सहायता (₹100 से)।",
+      "id": "stationery-for-students",
+      "image": "https://www.maasavitringo.org/wp-content/uploads/2024/05/CMP-2.jpg",
+      "name": "गरीब छात्रों के लिए स्टेशनरी",
+      "paymentQrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
+      "priceStarts": 100,
+      "timesDonated": 0
+    },
+    {
+      "buyLink": "",
+      "description": "Puppies/dogs के लिए parvo vaccine support (QR से योगदान)।",
+      "donors": [
+        {
+          "address": "",
+          "description": "",
+          "name": "आशु तिवारी",
+          "number": "",
+          "photo": "https://avatars.githubusercontent.com/u/40313523?v=4",
+          "thankYouNote": "बहुत बहुत धन्यवाद — आपके सहयोग से ज़रूरतमंदों तक मदद पहुँचेगी।"
+        }
+      ],
+      "id": "anti-parvo-vaccine",
+      "image": "https://5.imimg.com/data5/SELLER/Default/2022/11/LP/YV/CI/8640913/megavac-7-vaccination-250x250.JPG",
+      "name": "डॉग एंटी-पार्वो वैक्सीन",
+      "paymentQrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
+      "priceStarts": 500,
+      "timesDonated": 0
+    },
+    {
+      "buyLink": "",
+      "description": "Puppies के लिए दूध/फीड — ₹30 प्रति puppy (QR से योगदान)।",
+      "id": "milk-for-puppies",
+      "image": "https://s7d2.scene7.com/is/image/PetSmart/WEB-2236502-Apr24_AHB11_Dog_DT",
+      "name": "पिल्लों के लिए दूध",
+      "paymentQrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
+      "priceStarts": 30,
+      "timesDonated": 0
+    },
+    {
+      "buyLink": "https://www.meesho.com/pet-fun-25mm-reflective-radium-dog-collar-soft-nylon-quick-release-safety-buckle-adjustable-neck-strap-comfortable-durable-for-medium-to-large-dogs-color-may-vary/p/9g2mbx",
+      "description": "Street dogs के लिए सुरक्षित reflective collar ताकि रात में visibility बढ़े।",
+      "id": "reflective-radium-dog-collar",
+      "image": "https://images.meesho.com/images/products/571191693/yrxhl_512.avif?width=512",
+      "name": "रिफ्लेक्टिव रैडियम डॉग कॉलर",
+      "paymentQrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
+      "priceStarts": 150,
+      "timesDonated": 1
+    },
+    {
+      "buyLink": "",
+      "description": "बच्चों के लिए स्कूल बैग (₹299 से)।",
+      "id": "school-bag",
+      "image": "https://rukminim2.flixcart.com/image/180/240/xif0q/backpack/y/t/z/3-konngi-rabbit-pink-kids-school-bag-soft-plush-for-boys-girls-original-imagjz2uahb8jkrz.jpeg?q=90",
+      "name": "स्कूल बैग",
+      "paymentQrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
+      "priceStarts": 299,
+      "timesDonated": 0
+    },
+    {
+      "buyLink": "",
+      "description": "गाँव में street light के लिए सहयोग (₹499 से)।",
+      "id": "street-lights",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPAyn--4ZsyonxJzogX7uHO8rCuazyN7uF8Q&s",
+      "name": "स्ट्रीट लाइट",
+      "paymentQrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
+      "priceStarts": 499,
+      "timesDonated": 0
+    },
+    {
+      "buyLink": "",
+      "description": "हमें एक साइन बोर्ड की जरूरत है। हमारे गाँव में कुछ ऐसी जगहें हैं जहाँ सरकार द्वारा अभी तक साइन बोर्ड स्थापित नहीं किया गया है। वहाँ आए दिन दुर्घटनाएँ होती रहती हैं और लोग चोटिल होते रहते हैं।\n\nइसलिए वहाँ साइन बोर्ड लगवाना बहुत आवश्यक है। इसके लिए आप सभी से निवेदन है कि कृपया सहयोग (दान) करें, जिससे हम इस कार्य में मदद कर सकें।\n\nधन्यवाद।",
+      "id": "sign-board",
+      "image": "https://i.ibb.co/k2j0Xc62/29363cc04338.jpg",
+      "name": "Sign Board  ( साइन बोर्ड )",
+      "paymentQrImage": "",
+      "priceStarts": 499,
+      "timesDonated": 0
+    }
+  ],
+  "qrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
+  "screenshotNoteHref": "/contacts",
+  "screenshotNoteLabel": "सम्पर्क पृष्ठ",
+  "shipTo": {
+    "addressLines": [
+      "ग्राम: चरावां पोस्ट: कोदैला जिला: अयोध्या, उत्तर प्रदेश पिन: 224203 सरकारी गोदाम के पास"
+    ],
+    "name": "आशु तिवारी",
+    "phone": "7800818001"
+  },
+  "upiId": "ashumsd7@ybl"
+}
+
+
+========================================================================
+STATIC: data/about.json
+========================================================================
+
+{
+  "title": "हमारे बारे में",
+  "paragraphs": [
+    "यह वेबसाइट चरावां गाँव की सार्वजनिक जानकारी, दुकानों की सूची, समाचार और सांस्कृतिक गतिविधियों को एक स्थान पर लाने के लिए बनाई गई है।"
+  ],
+  "donateCta": "गाँव का समर्थन करें",
+  "donateHref": "/donate"
+}
+
+
+========================================================================
+STATIC: data/contacts.json
+========================================================================
+
+{
+  "title": "सम्पर्क करें",
+  "intro": "प्रश्न, सुझाव या सामग्री भेजने के लिए नीचे दिए गए विकल्पों से जुड़ें।",
+  "channels": [
+    {
+      "label": "व्हाट्सप्प समूह",
+      "href": "https://chat.whatsapp.com/DGW9FlVoEeF7YVPxtptsUi?mode=gi_t"
+    },
+    { "label": "ईमेल", "href": "mailto:hello@charawan.netlify.app" },
+    { "label": "फेसबुक", "href": "" },
+    { "label": "इंस्टाग्राम", "href": "" },
+    { "label": "यूट्यूब", "href": "" }
+  ]
+}
+
+
+========================================================================
+STATIC: data/cricket.json
+========================================================================
+
+{
+  "banner": {
+    "title": "Cricket",
+    "image": "https://i.ibb.co/K6jby1w/rampur-Cricket-Winner.jpg",
+    "mobileImage": "https://i.ibb.co/X7zZ9ts/IMG-20211002-000344.jpg"
+  },
+  "heading": "चरावां क्रिकेट क्लब",
+  "body": "जैसा की हम सब जानते हैं कि हमारे प्यारे भारत देश में क्रिकेट को लेकर कितनी उत्सुकता है अगर आप किसी गांव में जाए तो लगभग हर दुसरे या तीसरे गड्ढे में या किसी खाली जगह को साफ़ करके कुछ बच्चे क्रिकेट खेलते नज़र आ जायेंगे कोई डंडे का बैट बना कर खेल रहा होगा तो कोई चंदा इकट्ठा करके नया बल्ला खरीद कर लाया होगा लेकिन क्रिकेट खेलता आपको मिलेगा ज़रूर इसी उत्सुकता के साथ जी रहा है हमारा गांव चरावां वैसे तो क्रिकेट के छोटे छोटे मैदान जो कि खेलने लायक बहुत हैं लेकिन पूरे गांव में दो तीन जगह ऐसी हैं जहाँ एक बेहतरीन अंडरआर्म क्रिकेट जिसे हम रूल आउट क्रिकेट के नाम से जानते है इसका आयोजन कर चुके हैं और ये क्रिकेट टूर्नामेंट हर वर्ष आयोजित होते हैं उन्ही आयोजनों में कुछ क्लिप्स आपको हम अभी दिखने वाले है जिन्हे आप नीचे स्क्रॉल कर के देख सकते है ये चौराहे पर आयाजित 2018 और 2021 टूर्नामेंट कि कुछ झलकियां है इसके अलावा चमक क्रिकेट क्लब जो क्रिकेट टूर्नामेंट का आयोजन काफी वर्षो से कराते आ रहे हैं उनकी कुछ फोटोज या क्लिप्स जैसे हमे प्राप्त होंगी हम यहाँ प्रकाशित कर देंगे फ़िलहाल नीचे वीडियो का आनंद लीजिये और आपके पास चरावां या इसके आस पास गांव कि कोई भी क्लिप या फोटोज हो तो हमे भेजना न भूले इन सबको हम वेबसाइट पर प्रकाशित ज़रूर करेंगे धन्यवाद किसी भी प्रकार कि फोटो या वीडियो भेजने के लिए सम्पर्क करें क्लिक करें !",
+  "whatsapp": "https://chat.whatsapp.com/LgCz9l1tWQKKJe6OQ5n8Zt",
+  "sections": [
+    {
+      "id": "2021",
+      "title": "क्रिकेट टूर्नामेंट 2021",
+      "videos": [
+        "https://www.youtube.com/embed/tg4qNbF_KUA",
+        "https://www.youtube.com/embed/ll9NOyqrWbA",
+        "https://www.youtube.com/embed/1spkXqUybDo",
+        "https://www.youtube.com/embed/Yspi4LlPnKs",
+        "https://www.youtube.com/embed/zMgRDrfVv2U",
+        "https://www.youtube.com/embed/Qxqw0qMxduo",
+        "https://www.youtube.com/embed/IxmXJlOMgak"
+      ]
+    },
+    {
+      "id": "2018",
+      "title": "क्रिकेट टूर्नामेंट 2018",
+      "videos": [
+        "https://www.youtube.com/embed/kbl6677hT04",
+        "https://www.youtube.com/embed/1zENI_EMIWc"
+      ]
+    }
+  ]
+}
+
+
+========================================================================
+STATIC: data/develop-village.json
+========================================================================
+
+{
+  "title": "गाँव का विकास — योगदान व कार्य",
+  "intro": "यह पृष्ठ चरावां में किए गए सार्वजनिक/सामुदायिक कार्यों और आवश्यकताओं की जानकारी के लिए है। विवरण जल्द अपडेट किया जाएगा।",
+  "milestones": [
+    "डिजिटल डायरेक्टरी व दुकान सूची का विस्तार",
+    "समुदाय सूचनाएँ एक स्थान पर",
+    "आगामी: स्वास्थ्य शिविर व शिक्षा सहायता सूची"
+  ]
+}
+
+
+========================================================================
+STATIC: data/donate.json
+========================================================================
+
+{
+  "banner": {
+    "title": "दान — चरावां",
+    "image": "https://image.freepik.com/free-photo/people-holding-rubber-heart_1150-18576.jpg",
+    "mobileImage": "https://i.ibb.co/BGQmRTk/donat.png"
+  },
+  "heading": "करिये गांव का समर्थन",
+  "upiId": "ashumsd7@ybl",
+  "qrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
+  "shipTo": {
+    "name": "आशु तिवारी",
+    "addressLines": [
+      "ग्राम: चरावां पोस्ट: कोदैला जिला: अयोध्या, उत्तर प्रदेश पिन: 224203 सरकारी गोदाम के पास"
+    ],
+    "phone": "7800818001"
+  },
+  "screenshotNoteHref": "/contacts",
+  "screenshotNoteLabel": "सम्पर्क पृष्ठ",
+  "bodyParagraphs": [
+    "सबसे पहले तो हम आपका बहुत बहुत आभार प्रगट करते हैं आपने डोनेशन में अपनी रूचि दिखाई, अगर आप भी चरावां गांव के विकास में योगदान देना चाहते हैं तो नीचे दिए गए QR कोड या फिर इस UPI ID पर कोई भी राशि भेज सकते हैं। आपके द्वारा भेजी गयी राशि आप पर निर्भर करता है की आप उसे गुप्त रखना चाहते है या फिर आप दूसरों को भी बताना चाहेंगे जिससे और लोग आप के मदद से प्रेरित होकर सामने आये। आपके द्वारा दी गयी राशि कुछ भी हो सकती है — 1 रूपये का भी किया गया दान सराहनीये होगा। धन्यवाद।",
+    "नोट: किसी भी राशि को भेजने के बाद कृपया सम्पर्क के माध्यम से पेमेंट का स्क्रीनशॉट हम तक ज़रूर पहुँचा दें। साथ में आप ये भी लिख सकते हैं की हम आपके द्वारा प्राप्त राशि कहाँ और किस प्रकार प्रयोग करें। अगर आप इसे गुप्त रखना चाहते हैं तो हम आपका धन्यवाद देते हैं और हम आपको आशा दिलाते हैं की आपके द्वारा दी हुई राशि का हम सही जगह और सही समय पर प्रयोग करेंगे। धन्यवाद।"
+  ],
+  "needs": [
+   
+  ]
+}
+
+
+========================================================================
+STATIC: data/election.json
+========================================================================
+
+{
+  "banner": {
+    "title": "Election",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRldW7veazJYtaphJxxzZ7RZlJzXF8MvVwf2w&s",
+    "mobileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRldW7veazJYtaphJxxzZ7RZlJzXF8MvVwf2w&s"
+  },
+  "heading": "चुनाव चरावां में",
+  "years": ["2021", "2015", "2010"],
+  "electionData": [
+    {
+      "year": "2021",
+      "data": [
+        {
+          "type": "ग्राम पंचायत प्रधान ",
+          "winnerImg": "https://i.ibb.co/Vw20jjS/anil005018092021.jpg",
+          "img": "",
+          "downloadLink": null,
+          "winner": "अनिल कुमार ",
+          "opponent": "",
+          "about": "2021 के ग्राम पंचायत चुनाव में चरावां के प्रधान के रूप में अनिल कुमार जी चुने गए।"
+        },
+        {
+          "type": "बी डी सी",
+          "winnerImg": "https://i.ibb.co/JQNw2XM/anil003918092021.jpg",
+          "img": "",
+          "downloadLink": null,
+          "winner": "अनीस तिवारी ",
+          "opponent": "",
+          "about": "बीडीसी प्रतिनिधित्व — अनीस तिवारी जी।"
+        }
+      ]
+    },
+    {
+      "year": "2015",
+      "data": [
+        {
+          "type": "ग्राम पंचायत प्रधान  ",
+          "img": "https://i.ibb.co/0qLLPsD/ele2015.jpg",
+          "winnerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ZPryW2FN8JQZ1y8I0BaGzVJTi6evpNrkdZ17uaWiOjIsBLYnuUHv2KIt0eBeqgzHICQ&usqp=CAU",
+          "downloadLink": "http://sec.up.nic.in/ElecLive/ResultSearchOnVacancy.aspx?VacancyId=CN9xsQK+u2E=&PostId=v/iigWwtI48=&DistId=I3JyRKadE8w=",
+          "winner": "रोशनलाल (436)",
+          "opponent": "vs संदीप तिवारी (303)",
+          "about": "2015 के चुनाव परिणाम — आधिकारिक लिंक से विवरण देखें।"
+        },
+        {
+          "type": "बी डी सी",
+          "winnerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ZPryW2FN8JQZ1y8I0BaGzVJTi6evpNrkdZ17uaWiOjIsBLYnuUHv2KIt0eBeqgzHICQ&usqp=CAU",
+          "img": "",
+          "downloadLink": null,
+          "winner": "",
+          "opponent": "",
+          "about": "2015 बीडीसी — विवरण जल्द।"
+        }
+      ]
+    },
+    {
+      "year": "2010",
+      "data": [
+        {
+          "type": "ग्राम पंचायत प्रधान ",
+          "winnerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ZPryW2FN8JQZ1y8I0BaGzVJTi6evpNrkdZ17uaWiOjIsBLYnuUHv2KIt0eBeqgzHICQ&usqp=CAU",
+          "img": "https://i.ibb.co/ZmRW3RZ/2010-pradhan.jpg",
+          "downloadLink": "http://sec.up.nic.in/site/fonts/gpp_1404.pdf",
+          "winner": "ऋषिकेश जायसवाल  ",
+          "opponent": "",
+          "about": "2010 प्रधान चुनाव — आधिकारिक PDF।"
+        },
+        {
+          "type": "बी डी सी",
+          "winnerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ZPryW2FN8JQZ1y8I0BaGzVJTi6evpNrkdZ17uaWiOjIsBLYnuUHv2KIt0eBeqgzHICQ&usqp=CAU",
+          "img": "https://i.ibb.co/cgMZ6fL/BDC-2010.jpg",
+          "downloadLink": "http://sec.up.nic.in/site/fonts/kpm_1404.pdf",
+          "winner": "किरन",
+          "opponent": "",
+          "about": "2010 बीडीसी — आधिकारिक PDF।"
+        }
+      ]
+    }
+  ]
+}
+
+
+========================================================================
+STATIC: data/emergency-contacts.json
+========================================================================
+
+{
+  "sectionId": "emergency-contacts",
+  "heading": "आपातकालीन व त्वरित सम्पर्क",
+  "subheading": "महत्वपूर्ण सेवाओं के नंबर एक ही स्थान पर — कॉल करें या नंबर कॉपी करें।",
+  "helplinesHeading": "कुछ हेल्पलाइन",
+  "helplines": [
+    {
+      "id": "h112",
+      "label": "पुलिस / सामान्य आपातकाल (भारत)",
+      "number": "112",
+      "tel": "tel:112"
+    },
+    {
+      "id": "h1962",
+      "label": "पशु आपात सहायता हेल्पलाइन",
+      "number": "1962",
+      "tel": "tel:1962"
+    },
+    {
+      "id": "h101",
+      "label": "अग्निशमन दल (फायर ब्रिगेड)",
+      "number": "101",
+      "tel": "tel:101"
+    }
+  ],
+  "cards": [
+    {
+      "id": "c1",
+      "categoryHi": "पशु चिकित्सक",
+      "name": "पशु डॉक्टर",
+      "designation": "पृथ्वीराज वर्मा",
+      "phoneDisplay": "9565476111",
+      "tel": "tel:9565476111",
+      "copyDigits": "9565476111"
+    },
+    {
+      "id": "c2",
+      "categoryHi": "डॉक्टर",
+      "name": "Doc Bablu Prajapati",
+      "designation": "बबलू प्रजापति",
+      "phoneDisplay": "8004897846",
+      "tel": "tel:8004897846",
+      "copyDigits": "8004897846"
+    },
+    {
+      "id": "c3",
+      "categoryHi": "दुकान",
+      "name": "Sonu Kirana Store",
+      "designation": "सोनू किराना स्टोर",
+      "phoneDisplay": "6386172574",
+      "tel": "tel:6386172574",
+      "copyDigits": "6386172574"
+    },
+    {
+      "id": "c4",
+      "categoryHi": "सम्पर्क",
+      "name": "Sandeep Tiwari",
+      "designation": "संदीप तिवारी",
+      "phoneDisplay": "9984915000",
+      "tel": "tel:9984915000",
+      "copyDigits": "9984915000"
+    },
+   
+    {
+      "id": "c9",
+      "categoryHi": "नया नंबर",
+      "name": "नंबर जोड़ें / सूचना दें",
+      "designation": "अपना विवरण भेजने हेतु",
+      "phoneDisplay": "—",
+      "tel": "",
+      "copyDigits": "",
+      "ctaHref": "/contacts",
+      "ctaLabel": "सम्पर्क फ़ॉर्म खोलें"
+    }
+  ]
+}
+
+
+========================================================================
+STATIC: data/gallery.json
+========================================================================
+
+{
+  "heading": "गैलरी",
+  "items": [
+    {
+      "title": "चरावां गांव ",
+      "subTitle": "2013  से अब तक ",
+      "link": "",
+      "info": "",
+      "numberOfPhotos": "7500+ फोटो",
+      "type": "photo",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2210/2210000.png"
+    },
+    {
+      "title": "श्री रामचरित मानस पाठ  ",
+      "subTitle": "( विजय मिश्रा & पार्टी)   ",
+      "link": "https://www.youtube.com/channel/UCKGWoWw1mXPcpiR0yz5vO3g/videos",
+      "info": "फिल्मों के गानों के तर्ज़ों पर रामायण पाठ की संगीतमय प्रस्तुति ",
+      "numberOfPhotos": "25+ वीडियो",
+      "type": "video",
+      "icon": "https://images-eu.ssl-images-amazon.com/images/I/51l-0n5kdsL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
+    },
+    {
+      "title": "चरावां Vlogs",
+      "subTitle": "वीडियो लॉग्स देखें  ",
+      "link": "https://www.youtube.com/watch?v=3ysh5vssdeg&list=PL4ehj0-yhmAJAo8YqqJeHPbWqIFtN2ExL",
+      "info": "",
+      "numberOfPhotos": "2 वीडियो",
+      "type": "video",
+      "icon": "https://cdn-icons-png.flaticon.com/512/1518/1518977.png"
+    },
+    {
+      "title": "टूर्नामेंट तैयारी  2021",
+      "subTitle": "टूर्नामेंट तैयारी 2021",
+      "link": "https://photos.app.goo.gl/FNDNuQZ66qVkZtKR6",
+      "info": "",
+      "numberOfPhotos": "130+ फोटो",
+      "type": "photo",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2405/2405308.png"
+    },
+    {
+      "title": "चरावां क्रिकेट क्लब 2021",
+      "subTitle": "दिन 1",
+      "link": "https://photos.app.goo.gl/u2CLyH1VJ6tctRaz7",
+      "info": "",
+      "numberOfPhotos": "20+ फोटो",
+      "type": "photo",
+      "icon": "https://cdn-icons-png.flaticon.com/512/1454/1454436.png"
+    },
+    {
+      "title": "चरावां क्रिकेट क्लब 2021",
+      "subTitle": "फाइनल दिन ",
+      "link": "https://photos.app.goo.gl/QJ44jiWAb6Qwvti3A",
+      "info": "",
+      "numberOfPhotos": "440+ फोटो",
+      "type": "photo",
+      "icon": "https://cdn-icons-png.flaticon.com/512/864/864763.png"
+    },
+    {
+      "title": "होली 2021",
+      "subTitle": "चरावां चौराहा होली",
+      "link": "https://photos.app.goo.gl/eiiL5MQ2oCZReenH9",
+      "info": "",
+      "numberOfPhotos": "280+ फोटो",
+      "type": "photo",
+      "icon": "https://cdn-icons-png.flaticon.com/512/3755/3755104.png"
+    }
+  ]
+}
+
+
+========================================================================
+STATIC: data/games.json
+========================================================================
+
+{
+  "title": "खेल",
+  "body": "यहाँ छोटे-मोटे ब्राउज़र गेम या गाँव से जुड़ी गतिविधियाँ जोड़ी जा सकती हैं। अभी प्लेसहोल्डर है।",
+  "games": []
+}
+
+
+========================================================================
+STATIC: data/history.json
+========================================================================
+
+{
+  "banner": {
+    "title": "चरावां — इतिहास"
+  },
+  "heading": "चरावां का इतिहास",
+  "body": "हम आपके लिए चरावां के इतिहास को लेकर एक छोटा सा वीडियो प्रस्तुत कर रहे हैं, अगर आपके पास इस गांव से सम्बंधित कोई भी जानकारी है तो हमें ज़रूर भेंजे आप चाहें वीडियो भेज सकते हैं या लिख कर भी भेज सकते हैं आपके द्वारा दी गयी जानकरी हम वेबसाइट पर प्रकाशित करेंगे जानकारी देने के लिए सम्पर्क करें",
+  "whatsapp": "https://chat.whatsapp.com/LgCz9l1tWQKKJe6OQ5n8Zt",
+  "youtubeEmbed": "https://www.youtube.com/embed/hr6p9AR-zF8"
+}
+
+
+========================================================================
+STATIC: data/home.json
+========================================================================
+
+{
+  "hero": {
+    "welcomeEn": "Welcome to",
+    "titleEn": "CHARAWAN",
+    "welcomeHi": "चरावां में आपका हार्दिक स्वागत है",
+    "hopeLine": "आप सभी कुशल मंगल हों।",
+    "joinWhatsappCta": "WhatsApp समूह से जुड़ें",
+    "shopsCta": "संपर्क सूची देखें"
+  },
+  "notificationsPanel": {
+    "heading": "चरावां समाचार",
+    "subtitle": "गाँव की आधिकारिक व सामुदायिक अपडेट यहीं दिखाई जाती हैं।",
+    "seeAllHref": "/notifications",
+    "seeAllLabel": "सभी सूचनाएँ देखें",
+    "addLabel": "सूचना जोड़ें",
+    "addHref": "https://www.google.com"
+  },
+  "notifications": [
+    {
+      "id": "n1",
+      "headline": "होली की शुभकामनाएँ",
+      "message": "होली की ढेरों शुभकामनाएं — समस्त ग्रामवासियों के साथ मिलकर उत्सव मनाएँ।",
+      "author": "प्रशासन",
+      "timeLabel": "83 दिन बाद",
+      "likes": 59,
+      "unread": true,
+      "thumbnail": "/og-image-placeholder.svg"
+    },
+    {
+      "id": "n2",
+      "headline": "दीपावली की शुभकामनाएँ",
+      "message": "समस्त ग्राम वासियों की ओर से दीपावली की हार्दिक शुभकामनाएँ।",
+      "author": "प्रशासन",
+      "timeLabel": "49 दिन पहले",
+      "likes": 110,
+      "unread": false,
+      "thumbnail": "/og-image-placeholder.svg"
+    },
+    
+    {
+      "id": "n4",
+      "headline": "माता जी विसर्जन",
+      "message": "माता जी की मूर्ति का शांतिपूर्वक विसर्जन किया गया।",
+      "author": "प्रशासन",
+      "timeLabel": "69 दिन पहले",
+      "likes": 6,
+      "unread": false,
+      "thumbnail": "/og-image-placeholder.svg"
+    },
+    {
+      "id": "n5",
+      "headline": "दुकानों की सूची अपडेट",
+      "message": "चरावां व आसपास की दुकानों/सेवाओं की संख्या 150 से अधिक हो चुकी है।",
+      "author": "प्रशासन",
+      "timeLabel": "72 दिन पहले",
+      "likes": 6,
+      "unread": false,
+      "thumbnail": "/og-image-placeholder.svg"
+    }
+  ],
+  "importantLinks": [
+   
+    {
+      "label": "वेबसाइट सम्बन्धित जानकारी और फीडबैक के लिए वेबसाइट हेल्प डेस्क से जुड़ें",
+      "href": "https://chat.whatsapp.com/DGW9FlVoEeF7YVPxtptsUi?mode=gi_t"
+    },
+    {
+      "label": "चरावां के ओफिसिअल व्हाट्सप्प ग्रुप से जुड़ें",
+      "href": "https://chat.whatsapp.com/DGW9FlVoEeF7YVPxtptsUi?mode=gi_t"
+    },
+    {
+      "label": "सरकारी नौकरी की जानकारी के लिए वेबसाइट देखें",
+      "href": "https://www.sarkariresult.com/"
+    },
+    {
+      "label": "जनसुनवाई-समाधानपोर्टल पर अपनी शिकायत दर्ज़ करें",
+      "href": "https://jansunwai.up.nic.in/"
+    }
+  ],
+  "intro": "चरावां गाँव भारत के उत्तर प्रदेश में अयोध्या जिले की बीकापुर तहसील में स्थित है। यह उप-जिला मुख्यालय बीकापुर से 9 किमी दूर स्थित है।",
+  "stats": [
+    { "value": "313", "label": "घर" },
+    { "value": "2,000", "label": "लोग" },
+    { "value": "854", "label": "पुरुष" },
+    { "value": "807", "label": "महिलाएं" },
+    { "value": "211", "label": "बच्चे" },
+    { "value": "161", "label": "क्षेत्रफल (हे०)" }
+  ],
+  "statsNote": "*यह डेटा 2011 की जनगणना और 2021 के अनुसार एक्सपेक्टेड डेटा है |",
+  "villageDevelopment": {
+    "heading": "गांव का समर्थन करें",
+    "subheading": "डिजिटल पहल व सार्वजनिक सुविधाओं हेतु सहयोग व पारदर्शिता।",
+    "qrImage": "https://i.ibb.co/6cKfd2V/qe.jpg",
+    "contributionsCta": "योगदान व कार्य देखें",
+    "contributionsHref": "/develop-village",
+    "workDone": [
+      "ग्राम सूचना व दुकान डायरेक्टरी ऑनलाइन",
+      "सम्पर्क व महत्वपूर्ण लिंक एकत्र",
+      "गैलरी व क्रिकेट सामग्री का संग्रह"
+    ],
+    "requirements": [
+      "नई तस्वीरें व समाचार नियमित अपलोड",
+      "दुकान डेटा सत्यापन व अपडेट",
+      "स्थानीय स्वयंसेवक समन्वय"
+    ],
+    "donateCta": "दान करें",
+    "donateHref": "/donate"
+  },
+  "cricketSection": {
+    "title": "|| चरावां क्रिकेट क्लब ||",
+    "body": "चरावां गांव में क्रिकेट के दो क्लब है एक चरावां क्रिकेट क्लब और दूसरा चमक क्रिकेट क्लब ये क्लब क्रिकेट टूर्नामेंट का आयोजन हर वर्ष कराते हैं जिसमे दूर दूर से आयी हुई क्रिकेट टीमें हिस्सा लेती है जहाँ चरावां क्रिकेट क्लब क्रिकेट टूर्नामेंट का आयोजन दो बार करा चुका है तो वही चमक क्रिकेट क्लब के द्वारा क्रिकेट टूर्नामेंट का आयोजन विगत कई वर्षो से होता रहा है सत्र का टूर्नामेंट हर नववर्ष के पहले या दूसरे महीने में होता है",
+    "ctaLabel": "क्रिकेट पेज देखें",
+    "ctaHref": "/cricket"
+  },
+  "leaders": [
+    {
+      "name": "अनिल कुमार",
+      "role": "ग्राम प्रधान चरावां",
+      "tenure": "2021- अब तक",
+      "phone": "tel:+919839018844",
+      "photo": "https://i.ibb.co/Vw20jjS/anil005018092021.jpg"
+    },
+    {
+      "name": "अनीस तिवारी",
+      "role": "बी डी सी चरावां",
+      "tenure": "2021- अब तक",
+      "phone": "",
+      "photo": "https://i.ibb.co/JQNw2XM/anil003918092021.jpg"
+    },
+    {
+      "name": "अमित मौर्या",
+      "role": "कोटेदार चरावां",
+      "tenure": "2021- अब तक",
+      "phone": "tel:+919628771123",
+      "photo": "https://i.ibb.co/5FGTrtc/mauryaamit.jpg"
+    }
+  ],
+  "aboutTeaser": "लगभग 2000 से ज्यादा आबादी वाला 5 पुरवा का ये गांव उत्तर प्रदेश के अयोध्या जिले के बीकापुर तहसील के 9 किलोमीटर दक्षिण पूर्व की ओर बसा है चरावां के पडोसी गांव बेनीगद्दोपुर ,बरांव, कोदैला हैं चरावां में लगभग 350 से ज्यादा घर है। चरावां के प्रधान जो अभी 2021 के आम चुनाव में चुने गए हैं अनिल कुमार जी है बी डी सी का पद अनीस तिवारी जी के पास है तो वहीँ कोटा सम्बंधित काम अमित मौर्या जी सम्हाल रहे हैं चरावां एक चौराहा है जिसके चार रास्ते क्रमशः रामपुर भगन बीकापुर धर्मगंज और जानेबाज़ार को जोड़ते है |",
+  "footer": {
+    "copyright": "© चरावां 2021 charawan.netlify.app",
+    "terms": "नियम और शर्तें"
+  }
+}
+
+
+========================================================================
+STATIC: data/i18n.json
+========================================================================
+
+{
+  "hi": {
+    "nav.home": "मुख्य पेज",
+    "nav.shops": "संपर्क सूची",
+    "nav.emergency": "आपातकालीन सम्पर्क",
+    "nav.history": "इतिहास",
+    "nav.gallery": "गैलरी",
+    "nav.cricket": "क्रिकेट",
+    "nav.election": "इलेक्शन",
+    "nav.contact": "सम्पर्क करें",
+    "nav.about": "हमारे बारे में",
+    "nav.links": "महत्वपूर्ण लिंक",
+    "nav.donate": "दान",
+    "common.call": "फोन करें",
+    "common.openMap": "मानचित्र खोलें",
+    "common.readMore": "और पढ़ें",
+    "theme.light": "दिन मोड",
+    "theme.dark": "रात मोड",
+    "lang.hi": "हिंदी",
+    "lang.en": "English",
+    "translate.hint": "Google अनुवाद",
+    "chat.title": "सहायक (जल्द)",
+    "chat.body": "यहाँ आपका चैटबॉट जुड़ेगा। अभी यह प्लेसहोल्डर है।"
+  },
+  "en": {
+    "nav.home": "Home",
+    "nav.shops": "Contact list",
+    "nav.emergency": "Emergency contacts",
+    "nav.history": "History",
+    "nav.gallery": "Gallery",
+    "nav.cricket": "Cricket",
+    "nav.election": "Elections",
+    "nav.contact": "Contact",
+    "nav.about": "About",
+    "nav.links": "Important links",
+    "nav.donate": "Donate",
+    "common.call": "Call",
+    "common.openMap": "Open map",
+    "common.readMore": "Read more",
+    "theme.light": "Light mode",
+    "theme.dark": "Dark mode",
+    "lang.hi": "Hindi",
+    "lang.en": "English",
+    "translate.hint": "Google Translate",
+    "chat.title": "Assistant (soon)",
+    "chat.body": "Your chatbot will connect here. This is a placeholder for now."
+  }
+}
+
+
+========================================================================
+STATIC: data/links.json
+========================================================================
+
+{
+  "title": "महत्वपूर्ण लिंक",
+  "items": [
+ 
+    { "label": "जनसुनवाई पोर्टल (UP)", "href": "https://jansunwai.up.nic.in/" },
+    { "label": "सरकारी नौकरी जानकारी", "href": "https://www.sarkariresult.com/" },
+    { "label": "मानचित्र (Google)", "href": "https://www.google.com/maps?q=Charawan+Uttar+Pradesh" }
+  ]
+}
+
+
+========================================================================
+STATIC: data/notifications.json
+========================================================================
+
+{
+  "panel": {
+    "heading": "चरावां समाचार",
+    "subtitle": "गाँव की आधिकारिक व सामुदायिक अपडेट यहीं दिखाई जाती हैं।",
+    "seeAllHref": "/notifications",
+    "seeAllLabel": "सभी सूचनाएँ देखें",
+    "addLabel": "सूचना जोड़ें",
+    "addHref": "https://www.google.com"
+  },
+  "items": [
+    {
+      "id": "n-ambedkar",
+      "headline": "डॉ. भीमराव आंबेडकर जयंती की शुभकामनाएँ",
+      "message": "समता, न्याय और शिक्षा के प्रेरणास्रोत डॉ. भीमराव आंबेडकर जी की जयंती पर विनम्र श्रद्धांजलि।",
+      "author": "चरावां समाचार",
+      "timeLabel": "आज",
+      "likes": 73,
+      "unread": true
+    },
+   
+    {
+      "id": "n-holi",
+      "headline": "होली की हार्दिक शुभकामनाएँ",
+      "message": "समस्त ग्रामवासियों को होली की हार्दिक शुभकामनाएँ। रंगों के इस पर्व को प्रेम, सौहार्द और सुरक्षित तरीके से मनाएँ।",
+      "author": "चरावां समाचार",
+      "timeLabel": "आज",
+      "likes": 59,
+      "unread": true
+    },
+    {
+      "id": "n-nav-varsh",
+      "headline": "हिंदू नववर्ष की हार्दिक शुभकामनाएँ",
+      "message": "नव संवत्सर के पावन अवसर पर आप सभी को हिंदू नववर्ष की हार्दिक शुभकामनाएँ। यह वर्ष आपके लिए सुख-समृद्धि लेकर आए।",
+      "author": "चरावां समाचार",
+      "timeLabel": "आज",
+      "likes": 41,
+      "unread": true
+    },
+   
+    {
+      "id": "n-immersion",
+      "headline": "माता जी विसर्जन",
+      "message": "माता जी की मूर्ति का शांतिपूर्वक विसर्जन संपन्न हुआ। सहयोग के लिए धन्यवाद।",
+      "author": "समिति",
+      "timeLabel": "69 दिन पहले",
+      "likes": 6
+    },
+    {
+      "id": "n-shops",
+      "headline": "संपर्क/दुकानों की सूची अपडेट",
+      "message": "चरावां व आसपास की दुकानों/सेवाओं की सूची अपडेट की गई है — नई प्रविष्टियाँ जोड़ दी गई हैं।",
+      "author": "टीम",
+      "timeLabel": "72 दिन पहले",
+      "likes": 6
+    },
+    {
+      "id": "n-diwali",
+      "headline": "दीपावली की हार्दिक शुभकामनाएँ",
+      "message": "समस्त ग्रामवासियों की ओर से दीपावली की हार्दिक शुभकामनाएँ।",
+      "author": "प्रशासन",
+      "timeLabel": "49 दिन पहले",
+      "likes": 110
+    }
+  ]
+}
+
+
+========================================================================
+STATIC: data/shop-type-filters.json
+========================================================================
+
+[
+  {
+    "title": "आपातकालीन सेवा",
+    "value": "emergency"
+  },
+  {
+    "title": "चरावां ऑफिस",
+    "value": "charawanOffice"
+  },
+  {
+    "title": "जनरल/किराना",
+    "value": "generalStore"
+  },
+  {
+    "title": "मेडिकल स्टोर",
+    "value": "medicalStore"
+  },
+  {
+    "title": "डॉक्टर्स",
+    "value": "doctors"
+  },
+  {
+    "title": "पशु डॉक्टर",
+    "value": "animalDoctors"
+  },
+  {
+    "title": "हॉस्पिटल",
+    "value": "hospital"
+  },
+  {
+    "title": "आयुर्वेदिक",
+    "value": "aayurvedic"
+  },
+  {
+    "title": "पतंजलि",
+    "value": "patanjali"
+  },
+  {
+    "title": "होम्योपैथिक",
+    "value": "homeopathic"
+  },
+  {
+    "title": "फास्टफूड",
+    "value": "fastfood"
+  },
+  {
+    "title": "होटल",
+    "value": "hotel"
+  },
+  {
+    "title": "कोल्डड्रिंक",
+    "value": "coldDrink"
+  },
+  {
+    "title": "दूध वाले",
+    "value": "milk"
+  },
+  {
+    "title": "डेरी",
+    "value": "dairy"
+  },
+  {
+    "title": "बेकरी/केक",
+    "value": "backery"
+  },
+  {
+    "title": "सब्जी की दुकान",
+    "value": "vegetables"
+  },
+  {
+    "title": "मोबाइल स्टोर",
+    "value": "mobileStore"
+  },
+  {
+    "title": "प्रिंटिंग/फोटोकॉपी",
+    "value": "prinitng"
+  },
+  {
+    "title": "स्टूडियो/वीडियोग्राफी",
+    "value": "photoStudio"
+  },
+  {
+    "title": "मोबाइल रिपेरिंग",
+    "value": "mobileRepair"
+  },
+  {
+    "title": "जन सेवा केंद्र",
+    "value": "janSewaKendra"
+  },
+  {
+    "title": "मशीनरी स्टोर /हार्डवेयर",
+    "value": "machineryStore"
+  },
+  {
+    "title": "कस्टमर केयर",
+    "value": "customerCare"
+  },
+  {
+    "title": "स्कूल /कॉलेज",
+    "value": "school"
+  },
+  {
+    "title": "कोचिंग",
+    "value": "coaching"
+  },
+  {
+    "title": "स्टेशनरी",
+    "value": "stationery"
+  },
+  {
+    "title": "नाई/सैलून",
+    "value": "barber"
+  },
+  {
+    "title": "ब्यूटी पार्लर",
+    "value": "beautiParler"
+  },
+  {
+    "title": "कॉस्मेटिक",
+    "value": "cosmetic"
+  },
+  {
+    "title": "गिफ्ट्स",
+    "value": "gifts"
+  },
+  {
+    "title": "चप्पल जूता",
+    "value": "chappal"
+  },
+  {
+    "title": "कपडा गारमेंट्स",
+    "value": "garments"
+  },
+  {
+    "title": "डीजे",
+    "value": "dj"
+  },
+  {
+    "title": "लाइट हाउस",
+    "value": "lightHouse"
+  },
+  {
+    "title": "टेंट हाउस",
+    "value": "tentHouse"
+  },
+  {
+    "title": "कैटर्स",
+    "value": "cetters"
+  },
+  {
+    "title": "डेकोरेशन",
+    "value": "decoration"
+  },
+  {
+    "title": "माली",
+    "value": "maali"
+  },
+  {
+    "title": "साइकिल रिपेयर",
+    "value": "cycleStore"
+  },
+  {
+    "title": "बाइक रिपेयर",
+    "value": "bikeRepair"
+  },
+  {
+    "title": "गैस सर्विस",
+    "value": "gasService"
+  },
+  {
+    "title": "गैस चूल्हा रिपेयर",
+    "value": "gasChulhaRepair"
+  },
+  {
+    "title": "घर की बिजली रिपेयर",
+    "value": "homeElectronic"
+  },
+  {
+    "title": "इलेक्ट्रॉनिक",
+    "value": "electronic"
+  },
+  {
+    "title": "वेल्डिंग वर्कशॉप",
+    "value": "welding"
+  },
+  {
+    "title": "मिस्त्री घर बनाने वाले",
+    "value": "homeMistri"
+  },
+  {
+    "title": "ईंट भठ्ठा",
+    "value": "bricks"
+  },
+  {
+    "title": "बोलेरो/कार बुकिंग",
+    "value": "rentCars"
+  },
+  {
+    "title": "पिक अप",
+    "value": "pickup"
+  },
+  {
+    "title": "सवारी गाड़ी/टेम्पो/बस",
+    "value": "taxi"
+  },
+  {
+    "title": "बस सर्विस",
+    "value": "busService"
+  },
+  {
+    "title": "ठेला",
+    "value": "thela"
+  },
+  {
+    "title": "बिल्डिंग मटेरियल",
+    "value": "buildingMaterials"
+  },
+  {
+    "title": "बीज भंडार / पेस्टीसाइड",
+    "value": "beej"
+  },
+  {
+    "title": "बड़ई",
+    "value": "carpenter"
+  },
+  {
+    "title": "फर्नीचर शॉप",
+    "value": "furniture"
+  },
+  {
+    "title": "लोहार",
+    "value": "blacksmith"
+  },
+  {
+    "title": "सुनार /ज्वेलर्स",
+    "value": "jeweller"
+  },
+  {
+    "title": "पान मसाला",
+    "value": "paanMasala"
+  },
+  {
+    "title": "टेलर /दर्जी",
+    "value": "tailor"
+  },
+  {
+    "title": "धोबी प्रेस",
+    "value": "press"
+  },
+  {
+    "title": "बैंक",
+    "value": "bank"
+  },
+  {
+    "title": "बर्तन",
+    "value": "bartan"
+  },
+  {
+    "title": "सिलाई सेंटर कोचिंग",
+    "value": "silayi"
+  },
+  {
+    "title": "मोची",
+    "value": "mochi"
+  },
+  {
+    "title": "डीजल पेट्रोल",
+    "value": "dieselPetrol"
+  },
+  {
+    "title": "पंडित",
+    "value": "pandit"
+  },
+  {
+    "title": "श्रमिक मजदूर",
+    "value": "helper"
+  },
+  {
+    "title": "प्लम्बर",
+    "value": "plumber"
+  },
+  {
+    "title": "पेंटर",
+    "value": "painter"
+  },
+  {
+    "title": "आटाचक्की",
+    "value": "chakki"
+  },
+  {
+    "title": "चश्मा",
+    "value": "chashma"
+  },
+  {
+    "title": "लकड़हारा",
+    "value": "woodCutter"
+  },
+  {
+    "title": "ट्रैक्टर/ट्रॉली",
+    "value": "tractors"
+  },
+  {
+    "title": "अन्य",
+    "value": "others"
+  }
+]
+
+
+========================================================================
+STATIC: data/shops/chunk-01.json
+========================================================================
+
+{
+  "-MkWsixtWXs8BQcslLPN": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkWsixtWXs8BQcslLPN",
+    "mobileNumber": "tel:+919696865230",
+    "mobileNumber2": "tel:+919838539922",
+    "openTime": "08:00",
+    "owenerName": "अजीत कुमार तिवारी",
+    "ownerPhoto": "https://i.ibb.co/2yBzNf2/IMG-20211008-132346.jpg",
+    "shopAddress": "श्री हरि दुर्गा मंदिर के बगल",
+    "shopInfo": " (फुटकर एवं थोक विक्रेता )सभी प्रकार के इंजन स्पेयर पार्ट जनरेटर के स्पेयर पार्ट टुब्यल की बोरिंग नल की बोरिंग प्लाइ के स्टाइलस दरवाजे फाइवर् के दरवाजे लोहे के दरवाजे बिजली की फीटिंग के सामान टंकी की फिटिग के सामान व मिस्त्री  टाइल्स फर्श व दीवाल की खेत की समर सेबल् पंप घर की समर सेबल् पंप चारा काटने की मोटर टिल्लू पंप पेंट 2hp मे किलोशकर बरुना क्रामटंन जेके लुबि पंप प्रकाश पाइप किसान पाइप अपोलो पाइप आदि का विशाल संग्रह् ",
+    "shopName": "तिवारी हार्डवेयर एंड मशीनरी स्टोर्स",
+    "shopPhotos": "",
+    "shopType": ["machineryStore"],
+    "villageName": "चरावां"
+  },
+  "-MkWzgsCh8qLP-mX9-5V": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkWzgsCh8qLP-mX9-5V",
+    "mobileNumber": "tel:+917239096065",
+    "mobileNumber2": "tel:+919616013139",
+    "openTime": "16:00",
+    "owenerName": "सुखराज यादव",
+    "ownerPhoto": "https://i.ibb.co/bRW8mJv/images-74.jpg",
+    "shopAddress": "मेन चौराहा",
+    "shopInfo": "चाउमीन बर्गर टिकिया चाट उपलब्ध ",
+    "shopName": "यादव चाउमीन एंड बर्गर कार्नर",
+    "shopPhotos": "",
+    "shopType": ["fastfood"],
+    "villageName": "चरावां"
+  },
+  "-MkX09N_o-1GEFvUhXDz": {
+    "closeTime": "08:00",
+    "inCharawan": "charawan",
+    "key": "-MkX09N_o-1GEFvUhXDz",
+    "mobileNumber": "tel:+919721218468",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "राम तेज निषाद",
+    "ownerPhoto": "https://i.ibb.co/ynXGJt5/IMG-20211008-105443.jpg",
+    "shopAddress": "सोनू किराना स्टोर के बगल",
+    "shopInfo": "सिलाई में 20 वर्षों से ज्यादा का अनुभव ",
+    "shopName": "बॉम्बे टेलर्स",
+    "shopPhotos": "",
+    "shopType": ["tailor"],
+    "villageName": "चरावां"
+  },
+  "-MkXEYIg-HCWSla7UR88": {
+    "closeTime": "07:00",
+    "inCharawan": "charawan",
+    "key": "-MkXEYIg-HCWSla7UR88",
+    "mobileNumber": "tel:+919984915000",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "संदीप तिवारी",
+    "ownerPhoto": "https://i.ibb.co/Wgg01DQ/photo.jpg",
+    "shopAddress": "ग्रामीण बैंक के बगल",
+    "shopInfo": "(PERFECT)परफेक्ट सीमेंट के थोक विक्रेता ,बेस्ट बिल्डिंग मटेरियल उपलब्ध ",
+    "shopName": "श्री लक्ष्मी नारायण ट्रेडर्स",
+    "shopPhotos": "",
+    "shopType": ["buildingMaterials"],
+    "villageName": "चरावां"
+  },
+  "-MkXFC5OyAKdmr8FWpHe": {
+    "closeTime": "08:00",
+    "closedOn": ["रविवार"],
+    "inCharawan": "charawan",
+    "key": "-MkXFC5OyAKdmr8FWpHe",
+    "mobileNumber": "tel:+919918112648",
+    "mobileNumber2": "tel:+91",
+    "openTime": "08:00",
+    "owenerName": "अरुण सिंह (पिंकू सिंह)",
+    "ownerPhoto": "https://i.ibb.co/JpVHPKg/images-75.jpg",
+    "shopAddress": "चौराहा",
+    "shopInfo": "मोबाइल एक्सेस्सरीज़ और ऑनलाइन वर्क जैसे फोटो कॉपी आदि के लिए सम्पर्क करें इलेक्ट्रिक सामन भी उपलब्ध हैं ",
+    "shopName": "अरुण कम्युनिकेशन",
+    "shopPhotos": "",
+    "shopType": ["mobileStore", "mobileRepair", "photoStudio", "prinitng", "electronic"],
+    "villageName": "चरावां"
+  },
+  "-Mkh6LGvuWKzVhZn_qq-": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "key": "-Mkh6LGvuWKzVhZn_qq-",
+    "mobileNumber": "tel:+919839018844",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "अनिल कुमार ( प्रधान )",
+    "ownerPhoto": "https://i.ibb.co/fd3wnWJ/IMG-20211009-002535.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "ग्राम प्रधान ( चरावां )",
+    "shopPhotos": "",
+    "shopType": ["charawanOffice"],
+    "villageName": "चरावां"
+  },
+  "-Mkfog9dM7V3YDbm3TDe": {
+    "closeTime": "",
+    "inCharawan": "charawan",
+    "key": "-Mkfog9dM7V3YDbm3TDe",
+    "mobileNumber": "tel:+919628771123",
+    "mobileNumber2": "tel:+91",
+    "openTime": "",
+    "owenerName": "अमित मौर्या",
+    "ownerPhoto": "https://i.ibb.co/GFszyzp/IMG-20211008-192137.jpg",
+    "shopAddress": "",
+    "shopInfo": "",
+    "shopName": "कोटेदार",
+    "shopPhotos": "",
+    "shopType": ["charawanOffice"],
+    "villageName": "चरावां"
+  }
+}
+
+
+========================================================================
+STATIC: data/shops.json
+========================================================================
+
+{}
+
+
+========================================================================
+STATIC: data/site.json
+========================================================================
+
+{
+  "village": {
+    "nameHi": "चरावां",
+    "nameEn": "Charawan",
+    "taglineHi": "अयोध्या जिला, बीकापुर तहसील",
+    "taglineEn": "Ayodhya district, Bikapur tehsil, Uttar Pradesh"
+  },
+  "domain": "charawan.netlify.app",
+  "map": {
+    "embedUrl": "https://www.google.com/maps?q=Charawan+Uttar+Pradesh&output=embed",
+    "link": "https://www.google.com/maps?q=Charawan+Uttar+Pradesh"
+  },
+  "social": {
+    "facebook": "",
+    "twitter": "",
+    "whatsappGroup": "https://chat.whatsapp.com/DGW9FlVoEeF7YVPxtptsUi?mode=gi_t",
+    "email": "mailto:hello@charawan.netlify.app"
+  },
+  "seo": {
+    "defaultTitle": "चरावां | Charawan — गाँव की आधिकारिक जानकारी",
+    "defaultDescription": "चरावां (Charawan) गाँव की समाचार, दुकानें, गैलरी, क्रिकेट, चुनाव परिणाम और सम्पर्क — अयोध्या, उत्तर प्रदेश।"
+  }
+}
+
+
+========================================================================
+Site routes (Next.js app router pages)
+========================================================================
+
+/
+/about
+/add-contact
+/admin
+/charwan-jobs
+/contacts
+/cricket
+/develop-village
+/donate
+/election
+/gallery
+/games
+/history
+/links
+/login
+/manage-contacts
+/manage-donations
+/manage-notifications
+/notifications
+/shops

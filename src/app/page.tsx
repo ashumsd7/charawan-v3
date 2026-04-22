@@ -6,7 +6,6 @@ import {
   Link2,
   MapPin,
   Sparkles,
-  Store,
 } from "lucide-react";
 import { readJsonFile } from "@/lib/read-data";
 import type { Metadata } from "next";
@@ -19,6 +18,7 @@ import { EmergencyContactsSection } from "@/components/emergency-contacts-sectio
 import { homeCarouselPhotos } from "@/data/home-carousel-photos";
 import { WHATSAPP_CONTACT_HREF } from "@/lib/constants";
 import { CHARAWAN_DONATIONS_FIREBASE_URL, normalizeDonateDbShape, type DonateDbShape } from "@/lib/donations-firebase";
+import { HomeHeroActions } from "@/components/home-hero-actions";
 
 export const metadata: Metadata = {
   title: "मुख्य पेज",
@@ -64,15 +64,12 @@ export default async function HomePage() {
             </p>
             <p className="text-sm text-muted">{home.hero.hopeLine}</p>
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link
-                href="/shops"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
-              >
-                <Store className="h-4 w-4" aria-hidden />
-                {home.hero.shopsCta}
-              </Link>
-            </div>
+            <HomeHeroActions
+              shopsHref="/shops"
+              shopsLabel={home.hero.shopsCta}
+              chatbotTitle="AI Chatbot"
+              chatbotHintHi="कुछ भी पूछें"
+            />
           </div>
 
           <HeroCarousel

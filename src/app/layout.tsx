@@ -90,7 +90,29 @@ export default async function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
-        <ChatAssistant title={t("chat.title")} body={t("chat.body")} />
+        <ChatAssistant
+          labels={{
+            title: t("chat.title"),
+            subtitle: t("chat.subtitle"),
+            welcome: t("chat.welcome"),
+            hintsTitle: t("chat.hintsTitle"),
+            hint1: t("chat.hint1"),
+            hint2: t("chat.hint2"),
+            hint3: t("chat.hint3"),
+            hint4: t("chat.hint4"),
+            placeholder: t("chat.placeholder"),
+            send: t("chat.send"),
+            thinking: t("chat.thinking"),
+            close: t("chat.close"),
+            fabAria: t("chat.fabAria"),
+            copy: t("chat.copy"),
+            share: t("chat.share"),
+            copied: t("chat.copied"),
+            sourceIntro: t("chat.sourceIntro"),
+            sourceOutro: t("chat.sourceOutro"),
+            shareFallback: t("chat.shareFallback"),
+          }}
+        />
       </body>
     </html>
   );
