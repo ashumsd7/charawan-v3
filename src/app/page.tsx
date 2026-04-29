@@ -16,7 +16,7 @@ import { HomeNotificationsFeed } from "@/components/home-notifications-feed";
 import { VillageSupportSection } from "@/components/village-support-section";
 import { EmergencyContactsSection } from "@/components/emergency-contacts-section";
 import { homeCarouselPhotos } from "@/data/home-carousel-photos";
-import { WHATSAPP_CONTACT_HREF } from "@/lib/constants";
+import { WHATSAPP_NEWS_GRP_HREF } from "@/lib/constants";
 import { CHARAWAN_DONATIONS_FIREBASE_URL, normalizeDonateDbShape, type DonateDbShape } from "@/lib/donations-firebase";
 import { HomeHeroActions } from "@/components/home-hero-actions";
 
@@ -78,7 +78,7 @@ export default async function HomePage() {
               src: p.src,
               alt: `चरावां — गैलरी ${idx + 1}`,
             }))}
-            whatsappHref={WHATSAPP_CONTACT_HREF || site.social.whatsappGroup}
+            whatsappHref={WHATSAPP_NEWS_GRP_HREF || site.social.whatsappGroup}
             whatsappLabel={home.hero.joinWhatsappCta}
           />
         </section>
