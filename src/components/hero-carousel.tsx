@@ -61,7 +61,7 @@ export function HeroCarousel({
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-5 py-3.5 text-center text-base font-bold text-white shadow-lg transition hover:brightness-110"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-5 py-3.5 text-center text-base font-bold text-black shadow-lg transition hover:brightness-110"
       >
         <MessageCircle className="h-5 w-5 shrink-0" aria-hidden />
         {whatsappLabel}
