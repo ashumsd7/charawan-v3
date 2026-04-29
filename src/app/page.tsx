@@ -68,7 +68,8 @@ export default async function HomePage() {
               shopsHref="/shops"
               shopsLabel={home.hero.shopsCta}
               chatbotTitle="AI Chatbot"
-              chatbotHintHi="कुछ भी पूछें"
+              // chatbotHintHi="कुछ भी पूछें"
+              chatbotHintHi=""
             />
           </div>
 
@@ -82,9 +83,9 @@ export default async function HomePage() {
           />
         </section>
 
+        <HomeNotificationsFeed />
         <VillageSupportSection data={home.villageDevelopment} donate={donate} />
 
-        <HomeNotificationsFeed />
 
         <EmergencyContactsSection
           sectionId={emergency.sectionId}

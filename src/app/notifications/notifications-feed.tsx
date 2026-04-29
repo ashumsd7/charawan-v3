@@ -23,6 +23,7 @@ import { buildNotificationShareText } from "@/lib/notification-share-text";
 import { AnimatePresence, motion } from "framer-motion";
 import { createPortal } from "react-dom";
 import { fetchNewsFromFirebase, getNewsHref, type FirebaseNewsItem } from "@/lib/news";
+// import { useRouter } from "next/navigation";
 
 
 function NewsMedia({
@@ -154,7 +155,7 @@ export function NotificationsFeed({
   const [loading, setLoading] = useState(true);
   const [allNews, setAllNews] = useState<FirebaseNewsItem[]>([]);
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
-
+  // const router = useRouter();
   useEffect(() => setMounted(true), []);
 
   const siteOrigin =
@@ -281,7 +282,10 @@ export function NotificationsFeed({
                   <motion.button
                     type="button"
                     aria-label="बंद करें"
-                    onClick={() => setLightbox(null)}
+                      onClick={(e) => {
+                      e.stopPropagation();
+                      setLightbox(null);
+                    }}
                     className="absolute inset-0 bg-black/75"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -300,7 +304,10 @@ export function NotificationsFeed({
                     <button
                       type="button"
                       aria-label="बंद करें"
-                      onClick={() => setLightbox(null)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setLightbox(null);
+                      }}
                       className="absolute right-3 top-3 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition hover:bg-white/15 active:scale-95"
                     >
                       <X className="h-5 w-5" aria-hidden />
@@ -361,6 +368,7 @@ export function NotificationsFeed({
           {visible.map((news) => (
             <article
               key={news.key ?? String(news.timeStamp ?? Math.random())}
+              // onClick={() => router.push(getNewsHref(news) as string)}
               className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-gradient-to-b from-white via-slate-50 to-rose-50/30 shadow-sm ring-1 ring-slate-900/5 transition hover:-translate-y-[1px] hover:shadow-lg dark:border-slate-700 dark:from-slate-900/60 dark:via-slate-950/30 dark:to-rose-950/15 dark:ring-white/10"
             >
               <span
@@ -404,15 +412,21 @@ export function NotificationsFeed({
                   {news.shortInfo ? (
                     <p className="text-sm leading-relaxed text-foreground/90">{news.shortInfo}</p>
                   ) : null}
-                  {news.detailedInfo?.trim() ? (
-                    <p className="text-xs leading-relaxed text-muted">{news.detailedInfo.trim()}</p>
-                  ) : null}
-                  <Link
+                  {news.detailedInfo?.trim() ? ( <div className="flex  items-center">
+                    <p className="text-xs leading-relaxed text-muted">
+                      {news.detailedInfo.trim().slice(0, 50)}
+                      {news.detailedInfo.trim().length > 50 ? "…" : ""}
+                    </p> 
+                    <Link
                     href={getNewsHref(news)}
-                    className="flex justify-end text-sm font-extrabold text-red-700 underline underline-offset-2 dark:text-red-300"
+                    className="flex justify-end text-xs  text-red-700 underline underline-offset-2 dark:text-red-300"
                   >
                     पूरी खबर पढ़ें
                   </Link>
+                  </div>
+                  ) : null}
+             
+                  
                 </div>
               </div>
 
@@ -464,6 +478,16 @@ export function NotificationsFeed({
                   </span>
                   <span className="hidden sm:inline">रिपोर्ट</span>
                 </a>
+
+                <Link
+                    href={getNewsHref(news)}
+                    className="inline-flex cursor-pointer items-center gap-2 rounded-full px-2 py-2 text-xs font-extrabold text-slate-700 transition hover:bg-amber-50 hover:text-amber-800 active:scale-[0.98] dark:text-slate-200 dark:hover:bg-amber-950/30 dark:hover:text-amber-200"
+                  >
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition group-hover:bg-amber-100 dark:bg-slate-800 dark:group-hover:bg-amber-950/40">
+                      <ArrowUpRight className="h-4 w-4" aria-hidden />
+                    </span>
+                    <span className="hidden sm:inline">पूरी खबर पढ़ें</span>
+                  </Link>
               </div>
             </article>
           ))}
