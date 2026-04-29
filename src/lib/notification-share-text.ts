@@ -8,7 +8,11 @@ export type ShareableNotification = {
   img2?: string;
 };
 
-export function buildNotificationShareText(n: ShareableNotification, siteOrigin: string) {
+export function buildNotificationShareText(
+  n: ShareableNotification,
+  siteOrigin: string,
+  sourcePath = "/news",
+) {
   const base = siteOrigin.replace(/\/$/, "");
   const title = (n.newsTitle || "चरावां अपडेट").trim();
   const short = (n.shortInfo || "").trim();
@@ -32,7 +36,7 @@ export function buildNotificationShareText(n: ShareableNotification, siteOrigin:
   }
   lines.push("");
   lines.push(`👤 ${by}${when ? ` · ⏳ ${when}` : ""}`);
-  lines.push("", `🌐 स्रोत: ${base}/notifications`, "", "धन्यवाद! 😊");
+  lines.push("", `🌐 स्रोत: ${base}${sourcePath}`, "", "धन्यवाद! 😊");
   return lines.join("\n");
 }
 

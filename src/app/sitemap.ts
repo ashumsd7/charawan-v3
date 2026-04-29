@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { fetchNewsFromFirebase, getNewsHref } from "@/lib/news";
 
 const base = "https://charawan.netlify.app";
 
@@ -15,16 +16,29 @@ const paths = [
   "/links",
   "/donate",
   "/games",
-  "/notifications",
+  "/news",
   "/develop-village",
 ];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const last = new Date();
-  return paths.map((path) => ({
+  const staticEntries = paths.map((path) => ({
     url: `${base}${path}`,
     lastModified: last,
     changeFrequency: "weekly",
     priority: path === "/" ? 1 : 0.7,
   }));
+
+  try {
+    const allNews = await fetchNewsFromFirebase();
+    const newsEntries: MetadataRoute.Sitemap = allNews.map((item) => ({
+      url: `${base}${getNewsHref(item)}`,
+      lastModified: item.timeStamp ? new Date(item.timeStamp) : last,
+      changeFrequency: "daily",
+      priority: 0.8,
+    }));
+    return [...staticEntries, ...newsEntries];
+  } catch {
+    return staticEntries;
+  }
 }

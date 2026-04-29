@@ -36,10 +36,10 @@ export default function CharwanJobsPage() {
             </div>
 
             <Link
-              href="/notifications"
+              href="/news"
               className="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white/60 px-4 py-2 text-sm font-bold text-foreground transition hover:bg-white/80 dark:border-slate-700 dark:bg-slate-900/40"
             >
-              ← सूचनाएँ देखें
+              ← समाचार देखें
             </Link>
           </div>
         </div>

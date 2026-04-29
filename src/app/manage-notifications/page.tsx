@@ -21,11 +21,13 @@ import {
 } from "lucide-react";
 import { CHARAWAN_NOTIFICATIONS_FIREBASE_URL } from "@/lib/notifications-firebase";
 import { isAdminAuthenticatedClient } from "@/lib/admin-auth";
+import { normalizeManualSlug } from "@/lib/news";
 
 type Toast = { id: string; type: "success" | "error" | "info"; title: string; body?: string };
 
 type FirebaseNewsItem = {
   key?: string;
+  slug?: string;
   reporterName?: string;
   newsTitle?: string;
   shortInfo?: string;
@@ -100,6 +102,7 @@ export default function ManageNotificationsPage() {
   const [editNewsTitle, setEditNewsTitle] = useState("");
   const [editShortInfo, setEditShortInfo] = useState("");
   const [editDetailedInfo, setEditDetailedInfo] = useState("");
+  const [editSlug, setEditSlug] = useState("");
   const [editIsAdmin, setEditIsAdmin] = useState(true);
   const [editImg1, setEditImg1] = useState("");
   const [editImg2, setEditImg2] = useState("");
@@ -118,6 +121,7 @@ export default function ManageNotificationsPage() {
   const [newsTitle, setNewsTitle] = useState("");
   const [shortInfo, setShortInfo] = useState("");
   const [detailedInfo, setDetailedInfo] = useState("");
+  const [slug, setSlug] = useState("");
   const [isAdmin, setIsAdmin] = useState(true);
   const [img1, setImg1] = useState("");
   const [img2, setImg2] = useState("");
@@ -233,6 +237,7 @@ export default function ManageNotificationsPage() {
     setNewsTitle("");
     setShortInfo("");
     setDetailedInfo("");
+    setSlug("");
     setIsAdmin(true);
     setImg1("");
     setImg2("");
@@ -249,6 +254,7 @@ export default function ManageNotificationsPage() {
       newsTitle: cleanTitle,
       shortInfo: cleanShort,
       detailedInfo: detailedInfo.trim(),
+      slug: normalizeManualSlug(slug),
       timeStamp: Date.now(),
       isAdmin,
       img1: img1.trim(),
@@ -307,6 +313,7 @@ export default function ManageNotificationsPage() {
     setEditNewsTitle(n.newsTitle ?? "");
     setEditShortInfo(n.shortInfo ?? "");
     setEditDetailedInfo(n.detailedInfo ?? "");
+    setEditSlug(n.slug ?? "");
     setEditIsAdmin(Boolean(n.isAdmin));
     setEditImg1(n.img1 ?? "");
     setEditImg2(n.img2 ?? "");
@@ -332,6 +339,7 @@ export default function ManageNotificationsPage() {
       newsTitle: cleanTitle,
       shortInfo: cleanShort,
       detailedInfo: editDetailedInfo.trim(),
+      slug: normalizeManualSlug(editSlug),
       isAdmin: editIsAdmin,
       img1: editImg1.trim(),
       img2: editImg2.trim(),
@@ -495,6 +503,17 @@ export default function ManageNotificationsPage() {
                     onChange={(e) => setEditDetailedInfo(e.target.value)}
                     rows={4}
                     className="mt-2 w-full rounded-2xl border border-slate-200 bg-white/70 p-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="text-xs font-bold uppercase tracking-wider text-muted">
+                    Slug title in english (future URL)
+                  </label>
+                  <input
+                    value={editSlug}
+                    onChange={(e) => setEditSlug(e.target.value)}
+                    placeholder="manu-bhaker-vaibhav-sooryavanshi"
+                    className="mt-2 h-11 w-full rounded-2xl border border-slate-200 bg-white/70 px-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
                   />
                 </div>
                 <div>
@@ -772,6 +791,17 @@ export default function ManageNotificationsPage() {
                   rows={4}
                   placeholder="अगर चाहें तो पूरा विवरण लिखें"
                   className="mt-2 w-full rounded-2xl border border-slate-200 bg-white/70 p-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
+                />
+              </div>
+              <div className="sm:col-span-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-muted">
+                  Slug title in english (future URL)
+                </label>
+                <input
+                  value={slug}
+                  onChange={(e) => setSlug(e.target.value)}
+                  placeholder="manu-bhaker-vaibhav-sooryavanshi"
+                  className="mt-2 h-11 w-full rounded-2xl border border-slate-200 bg-white/70 px-4 text-sm font-semibold text-foreground shadow-sm outline-none transition focus:border-teal-500/60 focus:ring-2 focus:ring-teal-500/20 dark:border-slate-700 dark:bg-slate-900/40"
                 />
               </div>
               <div className="rounded-3xl border border-slate-200 bg-white/60 p-5 dark:border-slate-700 dark:bg-slate-900/40">

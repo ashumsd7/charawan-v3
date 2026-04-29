@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Bell, ListTree, RefreshCw } from "lucide-react";
+import { ListTree, Newspaper, RefreshCw } from "lucide-react";
 import { NotificationsFeed } from "@/app/notifications/notifications-feed";
 import { useState } from "react";
 
@@ -14,7 +14,7 @@ export function HomeNotificationsFeed() {
           <div className="min-w-0">
             <h2 className="flex items-center gap-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-800 ring-1 ring-amber-500/20 dark:text-amber-200">
-                <Bell className="h-5 w-5" aria-hidden />
+                <Newspaper className="h-5 w-5" aria-hidden />
               </span>
               चरावां समाचार
             </h2>
@@ -33,11 +33,11 @@ export function HomeNotificationsFeed() {
               रिफ्रेश
             </button>
             <Link
-              href="/notifications"
+              href="/news"
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-accent/40 bg-accent/10 px-4 py-2 text-sm font-bold text-accent transition hover:bg-accent/20"
             >
               <ListTree className="h-4 w-4" aria-hidden />
-              सभी सूचनाएँ देखें
+              सभी समाचार देखें
             </Link>
           </div>
         </div>

@@ -6,6 +6,7 @@ import axios from "axios";
 import {
   ArrowUpRight,
   Bell,
+  Newspaper,
   ChevronLeft,
   ChevronRight,
   Heart,
@@ -17,25 +18,12 @@ import {
   Share2,
   X,
 } from "lucide-react";
-import { CHARAWAN_NOTIFICATIONS_FIREBASE_URL } from "@/lib/notifications-firebase";
 import { WHATSAPP_CONTACT_HREF } from "@/lib/constants";
 import { buildNotificationShareText } from "@/lib/notification-share-text";
 import { AnimatePresence, motion } from "framer-motion";
 import { createPortal } from "react-dom";
+import { fetchNewsFromFirebase, getNewsHref, type FirebaseNewsItem } from "@/lib/news";
 
-type FirebaseNewsItem = {
-  key?: string;
-  reporterName?: string;
-  newsTitle?: string;
-  shortInfo?: string;
-  detailedInfo?: string;
-  timeStamp?: number;
-  isAdmin?: boolean;
-  img1?: string;
-  img2?: string;
-  likeCounter?: number;
-  timeAgo?: string;
-};
 
 function NewsMedia({
   img1,
@@ -66,7 +54,7 @@ function NewsMedia({
         <div className="flex aspect-[16/9] w-full items-center justify-center bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800">
           <div className="flex items-center gap-2 rounded-full bg-white/70 px-3 py-2 text-xs font-extrabold text-slate-700 ring-1 ring-slate-200 backdrop-blur dark:bg-slate-900/60 dark:text-slate-200 dark:ring-slate-700">
             <Bell className="h-4 w-4" aria-hidden />
-            सूचना
+            समाचार
           </div>
         </div>
       </div>
@@ -149,31 +137,6 @@ function NewsMedia({
   );
 }
 
-function calcTimeAgo(fromMs: number) {
-  let seconds = Math.floor((Date.now() - fromMs) / 1000);
-  let unit = " सेकंड ";
-  let direction = "पहले";
-  if (seconds < 0) {
-    seconds = -seconds;
-    direction = "अब से";
-  }
-  let value = seconds;
-  if (seconds >= 31536000) {
-    value = Math.floor(seconds / 31536000);
-    unit = " साल ";
-  } else if (seconds >= 86400) {
-    value = Math.floor(seconds / 86400);
-    unit = " दिन ";
-  } else if (seconds >= 3600) {
-    value = Math.floor(seconds / 3600);
-    unit = " घंटे ";
-  } else if (seconds >= 60) {
-    value = Math.floor(seconds / 60);
-    unit = " मिनट ";
-  }
-  return `${value}${unit}${direction}`;
-}
-
 export function NotificationsFeed({
   limit,
   showHeader = true,
@@ -202,22 +165,7 @@ export function NotificationsFeed({
   const callApi = useCallback(async () => {
     setLoading(true);
     try {
-      const { data } = await axios.get<Record<string, FirebaseNewsItem> | null>(
-        CHARAWAN_NOTIFICATIONS_FIREBASE_URL,
-        { timeout: 25_000, headers: { Accept: "application/json" } },
-      );
-      const list: FirebaseNewsItem[] = [];
-      if (data && typeof data === "object") {
-        for (const [key, value] of Object.entries(data)) {
-          const timeStamp = typeof value?.timeStamp === "number" ? value.timeStamp : undefined;
-          list.push({
-            ...value,
-            key,
-            timeAgo: timeStamp ? calcTimeAgo(timeStamp) : "—",
-          });
-        }
-      }
-      list.sort((a, b) => (b.timeStamp ?? 0) - (a.timeStamp ?? 0));
+      const list = await fetchNewsFromFirebase();
       setAllNews(list);
     } finally {
       setLoading(false);
@@ -254,13 +202,14 @@ export function NotificationsFeed({
   }, []);
 
   const onShare = async (n: FirebaseNewsItem) => {
-    const text = buildNotificationShareText(n, siteOrigin);
+    const sourcePath = getNewsHref(n);
+    const text = buildNotificationShareText(n, siteOrigin, sourcePath);
     try {
       if (typeof navigator !== "undefined" && "share" in navigator) {
         await navigator.share({
-          title: n.newsTitle || "चरावां नोटिफिकेशन",
+          title: n.newsTitle || "समाचार Charawan",
           text,
-          url: `${siteOrigin.replace(/\/$/, "")}/notifications`,
+          url: `${siteOrigin.replace(/\/$/, "")}${sourcePath}`,
         });
         return;
       }
@@ -375,7 +324,7 @@ export function NotificationsFeed({
           <div>
             <h2 className="flex items-center gap-2 text-xl font-extrabold text-foreground sm:text-2xl">
               <span className="flex h-9 w-9 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-800 ring-1 ring-amber-500/20 dark:text-amber-200">
-                <Bell className="h-5 w-5" aria-hidden />
+                <Newspaper className="h-5 w-5" aria-hidden />
               </span>
               चरावां समाचार
             </h2>
@@ -394,7 +343,7 @@ export function NotificationsFeed({
                 href="/manage-notifications"
                 className="inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 px-4 py-2 text-sm font-extrabold text-white shadow-sm transition hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
               >
-                नोटिफिकेशन जोड़ें
+                समाचार जोड़ें
                 <ArrowUpRight className="h-4 w-4" aria-hidden />
               </Link>
             ) : null}
@@ -458,6 +407,12 @@ export function NotificationsFeed({
                   {news.detailedInfo?.trim() ? (
                     <p className="text-xs leading-relaxed text-muted">{news.detailedInfo.trim()}</p>
                   ) : null}
+                  <Link
+                    href={getNewsHref(news)}
+                    className="flex justify-end text-sm font-extrabold text-red-700 underline underline-offset-2 dark:text-red-300"
+                  >
+                    पूरी खबर पढ़ें
+                  </Link>
                 </div>
               </div>
 
@@ -514,7 +469,7 @@ export function NotificationsFeed({
           ))}
 
           {!allNews.length ? (
-            <p className="py-10 text-center text-sm font-semibold text-muted">कोई नोटिफिकेशन नहीं मिला।</p>
+            <p className="py-10 text-center text-sm font-semibold text-muted">कोई समाचार नहीं मिला।</p>
           ) : null}
         </div>
       )}

@@ -35,10 +35,10 @@ export async function SiteHeader() {
     "site.json",
   );
   const t = (k: string) => i18n[lang][k] ?? k;
-  const mobileItems = [...navLeft, ...navRight, ...extraNav].map((i) => ({
+  const mobileItems = [{ href: "/news", label: "चरावां समाचार" }, ...[...navLeft, ...navRight, ...extraNav].map((i) => ({
     href: i.href,
     label: t(i.key),
-  }));
+  }))];
 
   return (
     <header className="sticky top-0 z-30 border-b border-white/10 shadow-lg shadow-slate-900/20">
@@ -80,6 +80,12 @@ export async function SiteHeader() {
               ))}
             </div>
             <div className="flex flex-wrap items-center justify-end gap-2">
+              <Link
+                href="/news"
+                className="rounded-full border border-red-300/35 bg-red-500/20 px-3 py-1.5 text-sm font-extrabold text-white underline underline-offset-2 transition hover:bg-red-500/30"
+              >
+                <span className="animate-pulse">चरावां समाचार</span>
+              </Link>
               {navRight.map((item) => (
                 <Link
                   key={item.href}
