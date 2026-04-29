@@ -22,10 +22,10 @@ const paths = [
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const last = new Date();
-  const staticEntries = paths.map((path) => ({
+  const staticEntries: MetadataRoute.Sitemap = paths.map((path) => ({
     url: `${base}${path}`,
     lastModified: last,
-    changeFrequency: "weekly",
+    changeFrequency: "weekly" as const,
     priority: path === "/" ? 1 : 0.7,
   }));
 
@@ -34,7 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const newsEntries: MetadataRoute.Sitemap = allNews.map((item) => ({
       url: `${base}${getNewsHref(item)}`,
       lastModified: item.timeStamp ? new Date(item.timeStamp) : last,
-      changeFrequency: "daily",
+      changeFrequency: "daily" as const,
       priority: 0.8,
     }));
     return [...staticEntries, ...newsEntries];
