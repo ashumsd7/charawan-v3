@@ -5,7 +5,8 @@ import { Share2 } from "lucide-react";
 export function ShareButton({ title }: { title: string }) {
   const onShare = async () => {
     const url = window.location.href;
-    const text = `${title}\n\n${url}`;
+    const text = `चरावां समाचार\n${title}\n\nपूरी खबर पढ़ें 👇`;
+    const clipboardText = `${text}\n${url}`;
     try {
       if ("share" in navigator) {
         await navigator.share({ title, text, url });
@@ -15,7 +16,7 @@ export function ShareButton({ title }: { title: string }) {
       // fallback to clipboard
     }
     try {
-      await navigator.clipboard.writeText(text);
+      await navigator.clipboard.writeText(clipboardText);
     } catch {
       // no-op
     }

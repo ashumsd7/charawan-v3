@@ -21,7 +21,11 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const description = news?.shortInfo?.trim() || "चरावां समाचार विस्तृत समाचार पेज";
   const path = news ? getNewsHref(news) : `/news/${slug}`;
   const canonicalUrl = `${SITE_BASE}${path}`;
-  const imageUrl = news?.img1 || news?.img2 || `${SITE_BASE}/logo.png`;
+  const rawImageUrl = news?.img1 || news?.img2 || `${SITE_BASE}/logo.png`;
+  const imageUrl =
+    rawImageUrl.startsWith("http://") || rawImageUrl.startsWith("https://")
+      ? rawImageUrl
+      : `${SITE_BASE}${rawImageUrl.startsWith("/") ? rawImageUrl : `/${rawImageUrl}`}`;
 
   return {
     title,
@@ -34,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
       url: canonicalUrl,
       siteName: "चरावां समाचार",
       locale: "hi_IN",
-      images: [{ url: imageUrl, alt: news?.newsTitle || "चरावां समाचार" }],
+      images: [{ url: imageUrl, width: 1200, height: 630, alt: news?.newsTitle || "चरावां समाचार" }],
     },
     twitter: {
       card: "summary_large_image",
