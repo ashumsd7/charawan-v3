@@ -22,6 +22,12 @@ const paths = [
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const last = new Date();
+  const safeDate = (value: unknown) => {
+    if (typeof value !== "number" || !Number.isFinite(value)) return last;
+    const parsed = new Date(value);
+    return Number.isNaN(parsed.getTime()) ? last : parsed;
+  };
+
   const staticEntries: MetadataRoute.Sitemap = paths.map((path) => ({
     url: `${base}${path}`,
     lastModified: last,
@@ -33,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const allNews = await fetchNewsFromFirebase();
     const newsEntries: MetadataRoute.Sitemap = allNews.map((item) => ({
       url: `${base}${getNewsHref(item)}`,
-      lastModified: item.timeStamp ? new Date(item.timeStamp) : last,
+      lastModified: safeDate(item.timeStamp),
       changeFrequency: "daily" as const,
       priority: 0.8,
     }));
