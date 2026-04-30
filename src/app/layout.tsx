@@ -62,6 +62,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     icons: {
       icon: [{ url: "/logo.png" }],
+      shortcut: [{ url: "/logo.png" }],
       apple: [{ url: "/logo.png" }],
     },
     robots: { index: true, follow: true },
