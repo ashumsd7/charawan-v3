@@ -13,15 +13,15 @@ export const metadata: Metadata = {
     locale: "hi_IN",
     title: "चरावां समाचार",
     description: "चरावां समाचार — पूर्ण समाचार सूची।",
-    url: "https://charawan.netlify.app/news",
+    url: "https://charawan.in/news",
     siteName: "चरावां समाचार",
-    images: [{ url: "https://charawan.netlify.app/logo.png", alt: "चरावां समाचार" }],
+    images: [{ url: "https://charawan.in/logo.png", alt: "चरावां समाचार" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "चरावां समाचार",
     description: "चरावां समाचार — पूर्ण समाचार सूची।",
-    images: ["https://charawan.netlify.app/logo.png"],
+    images: ["https://charawan.in/logo.png"],
   },
 };
 

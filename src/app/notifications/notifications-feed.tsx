@@ -161,7 +161,7 @@ export function NotificationsFeed({
   const siteOrigin =
     typeof window !== "undefined" && window.location?.origin
       ? window.location.origin
-      : "https://charawan.netlify.app";
+      : "https://charawan.in";
 
   const callApi = useCallback(async () => {
     setLoading(true);
@@ -417,15 +417,15 @@ export function NotificationsFeed({
                       {news.detailedInfo.trim().slice(0, 50)}
                       {news.detailedInfo.trim().length > 50 ? "…" : ""}
                     </p> 
-                    <Link
+                    
+                  </div>
+                  ) : null}
+             <Link
                     href={getNewsHref(news)}
                     className="flex justify-end text-xs  text-red-700 underline underline-offset-2 dark:text-red-300"
                   >
                     पूरी खबर पढ़ें
                   </Link>
-                  </div>
-                  ) : null}
-             
                   
                 </div>
               </div>
@@ -479,15 +479,7 @@ export function NotificationsFeed({
                   <span className="hidden sm:inline">रिपोर्ट</span>
                 </a>
 
-                <Link
-                    href={getNewsHref(news)}
-                    className="inline-flex cursor-pointer items-center gap-2 rounded-full px-2 py-2 text-xs font-extrabold text-slate-700 transition hover:bg-amber-50 hover:text-amber-800 active:scale-[0.98] dark:text-slate-200 dark:hover:bg-amber-950/30 dark:hover:text-amber-200"
-                  >
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 transition group-hover:bg-amber-100 dark:bg-slate-800 dark:group-hover:bg-amber-950/40">
-                      <ArrowUpRight className="h-4 w-4" aria-hidden />
-                    </span>
-                    <span className="hidden sm:inline">पूरी खबर पढ़ें</span>
-                  </Link>
+                
               </div>
             </article>
           ))}

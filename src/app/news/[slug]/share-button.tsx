@@ -5,7 +5,7 @@ import { Share2 } from "lucide-react";
 export function ShareButton({ title }: { title: string }) {
   const onShare = async () => {
     const url = window.location.href;
-    const text = `चरावां समाचार\n${title}\n\nपूरी खबर पढ़ें 👇`;
+    const text = `🗞️ चरावां समाचार\n${title}\n\nपूरी खबर पढ़ें 👇`;
     const clipboardText = `${text}\n${url}`;
     try {
       if ("share" in navigator) {

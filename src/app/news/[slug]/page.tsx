@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import { CalendarClock, Clock3, UserCircle2 } from "lucide-react";
 import { createNewsSlug, fetchNewsFromFirebase, getNewsHref, getNewsPathSegment } from "@/lib/news";
 import { ShareButton } from "@/app/news/[slug]/share-button";
+import { buildCustomMetadata } from "@/components/seo/CustomHeadTag";
 
 type Params = { slug: string };
-const SITE_BASE = "https://charawan.netlify.app";
+const SITE_BASE = "https://charawan.in";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 300;
@@ -20,33 +21,18 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const title = news?.newsTitle ? `${news.newsTitle} | चरावां समाचार` : "समाचार विवरण | चरावां समाचार";
   const description = news?.shortInfo?.trim() || "चरावां समाचार विस्तृत समाचार पेज";
   const path = news ? getNewsHref(news) : `/news/${slug}`;
-  const canonicalUrl = `${SITE_BASE}${path}`;
-  const rawImageUrl = news?.img1 || news?.img2 || `${SITE_BASE}/logo.png`;
-  const imageUrl =
-    rawImageUrl.startsWith("http://") || rawImageUrl.startsWith("https://")
-      ? rawImageUrl
-      : `${SITE_BASE}${rawImageUrl.startsWith("/") ? rawImageUrl : `/${rawImageUrl}`}`;
+  const imageUrl = news?.img1 || news?.img2 || "/logo.png";
 
-  return {
+  return buildCustomMetadata({
+    baseUrl: SITE_BASE,
+    path,
     title,
     description,
-    alternates: { canonical: path },
-    openGraph: {
-      type: "article",
-      title,
-      description,
-      url: canonicalUrl,
-      siteName: "चरावां समाचार",
-      locale: "hi_IN",
-      images: [{ url: imageUrl, width: 1200, height: 630, alt: news?.newsTitle || "चरावां समाचार" }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [imageUrl],
-    },
-  };
+    imageUrl,
+    siteName: "चरावां समाचार",
+    locale: "hi_IN",
+    type: "article",
+  });
 }
 
 export default async function NewsDetailPage({ params }: { params: Promise<Params> }) {
@@ -62,7 +48,7 @@ export default async function NewsDetailPage({ params }: { params: Promise<Param
   const dateLabel = selected.timeStamp
     ? new Date(selected.timeStamp).toLocaleString("hi-IN", {
         dateStyle: "medium",
-        timeStyle: "short",
+        // timeStyle: "short",
       })
     : "समय उपलब्ध नहीं";
 

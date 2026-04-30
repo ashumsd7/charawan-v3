@@ -30,7 +30,7 @@ export default async function ShopsPage() {
   let shops: ShopWithKey[] = [];
   let fetchError: string | undefined;
 
-  const site = await readJsonFile<SiteJson>("site.json").catch(() => ({ domain: "charawan.netlify.app" }));
+  const site = await readJsonFile<SiteJson>("site.json").catch(() => ({ domain: "charawan.in" }));
   const siteOrigin = `https://${site.domain}`;
 
   try {

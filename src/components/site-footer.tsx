@@ -100,7 +100,7 @@ export async function SiteFooter() {
               </a>
             );
           })}
-          {/* <a className="hover:text-accent" href={"mailto:hello@charawan.netlify.app"}>
+          {/* <a className="hover:text-accent" href={"mailto:hello@charawan.in"}>
             Email
           </a> */}
           <Link className="hover:text-accent" href="/admin">

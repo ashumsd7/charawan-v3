@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
     village: { nameHi: string };
     domain?: string;
   }>("site.json");
-  const baseUrl = `https://${site.domain || "charawan.netlify.app"}`;
+  const baseUrl = `https://${site.domain || "charawan.in"}`;
   return {
     metadataBase: new URL(baseUrl),
     title: {

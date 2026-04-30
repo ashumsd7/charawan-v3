@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { fetchNewsFromFirebase, getNewsHref } from "@/lib/news";
 
-const base = "https://charawan.netlify.app";
+const base = "https://charawan.in";
 
 const paths = [
   "/",
